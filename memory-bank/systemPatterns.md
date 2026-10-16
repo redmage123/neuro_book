@@ -8,16 +8,19 @@ docs/
 │   │   ├── Frontispiece/
 │   │   ├── Chapter1/
 │   │   ├── Chapter2/
-│   │   └── Chapter3/
+│   │   ├── Chapter3/
+│   │   └── Chapter4/   # + images/, make_figures.py, .md source
 │   └── pdf/        # Print-ready, review-ready
 │       ├── frontispiece/
 │       ├── Chapter1/
 │       ├── Chapter2/
-│       └── Chapter3/
+│       ├── Chapter3/
+│       └── Chapter4/
 └── companion/      # Student notes & labs
     ├── Chapter1/
     ├── Chapter2/
-    └── Chapter3/
+    ├── Chapter3/
+    └── Chapter4/
         ├── Word/
         └── pdf/
 ```
