@@ -1,10 +1,11 @@
 # Active Context
 
 ## Current Focus
-- Chapters 0-5 drafted with companions; both volumes aligned through Chapter 5
-- Next: Chapter 6 (Perception as Inference: How the Brain Sees What It Expects), as announced at the end of Chapter 5
+- Chapters 0-6 drafted with companions; both volumes aligned through Chapter 6
+- Next: Chapter 7 (Emotion and the Body: How Internal States Tell the Brain What Matters), as announced at the end of Chapter 6
 
 ## Recent Changes
+- 2026-10-16: Chapter 6 (Perception as Inference) written with companion (Labs 6.1-6.7: Bayes by hand, precision-weighted cue combination, prediction error on a chain, hollow-mask odds, efference copy cases, learning a prior with a surprise rule, concept map); figures via book/Word/Chapter6/make_figures.py; Figure 6.6 is Adelson's checker-shadow (CC BY-SA 4.0)
 - 2026-10-16: Chapter 5 (Plasticity and Memory) written with companion (Labs 5.1-5.7: Hebb runaway/Oja, calcium control, STDP on a chain, sliding threshold, catastrophic interference vs interleaving, forgetting and spacing, concept map); figures via book/Word/Chapter5/make_figures.py
 - 2026-10-16: all chapters, companions and front matter restyled to one house style and rebuilt from markdown sources (docs/build.py, docs/style/reference.docx); old descriptor-suffixed files removed; Chapter 0 figures made local (four dead Commons links replaced: Na/K pump and Hooke cork from Commons, bond types and macromolecules drawn)
 - Added Chapter 3: Neuromodulation to main book
@@ -16,13 +17,13 @@
 - Configured MCP servers for research assistance (semantic-scholar, pubmed, arxiv, cite-assist)
 
 ## Next Steps
-1. Draft Chapter 6: Perception as Inference (predictive processing, Bayesian priors, illusions, attention as precision; links to Ch4 rhythms/routing and Ch5 priors as learned structure)
-2. Add Chapter 4 and 5 terms to the front-matter glossary (Ch5: LTP, LTD, NMDA receptor, STDP, eligibility trace, synaptic tagging, engram, consolidation, reconsolidation, synaptic scaling, sliding threshold, complementary learning systems, sharp-wave ripple, catastrophic interference) and Chapter 4 terms: circuit motif, feedforward/feedback/lateral inhibition, disinhibition, recurrent excitation, excitation-inhibition balance, central pattern generator, half-center oscillator, canonical microcircuit, cortical column, basal ganglia, striatum, cerebellum, Purkinje cell, climbing fiber, pattern separation, pattern completion, oscillation (theta/alpha/beta/gamma), small-world network, hub, connectome
+1. Draft Chapter 7: Emotion and the Body (interoception as inference, homeostasis and allostasis, amygdala/insula/hypothalamus, neuromodulators of Ch3 as the chemistry of emotion, decision-making link)
+2. Add Chapter 4, 5 and 6 terms to the front-matter glossary (Ch6: inverse problem, prior, likelihood, posterior, precision, predictive coding, prediction error, repetition suppression, mismatch negativity, receptive field, ventral stream, critical period, efference copy, forward model, cue combination; Ch5: LTP, LTD, NMDA receptor, STDP, eligibility trace, synaptic tagging, engram, consolidation, reconsolidation, synaptic scaling, sliding threshold, complementary learning systems, sharp-wave ripple, catastrophic interference) and Chapter 4 terms: circuit motif, feedforward/feedback/lateral inhibition, disinhibition, recurrent excitation, excitation-inhibition balance, central pattern generator, half-center oscillator, canonical microcircuit, cortical column, basal ganglia, striatum, cerebellum, Purkinje cell, climbing fiber, pattern separation, pattern completion, oscillation (theta/alpha/beta/gamma), small-world network, hub, connectome
 3. Decide whether the Contents list in the front matter (original 20-chapter plan) should be updated to the chapters as actually written (0 Foundations, 3 Neuromodulation, 4 Circuits, 5 Plasticity and Memory)
 
 ## Active Decisions
 - Companion volume creation prioritized after each main chapter? (TBD)
-- Chapter 6 scope: perception as inference; predictive coding; priors from Ch5 memory; attention; illusions as evidence (TBD)
+- Chapter 7 scope: emotion as regulation; interoception; body-to-brain signalling; how emotion sets priorities for learning and decision (TBD)
 
 ## Current Blockers
 - None identified

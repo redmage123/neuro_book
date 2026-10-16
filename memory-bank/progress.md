@@ -7,18 +7,19 @@
 - Chapter 3: Neuromodulation (main book + companion; PDF regenerated from Word 2026-10-16)
 - Chapter 4: Circuits, Networks, and Coordinated Behavior (main book + companion, 2026-10-16; 12 figures, 5 drawn by make_figures.py, 7 from Wikimedia Commons with credits in the chapter)
 - Chapter 5: Plasticity and Memory: How Experience Becomes Structure (main book + companion, 2026-10-16; 10 figures, 8 drawn by make_figures.py, 2 from Wikimedia Commons)
+- Chapter 6: Perception as Inference: How the Brain Sees What It Expects (main book + companion, 2026-10-16; 10 figures, 9 drawn by make_figures.py, checker-shadow illusion from Wikimedia Commons)
 - PDF and Word formats maintained for all chapters
 - Directory structure supports independent chapter review
 
 ## What's Left to Build
 - Convert Chapter 0 markdown to Word/PDF format
-- Chapters 6+ (Chapter 6 announced as "Perception as Inference: How the Brain Sees What It Expects")
+- Chapters 7+ (Chapter 7 announced as "Emotion and the Body: How Internal States Tell the Brain What Matters")
 - Final style sheet compliance review
 - License finalization before public release
 - Additional glossary entries as chapters expand
 
 ## Current Status
-**Phase:** Active writing — Chapters 0-5 drafted with companions; Chapter 6 (Perception as Inference) next
+**Phase:** Active writing — Chapters 0-6 drafted with companions; Chapter 7 (Emotion and the Body) next
 
 | Component | Status |
 |-----------|--------|
@@ -30,6 +31,7 @@
 | Companion Ch 2-3 | ✓ Complete (2026-10-16) |
 | Chapter 4 | ✓ Complete (book + companion, 2026-10-16) |
 | Chapter 5 | ✓ Complete (book + companion, 2026-10-16) |
+| Chapter 6 | ✓ Complete (book + companion, 2026-10-16) |
 | Chapters 6+ | Not started |
 
 ## Recent Addition: Chapter 0 (Foundations)
