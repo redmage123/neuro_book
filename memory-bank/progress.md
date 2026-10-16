@@ -3,14 +3,13 @@
 ## What Works
 - Front matter with glossary (v1 complete)
 - Chapter 1: Complete with images (main book + companion)
-- Chapter 2: Complete with images (main book only)
-- Chapter 3: Neuromodulation (main book only)
+- Chapter 2: Complete with images (main book + companion)
+- Chapter 3: Neuromodulation (main book + companion; PDF regenerated from Word 2026-10-16)
 - PDF and Word formats maintained for all chapters
 - Directory structure supports independent chapter review
 
 ## What's Left to Build
 - Convert Chapter 0 markdown to Word/PDF format
-- Companion volume for Chapters 2 and 3
 - Chapters 4+ (content TBD)
 - Final style sheet compliance review
 - License finalization before public release
@@ -24,9 +23,9 @@
 | Front Matter | ✓ Complete |
 | Chapter 0 (Foundations) | ✓ Complete (markdown, needs Word/PDF) |
 | Chapter 1 | ✓ Complete (book + companion) |
-| Chapter 2 | ✓ Complete (book only) |
-| Chapter 3 | ✓ Complete (book only) |
-| Companion Ch 2-3 | Not started |
+| Chapter 2 | ✓ Complete (book + companion) |
+| Chapter 3 | ✓ Complete (book + companion) |
+| Companion Ch 2-3 | ✓ Complete (2026-10-16) |
 | Chapters 4+ | Not started |
 
 ## Recent Addition: Chapter 0 (Foundations)

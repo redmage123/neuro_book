@@ -15,7 +15,9 @@ docs/
 │       ├── Chapter2/
 │       └── Chapter3/
 └── companion/      # Student notes & labs
-    └── Chapter1/
+    ├── Chapter1/
+    ├── Chapter2/
+    └── Chapter3/
         ├── Word/
         └── pdf/
 ```
