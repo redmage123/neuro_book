@@ -25,11 +25,24 @@ docs/
         └── pdf/
 ```
 
+## House Style and Build (since 2026-10-16)
+- Single source of truth per document: a markdown file next to the Word output
+  (docs/book/Word/<part>/How_the_Brain_Learns_<...>.md, docs/companion/ChapterN/Word/..._Student_Notes_and_Labs.md).
+- `python3 docs/build.py [filter] [--docx]` rebuilds every .docx (pandoc) and .pdf (LibreOffice headless)
+  from the markdown with the shared style `docs/style/reference.docx` (regenerate with docs/style/make_reference.py).
+- Style: Letter, 1 in margins; body Cambria 11 pt / 1.15; Title Calibri 26 bold blue (#1F4E79); Subtitle Calibri 15 grey;
+  Heading 1 Calibri 15 bold blue (chapter sections); Heading 2 13 bold blue; Heading 3 11.5 bold grey; Heading 4 11 bold italic;
+  figure captions Cambria 9.5 italic centered; epigraphs as blockquotes (Block Text, italic, indented).
+- Markdown conventions: YAML title/subtitle; epigraph as a blockquote; main-chapter sections are `#`;
+  companions use `#` for Student Notes / Labs, `##` for sections, `###` for lab parts; companions are built with
+  hard line breaks (one line = one line); figures are `![Figure N.M. caption](images/file)` alone in a paragraph;
+  images live in `images/` beside the source. Figure numbering is N.M in every chapter.
+- Do not edit the .docx/.pdf by hand; edit the .md and rebuild.
+
 ## Naming Conventions
-- Main book: `How_the_Brain_Learns_Chapter_N_[descriptor].{docx,pdf}`
+- Main book: `How_the_Brain_Learns_Chapter_N_<ShortTitle>.{md,docx,pdf}` (Chapter_0_Foundations, Chapter_1_What_the_Brain_Is, Chapter_2_Neurons, Chapter_3_Neuromodulation, Chapter_4_Circuits); front matter `How_the_Brain_Learns_Front_Matter`
 - Companion: `How_the_Brain_Learns_Chapter_N_Student_Notes_and_Labs.{docx,pdf}`
-- Versioning: `_v1`, `_v2` suffix when multiple versions exist
-- Descriptors: `FULL`, `with_Images`, `AUTHORITATIVE`, `STYLED`
+- No version or descriptor suffixes any more (git history holds earlier versions)
 
 ## Writing Patterns
 1. **Chapter structure**: Cumulative — each builds on previous

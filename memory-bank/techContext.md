@@ -3,7 +3,7 @@
 ## Document Formats
 - **Microsoft Word (.docx)**: Primary authoring and editorial format
 - **PDF**: Print-ready and review artifacts
-- No LaTeX source (Word is the master format)
+- Markdown is the master format since 2026-10-16; Word and PDF are built from it (pandoc + LibreOffice via docs/build.py)
 
 ## Tools & Dependencies
 - Word processor for authoring

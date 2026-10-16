@@ -48,69 +48,25 @@ The companion volume is **not a simplified version of the text**. It is a comple
 
 ## Formats and Publishing Workflow
 
-Both the main book and the companion volume are maintained in two primary formats:
+Every document has one source of truth: a markdown file stored next to its Word output
+(`docs/book/Word/<part>/*.md`, `docs/companion/ChapterN/Word/*.md`). Word and PDF are build
+products:
 
-- **PDF**  
-  - Print-ready
-  - Review-ready
-  - Used for formal circulation and archival builds
+```bash
+python3 docs/build.py              # rebuild every .docx and .pdf
+python3 docs/build.py Chapter3     # only the documents whose path contains "Chapter3"
+python3 docs/build.py --docx       # skip the PDF step
+```
 
-- **Word**  
-  - Editorial collaboration
-  - Copy-editing and publisher workflows
-  - Style-driven revisions
+- **Word (.docx)** is produced by pandoc from the markdown using the shared style
+  `docs/style/reference.docx` (regenerate it with `docs/style/make_reference.py`).
+  It is the format for copy-editing and publisher workflows.
+- **PDF** is exported from the Word file with headless LibreOffice. It is the print-ready and
+  review-ready artifact.
 
-All outputs adhere to the official **Style Sheet and Formatting Guide**.
+The house style (Letter page, Cambria body, Calibri headings, numbered figure captions, epigraphs
+as block quotes) is documented in `memory-bank/systemPatterns.md`. Do not edit the .docx or .pdf
+files by hand; edit the markdown and rebuild.
 
----
-
-## Intended Audience
-
-This project is written for:
-- Software engineers
-- Data scientists and machine-learning practitioners
-- Physicists and mathematicians
-- Technologists interested in biological intelligence
-- Educators seeking a mechanistic neuroscience text
-
-No prior coursework in neuroscience or neurobiology is assumed.
-
----
-
-## Contribution Policy
-
-This repository is **not a crowdsourced textbook**. Contributions are curated to preserve conceptual coherence, pedagogical intent, and authorial voice.
-
-Feedback is welcome in the form of:
-- Issues identifying errors or ambiguities
-- Requests for clarification or expansion
-- Suggestions for additional glossary entries
-- Technical corrections to figures or terminology
-
-Please avoid unsolicited stylistic rewrites.
-
----
-
-## License
-
-License terms will be finalized prior to public release.
-
-Until then, all content in this repository should be considered **copyrighted and not for redistribution** without explicit permission.
-
----
-
-## A Note on Expectations
-
-This is not a book about neuroscience as trivia, nor a catalog of brain regions or neurotransmitters. It is a book about **why the brain works the way it does**.
-
-Readers should expect:
-- Dense but carefully motivated prose
-- Fewer diagrams than typical textbooks, but more explanation
-- Emphasis on constraints, trade-offs, and failure modes
-- A gradual reshaping of intuitions rather than quick answers
-
----
-
-*“Every man can, if he so desires, become the sculptor of his own brain.”*  
-— Santiago Ramón y Cajal
-
+Requirements: `pandoc`, LibreOffice (`soffice`), Python 3 with `python-docx` (only for
+regenerating the reference document) and `matplotlib` (only for redrawing Chapter 4's figures).
