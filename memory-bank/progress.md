@@ -2,7 +2,7 @@
 
 ## What Works
 - Front matter with glossary (v1 complete)
-- Chapter 1: Complete with images (main book + companion)
+- Chapter 1: Complete with images (main book + companion; companion expanded to full notes + Labs 1.1-1.5 on 2026-10-16)
 - Chapter 2: Complete with images (main book + companion)
 - Chapter 3: Neuromodulation (main book + companion; PDF regenerated from Word 2026-10-16)
 - PDF and Word formats maintained for all chapters

@@ -8,13 +8,13 @@
 - Added Chapter 3: Neuromodulation to main book
 - 2026-10-16: Chapter 3 PDF regenerated from the Word doc with headless LibreOffice (`soffice --headless --convert-to pdf`)
 - 2026-10-16: Chapter 2 Student Notes and Labs moved from docs/book into docs/companion/Chapter2
-- 2026-10-16: Chapter 3 Student Notes and Labs written (notes + Labs 3.1-3.5) into docs/companion/Chapter3
+- 2026-10-16: Chapter 3 Student Notes and Labs written (notes + Labs 3.1-3.5) into docs/companion/Chapter3, with a reference table of the four neuromodulatory systems (source nuclei, targets, context, timescale)
+- 2026-10-16: Chapter 1 companion expanded from a 2-page outline to full Student Notes + Labs 1.1-1.5
 - Configured MCP servers for research assistance (semantic-scholar, pubmed, arxiv, cite-assist)
 
 ## Next Steps
 1. Begin planning/drafting Chapter 4
 2. Review style sheet compliance across all chapters
-3. Expand the Chapter 1 companion (currently a 2-page outline, much shorter than Chapters 2 and 3)
 
 ## Active Decisions
 - Companion volume creation prioritized after each main chapter? (TBD)
