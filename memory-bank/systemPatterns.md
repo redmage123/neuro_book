@@ -9,18 +9,21 @@ docs/
 │   │   ├── Chapter1/
 │   │   ├── Chapter2/
 │   │   ├── Chapter3/
-│   │   └── Chapter4/   # + images/, make_figures.py, .md source
+│   │   ├── Chapter4/   # + images/, make_figures.py, .md source
+│   │   └── Chapter5/   # same layout
 │   └── pdf/        # Print-ready, review-ready
 │       ├── frontispiece/
 │       ├── Chapter1/
 │       ├── Chapter2/
 │       ├── Chapter3/
-│       └── Chapter4/
+│       ├── Chapter4/
+│       └── Chapter5/
 └── companion/      # Student notes & labs
     ├── Chapter1/
     ├── Chapter2/
     ├── Chapter3/
-    └── Chapter4/
+    ├── Chapter4/
+    └── Chapter5/
         ├── Word/
         └── pdf/
 ```

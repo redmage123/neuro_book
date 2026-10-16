@@ -6,18 +6,19 @@
 - Chapter 2: Complete with images (main book + companion)
 - Chapter 3: Neuromodulation (main book + companion; PDF regenerated from Word 2026-10-16)
 - Chapter 4: Circuits, Networks, and Coordinated Behavior (main book + companion, 2026-10-16; 12 figures, 5 drawn by make_figures.py, 7 from Wikimedia Commons with credits in the chapter)
+- Chapter 5: Plasticity and Memory: How Experience Becomes Structure (main book + companion, 2026-10-16; 10 figures, 8 drawn by make_figures.py, 2 from Wikimedia Commons)
 - PDF and Word formats maintained for all chapters
 - Directory structure supports independent chapter review
 
 ## What's Left to Build
 - Convert Chapter 0 markdown to Word/PDF format
-- Chapters 5+ (Chapter 5 announced as "Plasticity and Memory: How Experience Becomes Structure")
+- Chapters 6+ (Chapter 6 announced as "Perception as Inference: How the Brain Sees What It Expects")
 - Final style sheet compliance review
 - License finalization before public release
 - Additional glossary entries as chapters expand
 
 ## Current Status
-**Phase:** Active writing — Chapter 4 (Circuits) drafted; Chapter 5 (Plasticity and Memory) next
+**Phase:** Active writing — Chapters 0-5 drafted with companions; Chapter 6 (Perception as Inference) next
 
 | Component | Status |
 |-----------|--------|
@@ -28,7 +29,8 @@
 | Chapter 3 | ✓ Complete (book + companion) |
 | Companion Ch 2-3 | ✓ Complete (2026-10-16) |
 | Chapter 4 | ✓ Complete (book + companion, 2026-10-16) |
-| Chapters 5+ | Not started |
+| Chapter 5 | ✓ Complete (book + companion, 2026-10-16) |
+| Chapters 6+ | Not started |
 
 ## Recent Addition: Chapter 0 (Foundations)
 Added prerequisite chapter addressing reader feedback about assumed knowledge. Covers:
