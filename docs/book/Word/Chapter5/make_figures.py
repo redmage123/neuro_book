@@ -103,17 +103,17 @@ def fig_engram():
 
 
 def fig_consolidation():
-    """Figure 5.6: two clocks of consolidation and the complementary learning systems."""
+    """Figure 5.7: two clocks of consolidation and the complementary learning systems."""
     fig = plt.figure(figsize=(9, 3.6)); gs = fig.add_gridspec(1, 2, width_ratios=[1.2, 1])
     ax = fig.add_subplot(gs[0]); ax.set_xlim(0, 10); ax.set_ylim(0, 6); ax.axis("off"); ax.set_title("A. Two clocks", fontsize=9.5, loc="left")
-    ax.add_patch(FancyBboxPatch((0.3, 3.6), 9.4, 1.6, boxstyle="round,pad=0.05", fc="#eef3f8", ec=EXC, lw=1.5)); ax.text(0.5, 4.95, "Synaptic consolidation (minutes to hours)", fontsize=9, color=EXC, fontweight="bold")
-    ax.text(0.5, 3.8, "early LTP (existing proteins)  ->  gene expression, new protein  ->  late LTP, enlarged spines\nlabile for about an hour; blocked by protein-synthesis inhibitors", fontsize=7.5, color=GRAY)
-    ax.add_patch(FancyBboxPatch((0.3, 0.6), 9.4, 2.4, boxstyle="round,pad=0.05", fc="#fbf3ee", ec=INH, lw=1.5)); ax.text(0.5, 2.75, "Systems consolidation (days to years)", fontsize=9, color=INH, fontweight="bold")
-    ax.text(0.5, 0.75, "hippocampus holds the index and replays it during sleep (sharp-wave ripples)\neach replay nudges cortical synapses a little\nover weeks the cortex can retrieve the memory without the hippocampus;\nwhat remains is the gist, interleaved with everything else known", fontsize=7.5, color=GRAY)
+    ax.add_patch(FancyBboxPatch((0.3, 3.5), 9.4, 2.1, boxstyle="round,pad=0.05", fc="#eef3f8", ec=EXC, lw=1.5)); ax.text(0.5, 5.3, "Synaptic consolidation (minutes to hours)", fontsize=9, color=EXC, fontweight="bold")
+    ax.text(0.5, 5.0, "early LTP (existing proteins)  ->  gene expression, new protein\n->  late LTP, enlarged spines\nlabile for about an hour; blocked by protein-synthesis inhibitors", fontsize=7.5, color=GRAY, va="top", linespacing=1.4)
+    ax.add_patch(FancyBboxPatch((0.3, 0.2), 9.4, 2.9, boxstyle="round,pad=0.05", fc="#fbf3ee", ec=INH, lw=1.5)); ax.text(0.5, 2.8, "Systems consolidation (weeks to years)", fontsize=9, color=INH, fontweight="bold")
+    ax.text(0.5, 2.5, "hippocampus holds the index and replays it (sharp-wave ripples)\neach replay nudges cortical synapses a little\nover weeks to years the cortex can retrieve the memory\nwithout the hippocampus; what remains is the gist,\ninterleaved with what the cortex already knew", fontsize=7.5, color=GRAY, va="top", linespacing=1.4)
     ax2 = fig.add_subplot(gs[1]); ax2.set_xlim(0, 10); ax2.set_ylim(0, 6); ax2.axis("off"); ax2.set_title("B. Complementary learning systems", fontsize=9.5, loc="left")
     ax2.add_patch(FancyBboxPatch((0.4, 3.6), 3.4, 1.7, boxstyle="round,pad=0.05", fc="white", ec=INH, lw=2)); ax2.text(2.1, 4.45, "Hippocampus\nfast, sparse,\none-shot", ha="center", va="center", fontsize=8, color=INH)
     ax2.add_patch(FancyBboxPatch((6.2, 3.6), 3.4, 1.7, boxstyle="round,pad=0.05", fc="white", ec=EXC, lw=2)); ax2.text(7.9, 4.45, "Neocortex\nslow, overlapping,\nstatistical", ha="center", va="center", fontsize=8, color=EXC)
-    ax2.add_patch(FancyArrowPatch((3.8, 4.8), (6.2, 4.8), arrowstyle="-|>", mutation_scale=14, lw=1.8, color=INH)); ax2.text(5.0, 5.05, "replay (sleep)", fontsize=7.5, color=INH, ha="center")
+    ax2.add_patch(FancyArrowPatch((3.8, 4.8), (6.2, 4.8), arrowstyle="-|>", mutation_scale=14, lw=1.8, color=INH)); ax2.text(5.0, 5.5, "replay (sleep, quiet rest)", fontsize=7.5, color=INH, ha="center")
     ax2.add_patch(FancyArrowPatch((6.2, 4.0), (3.8, 4.0), arrowstyle="-|>", mutation_scale=14, lw=1.2, color=EXC)); ax2.text(5.0, 3.55, "cues", fontsize=7.5, color=EXC, ha="center")
     ax2.add_patch(FancyArrowPatch((2.1, 1.4), (2.1, 3.6), arrowstyle="-|>", mutation_scale=14, lw=1.8, color=GRAY)); ax2.text(2.1, 0.8, "today's experience", fontsize=8, color=GRAY, ha="center")
     ax2.text(7.9, 1.9, "A fast learner would overwrite\nitself; a slow learner would\nmiss the day. Two systems, two\nrates, and replay to interleave.", fontsize=7.5, color=GRAY, ha="center", va="center")
@@ -121,7 +121,7 @@ def fig_consolidation():
 
 
 def fig_forgetting():
-    """Figure 5.7: forgetting, and what spaced retrieval does to it."""
+    """Figure 5.9: forgetting, and what spaced retrieval does to it."""
     fig, ax = plt.subplots(figsize=(7, 3.3)); t = np.linspace(0, 30, 600)
     ax.plot(t, 100 * np.exp(-t / 6), color=GRAY, lw=2, label="single exposure")
     s = 6; r = np.zeros_like(t); last = 0; strength = 100; cur = 6
@@ -138,11 +138,11 @@ def fig_forgetting():
 
 
 def fig_systems():
-    """Figure 5.9: kinds of memory map onto different circuits and mechanisms."""
+    """Figure 5.10: kinds of memory map onto different circuits and mechanisms."""
     fig, ax = plt.subplots(figsize=(9, 3.4)); ax.set_xlim(0, 12); ax.set_ylim(0, 6); ax.axis("off")
     cols = [("Episodic and semantic\n(facts, events)", "hippocampus,\nmedial temporal lobe,\nthen neocortex", "synaptic change,\nreplay and systems\nconsolidation", INH),
             ("Procedural\n(skills, habits)", "basal ganglia,\ncerebellum,\nmotor cortex", "dopamine-gated\nstriatal plasticity;\nclimbing-fiber LTD", EXC),
-            ("Emotional\n(fear, value)", "amygdala,\nventral striatum", "fast, durable\nLTP; hard to erase,\neasy to suppress", GOLD),
+            ("Emotional\n(fear, value)", "amygdala", "fast, durable\nLTP; hard to erase,\neasy to suppress", GOLD),
             ("Working\n(the next few seconds)", "prefrontal and\nparietal cortex", "persistent activity\nand short-term synaptic\nfacilitation, not\nstructural change", GREEN)]
     for i, (kind, where, how, c) in enumerate(cols):
         x = 0.3 + i * 2.95

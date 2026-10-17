@@ -332,7 +332,7 @@ def fig_plasticity():
         ax.set_title(title, fontsize=9.5, loc="left")
         synapse(ax, 0, 0, 1.0, n_rec, n_ves, r)
         ax.text(0, 3.3, "presynaptic axon", ha="center", fontsize=7.5, color=EXC)
-        ax.text(1.0, 1.3, f"{n_ves} vesicles\n({'low' if col == 0 else 'high'} release\nprobability)", fontsize=7.2, color=GRAY, va="center")
+        ax.text(1.0, 1.3, f"{n_ves} docked\nvesicles\n({'fewer' if col == 0 else 'more'})", fontsize=7.2, color=GRAY, va="center")
         ax.text(1.0, 0.25, f"{n_rec} receptors", fontsize=7.2, color=INH, va="center")
         ax.text(-2.9, -1.4, "dendrite", fontsize=7.5, color=EXC)
         ax.text(-1.05, 0.15, "spine\nhead", fontsize=7.2, color=GRAY, ha="right", va="center")
@@ -353,7 +353,7 @@ def fig_costs():
     fig = plt.figure(figsize=(9.5, 3.6)); gs = fig.add_gridspec(1, 3, width_ratios=[1.3, 1.1, 0.8], wspace=0.45)
     # A: timescales
     ax = fig.add_subplot(gs[0]); ax.set_xscale("log"); ax.set_xlim(1e-11, 10)
-    items = [("transistor switch", 1e-10, EXC), ("ion channel opening", 1e-4, GRAY), ("synaptic delay", 5e-4, GOLD),
+    items = [("transistor switch (~100 ps)", 1e-10, EXC), ("ion channel opening", 1e-4, GRAY), ("synaptic delay", 5e-4, GOLD),
              ("action potential", 1e-3, INH), ("EPSP", 1e-2, GREEN), ("reaction time", 2.5e-1, GRAY)]
     for i, (name, x, c) in enumerate(items):
         ax.plot([1e-11, x], [i, i], color=c, lw=1.2, alpha=0.5); ax.plot(x, i, "o", color=c, ms=7)
@@ -379,8 +379,8 @@ def fig_costs():
     for x, v in [(0, 2), (1, 20)]: ax3.text(x, v + 0.6, f"{v}%", ha="center", fontsize=8, color=GRAY)
     ax3.set_title("C. Expensive: the human\nbrain, about 20 watts", fontsize=9, loc="left")
     for s in ("top", "right"): ax3.spines[s].set_visible(False)
-    fig.text(0.5, -0.04, "Each of these 'faults' buys something: slow chemistry allows modulation, noise allows exploration and robustness, "
-             "and the energy pays for continuous adaptation.", ha="center", fontsize=8, color=GRAY)
+    fig.text(0.5, -0.04, "Slowness and noise are tolerable because the brain computes with populations of cells; "
+             "the energy buys signaling elements that can rewire themselves.", ha="center", fontsize=8, color=GRAY)
     fig.savefig(OUT / "fig_costs.png", dpi=200, bbox_inches="tight"); plt.close(fig)
 
 

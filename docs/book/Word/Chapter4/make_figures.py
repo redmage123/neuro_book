@@ -2,14 +2,15 @@
 """Regenerate the drawn figures for Chapter 4 (Circuits, Networks, and Coordinated Behavior).
 
 Outputs (into ./images):
-  fig_motifs.png   Figure 4.1  six circuit motifs
-  fig_ei.png       Figure 4.2  excitation-inhibition balance (rate-model simulation)
-  fig_cpg.png      Figure 4.4  half-center oscillator (rate-model simulation)
-  fig_bg.png       Figure 4.7  selection by disinhibition in the basal ganglia
-  fig_rhythms.png  Figure 4.10 EEG bands composite (needs eeg_theta/alpha/beta/gamma.png,
-                   Hugo Gamboa, Wikimedia Commons, CC BY-SA 3.0)
+  fig_motifs.png      Figure 4.1  six circuit motifs
+  fig_ei.png          Figure 4.2  excitation-inhibition balance (rate-model simulation)
+  fig_mach_bands.png  Figure 4.4  Mach bands: a gray staircase and a lateral-inhibition response
+  fig_cpg.png         Figure 4.5  half-center oscillator (rate-model simulation)
+  fig_bg.png          Figure 4.8  selection by disinhibition in the basal ganglia
+  fig_rhythms.png     Figure 4.11 EEG bands composite (needs eeg_delta/theta/alpha/beta/gamma.png,
+                      Hugo Gamboa, Wikimedia Commons, CC BY-SA 3.0)
 
-The other figures are downloaded from Wikimedia Commons; see "Figure Credits" in the chapter
+The other figures are downloaded from Wikimedia Commons; see "Figure Attribution" in the chapter
 and the URLs listed at the bottom of this file.
 
 Requires: matplotlib, numpy, Pillow.
@@ -26,7 +27,7 @@ from matplotlib.patches import Circle, FancyArrowPatch, FancyBboxPatch
 OUT = Path(__file__).parent / "images"
 OUT.mkdir(exist_ok=True)
 plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 10})
-EXC, INH, GRAY = "#1f4e79", "#b03a2e", "#555555"
+EXC, INH, GRAY, GOLD, GREEN = "#1f4e79", "#b03a2e", "#555555", "#c9a227", "#2e7d32"
 
 
 def neuron(ax, x, y, label, color=EXC, r=0.22):
@@ -58,7 +59,8 @@ def fig_motifs():
     ax = axes[0, 0]
     neuron(ax, 0.6, 2.2, "S"); neuron(ax, 2.0, 2.2, "M1"); neuron(ax, 2.0, 0.8, "M2"); neuron(ax, 1.3, 1.5, "I", INH, 0.18)
     conn(ax, (0.6, 2.2), (2.0, 2.2)); conn(ax, (0.6, 2.2), (1.3, 1.5), r=0.2); conn(ax, (1.3, 1.5), (2.0, 0.8), "inh", r=0.18)
-    ax.text(3.0, 2.2, "flexor", fontsize=8, color=GRAY, va="center"); ax.text(3.0, 0.8, "extensor", fontsize=8, color=GRAY, va="center")
+    # knee-jerk: the stretched quadriceps (an extensor) is excited; its antagonist, the hamstrings, is inhibited
+    ax.text(2.45, 2.2, "extensor\n(quadriceps)", fontsize=8, color=GRAY, va="center"); ax.text(2.45, 0.8, "flexor\n(hamstrings)", fontsize=8, color=GRAY, va="center")
     ax.text(0.6, 2.65, "sensory", fontsize=8, color=GRAY, ha="center")
     ax = axes[0, 1]
     neuron(ax, 0.6, 1.5, "In"); neuron(ax, 2.0, 2.3, "I", INH, 0.18); neuron(ax, 3.2, 1.5, "E")
@@ -87,26 +89,52 @@ def fig_motifs():
 
 
 def fig_ei():
-    def sim(gI, T=300, dt=1.0, seed=3, cap=5.0):
+    """Rate model with a firing threshold: the quiet state is stable until the input arrives, so
+    without inhibition the brief input tips the population into a runaway that outlasts it."""
+    def sim(gI, T=300, dt=1.0, seed=3, cap=5.0, theta=0.9):
         rng = np.random.default_rng(seed); E = np.zeros(T); I = np.zeros(T); e = i = 0.0
-        f = lambda x: cap * np.tanh(np.maximum(0, x) / cap)
+        fE = lambda x: cap * np.tanh(2 * np.maximum(0, x - theta) / cap)   # excitatory cells have a threshold
+        fI = lambda x: cap * np.tanh(2 * np.maximum(0, x) / cap)           # fast interneurons follow E directly
         for t in range(1, T):
-            inp = 0.6 + (0.8 if 100 <= t < 110 else 0) + rng.normal(0, 0.15)
-            e += (-e + f(1.6 * e - gI * i + inp)) / 10 * dt
-            i += (-i + f(1.2 * e)) / 5 * dt
+            inp = 0.6 + (1.5 if 100 <= t < 110 else 0) + rng.normal(0, 0.12)
+            e += (-e + fE(1.6 * e - gI * i + inp)) / 10 * dt
+            i += (-i + fI(1.2 * e)) / 5 * dt
             E[t] = e; I[t] = i
         return E, I
     fig, axes = plt.subplots(1, 3, figsize=(9, 2.7))
-    for ax, g, t in zip(axes, [0.0, 1.6, 3.5], ["No inhibition: runaway to saturation", "Balanced: brief, bounded response", "Too much inhibition: muted"]):
+    for ax, g, t in zip(axes, [0.0, 1.6, 3.5], ["No inhibition: the input triggers a runaway", "Balanced: brief, bounded response", "Too much inhibition: muted"]):
         E, I = sim(g); ax.plot(E, color=EXC, lw=1.5, label="excitatory rate")
         if g > 0:
             ax.plot(I, color=INH, lw=1.2, label="inhibitory rate")
-        ax.axvspan(100, 110, color="gold", alpha=0.35, lw=0); ax.axhline(5, color=GRAY, ls=":", lw=1)
+        ax.axvspan(100, 110, color=GOLD, alpha=0.4, lw=0); ax.axhline(5, color=GRAY, ls=":", lw=1)
         ax.set_title(t, fontsize=9.5); ax.set_xlabel("time (ms)"); ax.set_ylim(0, 5.6)
     axes[0].text(150, 5.12, "ceiling: every neuron firing flat out", fontsize=7, color=GRAY, ha="left", va="bottom")
-    axes[0].set_ylabel("population activity"); axes[1].legend(fontsize=7.5, loc="center right", frameon=False)
+    axes[0].set_ylabel("population activity"); axes[1].legend(fontsize=7.5, loc="upper right", frameon=False)
     fig.text(0.5, -0.02, "Yellow band: a brief sensory input. The same excitatory network behaves differently depending only on inhibitory gain.", ha="center", fontsize=8, color=GRAY)
     fig.tight_layout(); fig.savefig(OUT / "fig_ei.png", dpi=200, bbox_inches="tight"); plt.close(fig)
+
+
+def fig_mach_bands():
+    """Figure 4.4: a staircase of uniform gray steps (top) and the illustrative response of a
+    lateral-inhibition network to it (bottom), which overshoots on the bright side of each edge and
+    undershoots on the dark side: Mach bands."""
+    x = np.arange(1200)
+    lum = 0.25 + 0.12 * (x // 200)                      # six uniform steps
+    # center-surround kernel: narrow excitatory center, broad inhibitory surround (lateral inhibition)
+    k = np.arange(-60, 61); center = np.exp(-k**2 / (2 * 4.0**2)); surround = np.exp(-k**2 / (2 * 22.0**2))
+    kern = center / center.sum() - 0.45 * surround / surround.sum(); kern /= kern.sum()
+    pad = np.concatenate([np.full(60, lum[0]), lum, np.full(60, lum[-1])])
+    resp = np.convolve(pad, kern, mode="valid")
+    fig = plt.figure(figsize=(9, 4.4)); gs = fig.add_gridspec(2, 1, height_ratios=[1.0, 1.1], hspace=0.12)
+    ax = fig.add_subplot(gs[0]); ax.imshow(np.tile(lum, (260, 1)), cmap="gray", vmin=0, vmax=1, aspect="auto"); ax.axis("off")
+    ax.set_title("A. A staircase of uniform gray steps: each step looks lighter at its border with the darker step and darker at its border with the lighter one", fontsize=8.5, loc="left")
+    ax2 = fig.add_subplot(gs[1]); ax2.plot(x, lum, color=GRAY, lw=1.4, label="luminance (what is on the page)")
+    ax2.plot(x, resp, color=EXC, lw=1.6, label="simulated response of a lateral-inhibition network (what is reported)")
+    ax2.set_xlim(0, 1199); ax2.set_ylim(0.15, 0.95); ax2.set_yticks([]); ax2.set_xticks([]); ax2.set_ylabel("level")
+    for sp in ("top", "right"): ax2.spines[sp].set_visible(False)
+    ax2.legend(fontsize=8, loc="upper left", frameon=False)
+    ax2.set_title("B. The network overshoots on the bright side of every edge and undershoots on the dark side", fontsize=8.5, loc="left")
+    fig.savefig(OUT / "fig_mach_bands.png", dpi=200, bbox_inches="tight"); plt.close(fig)
 
 
 def fig_cpg(w=2.5, ga=3.0, tau_a=120, T=800, dt=0.5):
@@ -159,13 +187,14 @@ def fig_bg():
 
 def fig_rhythms():
     from PIL import Image
-    names = [("eeg_theta.png", "Theta (4-8 Hz): memory encoding, navigation"), ("eeg_alpha.png", "Alpha (8-12 Hz): idling, inhibition of unused regions"),
-             ("eeg_beta.png", "Beta (13-30 Hz): holding a motor or cognitive state"), ("eeg_gamma.png", "Gamma (30-100 Hz): local processing, attention")]
-    fig, axes = plt.subplots(4, 1, figsize=(7.5, 6))
+    names = [("eeg_delta.png", "Delta (below 4 Hz): deep sleep"), ("eeg_theta.png", "Theta (4-8 Hz): memory encoding, navigation"),
+             ("eeg_alpha.png", "Alpha (8-12 Hz): idling, inhibition of unused regions"), ("eeg_beta.png", "Beta (13-30 Hz): holding a motor or cognitive state"),
+             ("eeg_gamma.png", "Gamma (30-100 Hz): local processing, attention")]
+    fig, axes = plt.subplots(5, 1, figsize=(7.5, 7.4))
     for ax, (f, lab) in zip(axes, names):
         im = Image.open(OUT / f).convert("RGBA"); bg = Image.new("RGBA", im.size, "white"); bg.alpha_composite(im)
         ax.imshow(bg.convert("RGB")); ax.axis("off"); ax.set_title(lab, fontsize=9.5, loc="left")
-    fig.text(0.5, 0.005, "One second of scalp EEG filtered into four frequency bands. Traces: Hugo Gamboa, Wikimedia Commons, CC BY-SA 3.0.", ha="center", fontsize=8, color=GRAY)
+    fig.text(0.5, 0.005, "One second of scalp EEG filtered into five frequency bands. Traces: Hugo Gamboa, Wikimedia Commons, CC BY-SA 3.0.", ha="center", fontsize=8, color=GRAY)
     fig.tight_layout(rect=(0, 0.02, 1, 1)); fig.savefig(OUT / "fig_rhythms.png", dpi=200); plt.close(fig)
 
 
@@ -178,6 +207,7 @@ COMMONS = {
     "hippo.png": "https://upload.wikimedia.org/wikipedia/commons/2/25/CajalHippocampus_%28modified%29.png",
     "ws.png": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Watts-Strogatz_small-world_model_100nodes.png",
     "connectome.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/The_Human_Connectome.png/1280px-The_Human_Connectome.png",
+    "eeg_delta.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Eeg_delta.svg/1280px-Eeg_delta.svg.png",
     "eeg_theta.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Eeg_theta.svg/1280px-Eeg_theta.svg.png",
     "eeg_alpha.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Eeg_alpha.svg/1280px-Eeg_alpha.svg.png",
     "eeg_beta.png": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Eeg_beta.svg/1280px-Eeg_beta.svg.png",
@@ -185,8 +215,8 @@ COMMONS = {
 }
 
 if __name__ == "__main__":
-    fig_motifs(); fig_ei(); fig_cpg(); fig_bg()
-    if all((OUT / f"eeg_{b}.png").exists() for b in ("theta", "alpha", "beta", "gamma")):
+    fig_motifs(); fig_ei(); fig_mach_bands(); fig_cpg(); fig_bg()
+    if all((OUT / f"eeg_{b}.png").exists() for b in ("delta", "theta", "alpha", "beta", "gamma")):
         fig_rhythms()
     else:
         print("EEG band images missing; download them from the COMMONS table first.")

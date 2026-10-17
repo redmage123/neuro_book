@@ -77,7 +77,7 @@ def fig_transmission():
             px, py = cx + 0.78 * np.cos(ang) * 0.62, cy + 0.45 * np.sin(ang) * 1.0
             ax.add_patch(Rectangle((px - 0.07, py - 0.07), 0.14, 0.14, fc=INH, ec="none"))
     ax.text(1.2, 1.7, "receptors on many\ncells and synapses", ha="center", va="top", fontsize=8.5, color=INH)
-    ax.text(5.0, 0.35, "one sender, thousands of receivers\nseconds to minutes, micrometres", ha="center", va="center", fontsize=8.5, color=EXC)
+    ax.text(5.0, 0.35, "one sender, thousands of receivers\nseconds to minutes, micrometers", ha="center", va="center", fontsize=8.5, color=EXC)
     fig.tight_layout(); fig.savefig(OUT / "fig_transmission.png", dpi=200); plt.close(fig)
 
 
@@ -108,7 +108,7 @@ def synapse_pair(ax, x0, y0, modulator_level, label):
     ax.text(x0 + 2.0, y0 - 0.75, label, ha="center", va="top", fontsize=9.5, color=GOLD, weight="bold")
 
 
-def fig_context():
+def fig_modulator_context():
     """Figure 3.2: the same synapse behaves differently under low and high neuromodulator levels."""
     fig = plt.figure(figsize=(9.5, 4.8))
     gs = fig.add_gridspec(2, 2, height_ratios=[2.3, 1.0], hspace=0.05, wspace=0.12)
@@ -127,7 +127,7 @@ def fig_context():
         ax2.text(62, 1.9, f"postsynaptic response ×{gain:.1f}" if gain > 1 else "postsynaptic response", fontsize=8, color=EXC)
         if col == 1:
             ax2.text(2, 2.6, "larger response, and the synapse\nis now permitted to change", fontsize=8, color=GOLD, ha="left", va="top")
-    fig.savefig(OUT / "fig_context.png", dpi=200, bbox_inches="tight"); plt.close(fig)
+    fig.savefig(OUT / "fig_modulator_context.png", dpi=200, bbox_inches="tight"); plt.close(fig)
 
 
 # ----------------------------------------------------------------------------------------------
@@ -151,7 +151,7 @@ def nucleus(ax, p, color, size=90):
     ax.scatter([p[0]], [p[1]], s=size, color=color, zorder=6, edgecolors="white", linewidths=1.0)
 
 
-def fig_systems():
+def fig_neuromodulatory_systems():
     """Figure 3.3: the four major neuromodulatory systems on a schematic midsagittal brain."""
     fig, ax = plt.subplots(figsize=(9.5, 6.4)); ax.set_xlim(-0.2, 11.2); ax.set_ylim(-0.3, 7.6); ax.set_aspect("equal"); ax.axis("off")
     brain_outline(ax)
@@ -169,7 +169,7 @@ def fig_systems():
     for tgt, rad in [(cortex[0], 0.45), (cortex[2], 0.35), (cortex[4], 0.2), (hippo, 0.1), ((8.3, 1.8), -0.3)]:
         arrow(ax, lc, tgt, colors["norepinephrine"], cs=f"arc3,rad={rad}", lw=1.3)
     # serotonin: raphe nuclei to cortex and hippocampus
-    raphe = (6.15, 0.95); nucleus(ax, raphe, colors["serotonin"])
+    raphe = (6.1, 1.4); nucleus(ax, raphe, colors["serotonin"])
     for tgt, rad in [(cortex[1], 0.5), (cortex[3], 0.15), (hippo, 0.3), (striatum, 0.2)]:
         arrow(ax, raphe, tgt, colors["serotonin"], cs=f"arc3,rad={rad}", lw=1.3)
     # acetylcholine: basal forebrain to cortex and hippocampus; PPN/LDT to thalamus
@@ -180,7 +180,7 @@ def fig_systems():
     arrow(ax, ppn, thal, colors["acetylcholine"], cs="arc3,rad=-0.2", lw=1.3)
     # labels for nuclei (leader lines kept short)
     lab = [("VTA, substantia nigra\n(dopamine)", vta, (4.1, 1.45), INH), ("locus coeruleus\n(norepinephrine)", lc, (7.9, -0.05), EXC),
-           ("raphe nuclei\n(serotonin)", raphe, (3.6, 0.25), GREEN), ("basal forebrain\n(acetylcholine)", bf, (1.3, 2.3), GOLD),
+           ("raphe nuclei\n(serotonin)", raphe, (3.4, 0.35), GREEN), ("basal forebrain\n(acetylcholine)", bf, (1.3, 2.3), GOLD),
            ("pedunculopontine nucleus\n(acetylcholine)", ppn, (9.7, 0.85), GOLD)]
     for text, p, q, c in lab:
         ax.annotate(text, xy=p, xytext=q, fontsize=8, color=c, ha="center", va="center",
@@ -191,7 +191,7 @@ def fig_systems():
     # legend
     for k, (name, c) in enumerate(colors.items()):
         ax.plot([0.2, 0.7], [0.75 - k * 0.3] * 2, color=c, lw=2.2); ax.text(0.85, 0.75 - k * 0.3, name, fontsize=8.5, color=c, va="center")
-    fig.tight_layout(); fig.savefig(OUT / "fig_systems.png", dpi=200); plt.close(fig)
+    fig.tight_layout(); fig.savefig(OUT / "fig_neuromodulatory_systems.png", dpi=200); plt.close(fig)
 
 
 def fig_cholinergic():
@@ -216,7 +216,7 @@ def fig_cholinergic():
                 arrowprops=dict(arrowstyle="-", color=GOLD, lw=0.8, shrinkB=6))
     ax.annotate("pedunculopontine and laterodorsal\ntegmental nuclei (brainstem): to thalamus", xy=ppn, xytext=(8.2, -0.05), fontsize=8.5, color=GOLD, ha="center",
                 arrowprops=dict(arrowstyle="-", color=GOLD, lw=0.8, shrinkB=6))
-    ax.text(0.1, 0.1, "a few thousand cells reach the whole cortex", fontsize=8.5, color=EXC, style="italic")
+    ax.text(0.1, 0.1, "a few hundred thousand cells reach the whole cortex", fontsize=8.5, color=EXC, style="italic")
     fig.tight_layout(); fig.savefig(OUT / "fig_cholinergic.png", dpi=200); plt.close(fig)
 
 
@@ -332,7 +332,7 @@ def fig_math():
     fig = plt.figure(figsize=(9.5, 4.4))
     gs = fig.add_gridspec(2, 3, height_ratios=[0.85, 1.0], hspace=0.55, wspace=0.35)
     ax = fig.add_subplot(gs[0, :]); ax.axis("off")
-    ax.text(0.0, 0.95, "A three-factor learning rule", fontsize=10.5, color=EXC, weight="bold", va="top")
+    ax.text(0.0, 0.95, "A  the three-factor learning rule", fontsize=10.5, color=EXC, weight="bold", va="top")
     ax.text(0.02, 0.58, r"$\dfrac{de}{dt} = -\dfrac{e}{\tau_e} + \mathrm{STDP}(\Delta t)\;\delta(t - t_{\mathrm{pair}})$", fontsize=13, va="center")
     ax.text(0.55, 0.58, r"$\dfrac{dw}{dt} = \eta\; e(t)\; \delta_{\mathrm{DA}}(t)$", fontsize=13, va="center")
     ax.text(0.02, 0.12, "eligibility e rises when pre and post spikes pair (factors 1 and 2), decays with time constant τ;\n"
@@ -389,7 +389,7 @@ def fig_dbs():
                 arrowprops=dict(arrowstyle="-", color=GRAY, lw=0.8))
     ax.annotate("lead with electrode\ncontacts at the tip", xy=(5.32, 8.3), xytext=(7.6, 8.6), fontsize=8.5, color=EXC, va="center",
                 arrowprops=dict(arrowstyle="-", color=EXC, lw=0.8))
-    ax.annotate("target: subthalamic nucleus\n(a few millimetres across)", xy=tgt, xytext=(7.6, 7.2), fontsize=8.5, color=INH, va="center",
+    ax.annotate("target: subthalamic nucleus\n(a few millimeters across)", xy=tgt, xytext=(7.6, 7.2), fontsize=8.5, color=INH, va="center",
                 arrowprops=dict(arrowstyle="-", color=INH, lw=0.8, shrinkB=5))
     ax.annotate("extension cable\nunder the skin", xy=(3.85, 6.6), xytext=(0.6, 6.6), fontsize=8.5, color=EXC, va="center",
                 arrowprops=dict(arrowstyle="-", color=EXC, lw=0.8))
@@ -399,51 +399,9 @@ def fig_dbs():
     fig.tight_layout(); fig.savefig(OUT / "fig_dbs.png", dpi=200); plt.close(fig)
 
 
-def fig_stimulator():
-    """Figure 3.10: block diagram of a neurostimulator system with its pulse train."""
-    fig = plt.figure(figsize=(9.5, 4.6))
-    ax = fig.add_axes([0.0, 0.0, 0.62, 1.0]); ax.set_xlim(0, 10); ax.set_ylim(0, 7.4); ax.set_aspect("equal"); ax.axis("off")
-    # IPG
-    ax.add_patch(FancyBboxPatch((0.5, 2.0), 3.6, 3.4, boxstyle="round,pad=0.1", fc="white", ec=EXC, lw=1.8))
-    ax.text(2.3, 5.15, "implantable pulse generator", ha="center", fontsize=9, color=EXC, weight="bold")
-    for (x, y, w, h, lab) in [(0.8, 3.7, 1.4, 1.0, "battery"), (2.4, 3.7, 1.4, 1.0, "pulse\ncircuitry"), (0.8, 2.3, 1.4, 1.0, "telemetry\nradio"), (2.4, 2.3, 1.4, 1.0, "controller\nand settings")]:
-        ax.add_patch(Rectangle((x, y), w, h, fc=LIGHT, ec=GRAY, lw=1.0)); ax.text(x + w / 2, y + h / 2, lab, ha="center", va="center", fontsize=8)
-    arrow(ax, (2.2, 4.2), (2.4, 4.2), GRAY, lw=1.0); arrow(ax, (3.1, 3.3), (3.1, 3.7), GRAY, lw=1.0)
-    # extension and lead
-    ax.plot([4.1, 5.6], [4.2, 4.2], color=EXC, lw=2.5); ax.text(4.85, 4.45, "extension", ha="center", fontsize=8.5, color=EXC)
-    ax.add_patch(Rectangle((5.6, 4.05), 0.35, 0.3, fc=GRAY, ec="none")); ax.text(5.78, 3.75, "connector", ha="center", fontsize=7.5, color=GRAY)
-    ax.plot([5.95, 8.6], [4.2, 4.2], color=EXC, lw=2.0); ax.text(7.2, 4.45, "lead", ha="center", fontsize=8.5, color=EXC)
-    for k in range(4):
-        ax.add_patch(Rectangle((8.65 + k * 0.33, 4.08), 0.22, 0.24, fc=INH, ec="none"))
-    ax.text(9.3, 3.75, "four contacts\n(1.5 mm each)", ha="center", va="top", fontsize=7.5, color=INH)
-    ax.text(9.3, 4.6, "in the target\nnucleus", ha="center", va="bottom", fontsize=7.5, color=GRAY)
-    # programmer
-    ax.add_patch(FancyBboxPatch((0.5, 0.2), 2.4, 1.0, boxstyle="round,pad=0.08", fc="white", ec=GOLD, lw=1.6))
-    ax.text(1.7, 0.7, "clinician programmer\n(external)", ha="center", va="center", fontsize=8, color=GOLD)
-    for r in (0.35, 0.6, 0.85):
-        th = np.linspace(np.pi * 0.25, np.pi * 0.75, 50); ax.plot(1.5 + r * np.cos(th), 1.2 + r * np.sin(th), color=GOLD, lw=1.0)
-    ax.text(2.6, 1.55, "wireless: adjust\namplitude, frequency,\npulse width, contacts", fontsize=7.5, color=GOLD, va="center")
-    ax.text(5.0, 6.9, "A  system components", fontsize=10, color=EXC, weight="bold", ha="center")
-    # pulse train inset
-    bx = fig.add_axes([0.70, 0.22, 0.28, 0.6])
-    period = 1000 / 130.0; t = np.arange(0, 32, 0.005); v = np.zeros_like(t)
-    for k in range(5):
-        on = k * period + 2.0
-        v[(t >= on) & (t < on + 0.06 * 8)] = 3.0                 # cathodic phase (width exaggerated 8x to be visible)
-        v[(t >= on + 0.5) & (t < on + 0.5 + 0.06 * 8 * 2)] = -1.5  # charge-balancing phase
-    bx.plot(t, v, color=EXC, lw=1.2); bx.set_xlim(0, 32); bx.set_ylim(-2.5, 4.2)
-    bx.set_xlabel("time (ms)", fontsize=8); bx.set_ylabel("amplitude (V)", fontsize=8); bx.tick_params(labelsize=7.5)
-    for s in ("top", "right"): bx.spines[s].set_visible(False)
-    bx.annotate("", xy=(2.0, 3.6), xytext=(2.0 + period, 3.6), arrowprops=dict(arrowstyle="<->", color=GRAY, lw=0.8))
-    bx.text(2.0 + period / 2, 3.75, "7.7 ms (130 Hz)", fontsize=7.5, ha="center", color=GRAY)
-    bx.text(31, -2.2, "pulse width ~60 µs\n(drawn wider to be visible)", fontsize=7, ha="right", va="bottom", color=GRAY)
-    bx.set_title("B  typical pulse train", fontsize=10, color=EXC, weight="bold", loc="left")
-    fig.savefig(OUT / "fig_stimulator.png", dpi=200); plt.close(fig)
-
-
 if __name__ == "__main__":
-    fig_transmission(); fig_context(); fig_systems(); fig_cholinergic(); fig_rpe()
+    fig_transmission(); fig_modulator_context(); fig_neuromodulatory_systems(); fig_cholinergic(); fig_rpe()
     dc, dr = fig_td(); print("TD delta at cue (trial 1,10,40,150):", [round(dc[i - 1], 3) for i in (1, 10, 40, 150)])
     print("TD delta at reward (trial 1,10,40,150):", [round(dr[i - 1], 3) for i in (1, 10, 40, 150)])
-    fig_eligibility(); fig_math(); fig_dbs(); fig_stimulator()
+    fig_eligibility(); fig_math(); fig_dbs()
     print("done")

@@ -52,7 +52,7 @@ def fig_inverse():
 
 
 def fig_hierarchy():
-    """Figure 6.2: the ventral visual pathway with receptive fields growing at each stage."""
+    """Figure 6.4: the ventral visual pathway with receptive fields growing at each stage."""
     fig, ax = plt.subplots(figsize=(9.5, 3.8)); ax.set_xlim(0, 19); ax.set_ylim(0, 7.6); ax.set_aspect("equal"); ax.axis("off")
     stages = [("retina", 1.3, "points of\ncontrast", 0.18), ("LGN\n(thalamus)", 4.3, "points, with\ngain control", 0.22),
               ("V1", 7.3, "oriented\nedges", 0.35), ("V2", 10.3, "contours,\ntextures", 0.6), ("V4", 13.3, "shape parts,\ncolor", 1.0),
@@ -73,7 +73,7 @@ def fig_hierarchy():
     # LGN gets cortical feedback (strong)
     arrow(ax, (6.2, 3.35), (5.4, 3.35), color=INH, lw=2.6)
     ax.text(9.5, 0.9, "feedforward (blue, upward through the hierarchy): fast, carries evidence\n"
-                      "feedback (red, downward): more numerous axons, carries predictions and context",
+                      "feedback (red, downward): at least as numerous, carries predictions and context",
             ha="center", fontsize=8.2, color=GRAY)
     ax.text(9.5, 0.15, "The feedforward sweep reaches IT in about 100 ms; most of what the cortex does with an image happens after that, in the loops.",
             ha="center", fontsize=7.8, color=GRAY, style="italic")
@@ -81,7 +81,7 @@ def fig_hierarchy():
 
 
 def fig_bayes():
-    """Figure 6.3: prior, likelihood, posterior for a one-dimensional estimate."""
+    """Figure 6.2: prior, likelihood, posterior for a one-dimensional estimate."""
     x = np.linspace(-30, 50, 800)
     def g(m, s): return np.exp(-0.5 * ((x - m) / s) ** 2) / (s * np.sqrt(2 * np.pi))
     fig, axes = plt.subplots(1, 2, figsize=(9, 3.3))
@@ -102,7 +102,7 @@ def fig_bayes():
 
 
 def fig_light_above():
-    """Figure 6.4: shaded discs read as bumps or dents according to the light-from-above prior."""
+    """Figure 6.3: shaded discs read as bumps or dents according to the light-from-above prior."""
     n = 120; yy, xx = np.mgrid[-1:1:complex(0, n), -1:1:complex(0, n)]; rr = np.sqrt(xx ** 2 + yy ** 2)
     def disc(light_from_top):
         shade = 0.55 + 0.45 * (yy if light_from_top else -yy)  # brighter at the top if lit from above
@@ -115,7 +115,7 @@ def fig_light_above():
             for j in range(3):
                 grid[10 + i * n:10 + (i + 1) * n, 10 + j * (n + 10):10 + j * (n + 10) + n] = disc(pattern[i][j])
         ax.imshow(grid, cmap="gray", vmin=0, vmax=1); ax.axis("off"); ax.set_title(title, fontsize=9.5, loc="left")
-    fig.text(0.5, 0.02, "Discs lighter on top look like bumps; discs lighter on the bottom look like dents. Rotate the page and they swap.",
+    fig.text(0.5, 0.02, "Discs lighter on top look like bumps; discs lighter on the bottom look like dents. Rotate the image and they swap.",
              ha="center", fontsize=8, color=GRAY)
     fig.tight_layout(rect=(0, 0.06, 1, 1)); fig.savefig(OUT / "fig_light_above.png", dpi=200); plt.close(fig)
 
