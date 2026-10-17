@@ -1,0 +1,43 @@
+# Expert review: Chapter 0, Foundations: The Physical and Chemical Basis of Life
+
+File: `docs/book/Word/Chapter0/How_the_Brain_Learns_Chapter_0_Foundations.md`
+
+## Overall assessment
+
+Technical accuracy score: **4 / 5**
+
+The text is a competent, conservative primer; the numbers that matter (37 trillion cells, 86 billion neurons and a similar number of glia, Hooke 1665, Schwann/Schleiden 1838 to 1839, Hodgkin and Huxley 1952 and the 1963 Nobel shared with Eccles, Buchner 1897, enzyme rate enhancements up to 10^17) are correct and the footnotes support them. The problems are concentrated in the figures: three captions describe content that the chosen public-domain images do not show, and one caption attributes a generic schematic to Hodgkin and Huxley. There is also a textbook misconception in the glossary (ATP "bond energy"), a misdated end of vitalism, and an oversimplified account of visual-map self-organization that undersells the molecular guidance the chapter itself cites two sentences later.
+
+## Major (factually wrong, must fix)
+
+- **Line 155, Figure 0.7 caption**: "Hodgkin and Huxley's Nobel Prize-winning work. Their mathematical model of the action potential, based on voltage-clamp recordings from squid giant axons, remains foundational..." The image (Wikimedia "Action potential.svg", Chris 73) is a generic textbook schematic of a mammalian-style action potential (rest −70 mV, threshold −55 mV, peak +40 mV, "failed initiations"). It is not Hodgkin and Huxley's data, not their model output, and not a squid axon trace (squid axon rests near −60 to −65 mV). Either relabel the caption as "Schematic action potential (not Hodgkin and Huxley's recording)" or replace the image with a reproduction of a figure from Hodgkin and Huxley (1952), J. Physiol. 117:500.
+- **Line 196, Figure 0.9 caption**: "Self-organization in neural development. Neurons follow chemical gradients to reach their targets, then refine their connections based on activity." The image (Wikimedia "Neural crest.svg", Zephyris) shows neurulation: neural plate folding into neural tube with neural crest cells. It contains no axons, no gradients, no targets and no activity-dependent refinement. The caption describes a different figure. Replace the image (for example a retinotectal/retinogeniculate map-refinement schematic, or a Sperry chemoaffinity diagram) or rewrite the caption to describe neurulation.
+
+## Moderate (misleading or outdated, should fix)
+
+- **Line 50, Figure 0.2 caption**: "Thermodynamics and cellular order. Cells maintain their organized internal state by importing energy ... and exporting entropy (as heat and waste)." The image (Tim Vickers' catabolism schematic) shows proteins/polysaccharides/fats feeding acetyl-CoA, the citric acid cycle, NADH and oxidative phosphorylation to ATP. It is a metabolism diagram with nothing about entropy or order. The caption should say what the figure shows ("How cells harvest energy: catabolism funnels food molecules into ATP production") and the entropy point should stay in the text.
+- **Line 272 (glossary)**: "ATP ... breaking its bonds releases energy for cellular work." This is the classic "high-energy bond" misconception. Breaking any bond costs energy; the free energy of ATP hydrolysis comes from the overall reaction (relief of charge repulsion, resonance stabilization and solvation of the products). Correct wording: "hydrolysis of its terminal phosphate releases free energy". Source: Nelson and Cox, Lehninger Principles of Biochemistry, 8th ed., chapter 13 (the chapter already cites this book).
+- **Line 141**: "By the late 19th century, scientists realized these laws applied universally ... This realization ended vitalism." Vitalism remained a live scientific position well into the 20th century (Hans Driesch's entelechy, 1890s to 1900s; Bergson's élan vital, 1907; the vitalism debates of the 1920s to 1930s). Buchner 1897 (cited at line 151) is the usual turning point, not an endpoint; footnote 26 cites Schrödinger 1944, which does not support a late-19th-century date. Suggested: "By the mid-20th century ...".
+- **Lines 190 to 192**: "Neurons from the eye connect to neurons in the brain. Initially, these connections are imprecise. But a simple rule, neurons that fire together wire together, gradually refines the connections ... No blueprint specifies where each connection should go." Overstated. Coarse retinotopic maps are laid down by molecular gradients (Eph/ephrin, Sperry's chemoaffinity, which the chapter itself cites at footnote 38), and activity (spontaneous retinal waves before vision) refines them. The retina also projects to the thalamus and superior colliculus, not to the cortex directly. Suggested: "A coarse map is specified by chemical gradients; correlated activity then sharpens it." Source: Katz and Shatz 1996 (already cited), Cang and Feldheim 2013, Annu. Rev. Neurosci. 36:51.
+- **Line 264 (summary table) vs line 211**: The table says emergent properties "cannot be reduced to" component interactions; the text says emergence "is a statement about levels of description", that is, not irreducibility. These are the strong and weak senses of emergence and the book should pick one. Anderson 1972 (cited) argues that higher levels need their own laws, not that they are irreducible in principle.
+
+## Minor (imprecise wording)
+
+- **Line 79**: "It works well over micrometers (the scale of synapses)". The synaptic cleft is about 20 nm (Chapter 3's Figure 3.1 says so). Micrometers is the scale of spines and dendritic segments. Suggested: "over nanometers to micrometers (the scale of a synapse or a spine)".
+- **Line 131**: "Rudolf Virchow later added that all cells arise from pre-existing cells." The maxim omnis cellula e cellula was coined by François-Vincent Raspail (1825) and popularized by Virchow (1855). "Virchow later popularized the principle" is accurate.
+- **Line 147**: "mathematical model of the action potential in squid neurons". It was the squid giant axon specifically; say so, since the chapter later relies on axon versus soma distinctions.
+- **Line 153 and footnote 31**: "the genetic code (Nirenberg and Khorana, 1960s)" but the footnote cites Nirenberg and Matthaei 1961 and Crick et al. 1961, not Khorana. Add a Khorana reference (for example Khorana et al. 1966, Cold Spring Harb. Symp. Quant. Biol. 31:39) or drop his name from the text.
+- **Line 182**: "Synaptic signals are specialized paracrine signals". Alberts (cited at footnote 35) treats synaptic (neuronal) signaling as its own category alongside contact-dependent, paracrine and endocrine. Minor, but the cited source does not classify it this way.
+- **Line 236**: "We understand in considerable detail ... how the hippocampus supports memory formation, how the motor cortex generates movement commands." Both are active and unsettled research areas (Chapter 5 itself hedges systems consolidation; motor cortex dynamics are contested). "in some detail" is defensible; "considerable detail" is not.
+- **Footnote 5 (line 433)**: "Helmholtz stated energy conservation in general form". Mayer (1842) and Joule (1843) preceded Helmholtz (1847); fine to cite Helmholtz, but "first" is implied and would be wrong.
+- **Line 17 / footnote 1**: 37 trillion (Bianconi 2013) is fine; a newer estimate is about 36 trillion for a reference adult male and 28 trillion for a female (Hatton et al. 2023, PNAS 120:e2303077120). Optional update.
+- **Line 71**: Footnote [^9] is attached to a figure caption rather than to a sentence of text; pandoc handles it, but it reads oddly. The figure attribution ("Wikimedia Commons, public domain") omits the author; the pump schematic is by Mariana Ruiz Villarreal (LadyofHats), as for Figure 0.1.
+- **Line 209**: "A single water molecule is not wet." Fine as rhetoric, but wetness is a property of liquid-surface interaction, so the analogy is weaker than it looks; consider "a single water molecule has no temperature" (strictly an ensemble property).
+
+## Citation support check
+
+All footnoted claims are supported by the works cited, with the exceptions noted above (footnote 26 does not support the "late 19th century" date; footnote 31 omits Khorana; footnote 35's classification differs from the text). Footnote 19's 10^17 figure (Radzicka and Wolfenden 1995, OMP decarboxylase) is correct. Footnote 27's statement that Galvani began around 1780 and published in 1791 is correct. Footnote 29's note that the 1963 Nobel was shared with Eccles is correct.
+
+## Figures
+
+Figures 0.1, 0.3, 0.4, 0.5, 0.6 and 0.8 match their captions. Figures 0.2, 0.7 and 0.9 do not (see above). No simulated data are presented in this chapter, so no labeling issue arises.

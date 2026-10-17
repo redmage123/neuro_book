@@ -1,0 +1,46 @@
+# Literary Review: Chapter 1, "What the Brain Is (and Is Not)"
+
+Source: `docs/book/Word/Chapter1/How_the_Brain_Learns_Chapter_1_What_the_Brain_Is.md` (208 lines; body ends at line 102, about 1,700 words of body text, 3 figures)
+
+## Overall assessment
+
+What works: this is the right opening move for the stated reader, and it is argued with confidence. "The brain was never trying to solve the problem you think it was solving" (line 16) is a genuine hook; the "no reset button" section (54-64) is the best single idea in the first three chapters and is paid off handsomely in Chapter 5; the adaptive-control framing (66-76) sets up Chapter 6. The prose is clean, with almost no mechanical errors, and the last line ("Neuroscience begins not with facts, but with learning how to see") lands.
+
+What does not work: it is an essay, not a chapter. Seventeen hundred words, no number, no experiment, no named scientist in the text, and three figures the text never mentions, one of which (a Purkinje cell) sits under a section about noise and optimization. Every assertion is correct and every one is unsupported on the page; "Synapses sometimes fail to transmit" would land twice as hard as "a cortical synapse fails to release transmitter on roughly half the spikes that reach it," and the chapter's own footnotes contain those numbers. The short-declarative rhythm ("Brains are none of these things." "Biology is the source of the computation." "This chapter exists to reframe the problem.") is effective once and a tic by the third section. One claim about engineers is false for the engineers reading it. Two later chapters quote a sentence from this chapter that it does not contain, and the chapter opens as if Chapter 0 did not exist. The thinness relative to Chapters 4-6 is a real problem: a reader who judges the book by its first chapter will undervalue it. Prose quality: 4/5. Reader interest: 3/5.
+
+## Findings
+
+### Major (must fix before publication)
+
+- **Line 10.** "This book is about the brain, but it is not written primarily for neuroscientists. It is written for readers who already know how to think carefully about complex systems..." This is the book's opening paragraph, but Chapter 0 precedes it, and nothing in the chapter acknowledges that. Either move this paragraph into a preface, or add after it: "Chapter 0 supplied the cell biology the rest of the book assumes; this chapter supplies the frame."
+- **Lines 66-76 (missing sentence).** Chapter 4 line 80 cites "the one Chapter 1 proposed: the controller generates, the world corrects," and Chapter 6 line 112 cites "Chapter 1 said that the brain generates and the world corrects." No such sentence exists; the nearest (line 70) is "continuously coupling perception and action, adjusting its internal organization based on the consequences of its own behavior." Add the sentence here, after line 70: "The division of labor is simple to state: the brain generates behavior, and the world corrects it."
+- **Line 80.** "Engineers are trained to eliminate noise and redundancy. Biological systems embrace both." False for the target reader: redundancy is a core engineering tool (error-correcting memory, RAID, triple-redundant flight controllers), and this will cost credibility in the first chapter. Rewrite: "Engineers are trained to suppress noise and to add redundancy only where it is budgeted. Biological systems are built from noisy parts and are redundant everywhere."
+- **Whole chapter (thinness).** No concrete example, number or experiment appears in the text. Add at least three from the chapter's own references, each one sentence: the brain's energy budget (about 20 watts, Attwell & Laughlin, footnote 8); synaptic unreliability (release fails on a large fraction of spikes, Allen & Stevens, footnote 9); trial-to-trial variability (the same stimulus never produces the same spike train twice, Shadlen & Newsome, footnote 17). Each converts an assertion into evidence and brings the chapter closer to the density of Chapters 4-6. Consider also adding the "Implications for Artificial Intelligence" and "The Central Lesson" sections that Chapters 3-6 all have.
+- **Lines 36, 52, 88 (Figures 1.1-1.3).** None of the three figures is referred to in the text, and Figure 1.3 (Cajal's Purkinje cell) is placed under "Noise, Redundancy, and the Myth of Optimization," to which it is unrelated. Reference each figure in a sentence, and move Figure 1.3 to "Why This Matters Before We Study Neurons," where neurons and Cajal belong.
+
+### Minor (should fix)
+
+- **Line 8.** "--- Emily Dickinson (1830--1886)" The epigraph gives life dates; Chapter 0 gives a year, Chapters 4-6 give work and year, Chapter 3 gives nothing. Standardize to work and date: "Emily Dickinson, 'The Brain—is wider than the Sky—' (c. 1862)".
+- **Lines 18, 26, 42.** "This chapter exists to reframe the problem." / "Brains are none of these things." / "Every thought corresponds to physical change." Three one-sentence paragraphs in 90 lines. Keep one (line 26 is the best); fold the others into adjacent paragraphs.
+- **Line 34.** "Conflating the two obscures more than it reveals." Cliché. Suggest: "Conflating the two hides exactly the differences that matter."
+- **Line 36 (caption).** "Classical von Neumann computer architecture. Designed computing systems rely on centralized control, explicit memory separation, and deterministic execution. Biological brains do not." The caption restates the thesis rather than telling the reader what to look at. Suggest: "Classical von Neumann architecture. Note the single channel between memory and processor: every datum crosses it, and a clock sets when. Nothing in the brain corresponds to that channel or that clock."
+- **Lines 46 and 48.** "Physical processes take time. They consume energy. They are noisy. They leave traces." and "Synapses fail. Neurons die. Signals degrade." Fragment chains twice in consecutive paragraphs (and again at 82-84). Merge one: "Physical processes take time, consume energy and are noisy, and they leave traces."
+- **Line 52 (caption).** "Sagittal MRI of the human brain, illustrating large-scale anatomical organization shaped by biological development rather than explicit design." An MRI cannot illustrate "shaped by development rather than design"; the caption asserts rather than describes. Suggest: "Midline MRI of a human head. The folded cortex, the cerebellum beneath it and the brainstem are visible. None of this layout was specified in advance; Chapter 0 described how it develops."
+- **Line 62.** "Evolution cannot redesign from scratch; it can only modify what is already there." Jacob's "tinkering" is in footnote 12 and deserves the text: "Evolution, as François Jacob put it, is a tinkerer, not an engineer: it cannot redesign from scratch, only modify what is already there."
+- **Lines 64 and 76.** "This historical contingency is not a flaw. It is a defining feature of living systems." and "These are not bugs. They are trade-offs." The "not a bug, a feature" move appears twice here and again in Chapter 4 line 68, Chapter 5 lines 16 and 174. Use it once in the book; here, rewrite line 64 as "Historical contingency is what it means to be a living system."
+- **Line 70.** "A useful framing is to view the brain as an adaptive control system embedded in a body." "Control system" without saying what is controlled. Ashby and Powers (footnote 13) answer this; add: "What it controls is not the world but a set of internal variables that must stay within bounds for the organism to live: temperature, blood sugar, distance from danger."
+- **Line 84.** "Slow learning prevents catastrophic instability." Unexplained here and explained only in Chapter 5 (catastrophic interference). Add "(Chapter 5 shows why)".
+- **Line 88 (caption).** "Santiago Ramón y Cajal's drawings established neurons as discrete, branching cells..." The figure is a single drawing of a Purkinje cell (attribution, line 112). Say so: "Cajal's 1899 drawing of a Purkinje cell from the human cerebellum. Drawings like this established neurons as discrete, branching cells..."
+- **Line 92.** "This chapter has deliberately avoided detailed neurobiology." True only if Chapter 0 does not exist; see Major. Rewrite: "This chapter has stayed above the level of cells on purpose."
+- **Line 98.** "Neuroscience begins not with facts, but with learning how to see." Drop the comma in the "not X but Y" construction: "begins not with facts but with learning how to see."
+- **Lines 30 and 74.** "Precision is valuable only insofar as it supports survival." and "Accuracy matters only insofar as it serves this goal." The same construction twice; vary the second: "Accuracy is a means, and viability is the end."
+
+### Nit (optional)
+
+- **Line 12.** "This intimacy creates confidence without understanding." Good; keep.
+- **Line 28.** "deeply context dependent" Predicative, so no hyphen needed; fine.
+- **Line 56.** "biological systems have no reset button." Good, and Chapter 5 line 160 calls back to it; keep.
+- **Line 96.** "Understanding it requires patience, humility, and a willingness to revise intuitions forged in other domains." Slightly sermonizing; acceptable.
+- **Line 102.** "Chapter 2: Neurons --- The Brain's Signaling Cells" matches Chapter 2's subtitle; no change.
+
+Counts: Major 5, Minor 14, Nit 5.
