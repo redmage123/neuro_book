@@ -1,10 +1,11 @@
 # Active Context
 
 ## Current Focus
-- Chapters 0-6 drafted with companions; both volumes aligned through Chapter 6
-- Next: Chapter 7 (Emotion and the Body: How Internal States Tell the Brain What Matters), as announced at the end of Chapter 6
+- Chapters 0-7 drafted with companions; both volumes aligned through Chapter 7
+- Next: Chapter 8 (Decision-Making Under Uncertainty: How the Brain Chooses When It Cannot Be Sure), as announced at the end of Chapter 7; Chapter 7's Feeling and Choosing section hands over the Iowa gambling task and the value-and-body question
 
 ## Recent Changes
+- 2026-10-17: Chapter 7 (Emotion and the Body) written: homeostasis and allostasis, interoception and the insula, James-Lange to constructed emotion, value depends on bodily state, amygdala and extinction, stress axes and the inverted U, disorders of regulation, emotional memory, somatic markers (presented with the evidence against: Maia and McClelland, Heims pure autonomic failure, Fellows and Farah), AI implications. 7 drawn figures (make_figures.py), 102 citations verified (logged in docs/reference_verification.md), epigraph William James 1884 checked against the Mind text. Literary and expert reviews in docs/reviews/2026-10-17/*_chapter7.md, implemented (body cut from ~7,400 to ~6,650 words). Companion: notes + Labs 7.1-7.8 with computed check values.
 - 2026-10-17: all literary and expert review findings implemented across Chapters 0-6 (Ch1-3 expanded to ~5,000 words each with AI-implications and Central Lesson sections; Ch0 apparatus removed, Figs 0.2/0.7/0.9 redrawn; Ch2 active dendrites; Ch3 Clinical Evidence rewritten, Fig 3.10 cut, figure files renamed; Ch4 Mach-band figure added, figures now 4.1-4.13; contested claims hedged book-wide per docs/reviews conventions). 88 new citations verified (all OK), logged in docs/reference_verification.md. Check: Ch2 and Ch3 Cajal epigraphs (Recollections of My Life, 1937) should be spot-checked against a printed copy.
 - 2026-10-17: two full manuscript reviews (literary editor; neuroscience expert) saved in docs/reviews/2026-10-17/ (per-chapter reports + summaries). Literary: Ch4-6 publishable, Ch0-3 need expansion to the same standard (181 findings). Expert: 3.7/5 average, 10 major factual errors (Ch2 passive dendrites/soma, Ch4 basal ganglia 'fails safe', Fig 4.5 caption, Fig 3.4 nucleus basalis count, Neitz 2002 misdescribed, Ch0 Figs 0.2/0.7/0.9 captions), 35 moderate (contested claims stated as settled). None applied yet.
 - 2026-10-17: all 412 unique citations in Chapters 0-6 verified against CrossRef/PubMed/library records (log: docs/reference_verification.md); two corrected (Barresi & Gilbert author order; Sherrington 1906 publisher Scribner's), none missing.
@@ -22,13 +23,12 @@
 - Configured MCP servers for research assistance (semantic-scholar, pubmed, arxiv, cite-assist)
 
 ## Next Steps
-1. Draft Chapter 7: Emotion and the Body (interoception as inference, homeostasis and allostasis, amygdala/insula/hypothalamus, neuromodulators of Ch3 as the chemistry of emotion, decision-making link)
+1. Draft Chapter 8: Decision-Making Under Uncertainty (pick up the Iowa gambling task, value signals in ventromedial/orbitofrontal cortex, evidence accumulation, explore/exploit, risk and ambiguity; use the house conventions and run the two-reviewer pass)
 2. Add Chapter 4, 5 and 6 terms to the front-matter glossary (Ch6: inverse problem, prior, likelihood, posterior, precision, predictive coding, prediction error, repetition suppression, mismatch negativity, receptive field, ventral stream, critical period, efference copy, forward model, cue combination; Ch5: LTP, LTD, NMDA receptor, STDP, eligibility trace, synaptic tagging, engram, consolidation, reconsolidation, synaptic scaling, sliding threshold, complementary learning systems, sharp-wave ripple, catastrophic interference) and Chapter 4 terms: circuit motif, feedforward/feedback/lateral inhibition, disinhibition, recurrent excitation, excitation-inhibition balance, central pattern generator, half-center oscillator, canonical microcircuit, cortical column, basal ganglia, striatum, cerebellum, Purkinje cell, climbing fiber, pattern separation, pattern completion, oscillation (theta/alpha/beta/gamma), small-world network, hub, connectome
 3. Decide whether the Contents list in the front matter (original 20-chapter plan) should be updated to the chapters as actually written (0 Foundations, 3 Neuromodulation, 4 Circuits, 5 Plasticity and Memory)
 
 ## Active Decisions
 - Companion volume creation prioritized after each main chapter? (TBD)
-- Chapter 7 scope: emotion as regulation; interoception; body-to-brain signalling; how emotion sets priorities for learning and decision (TBD)
 
 ## Current Blockers
 - Ch3 epigraph ("unexplored continents") attributed to Cajal but primary source not verified.
