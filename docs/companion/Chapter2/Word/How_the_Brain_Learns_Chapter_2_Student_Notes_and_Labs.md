@@ -16,23 +16,33 @@ If you are coming from software, engineering, or math, this chapter is designed 
 
 Your goal is not to memorize vocabulary. Your goal is to be able to explain, in plain language, how inputs at synapses can change a neuron's probability of firing, how a spike propagates, and why learning has to be implemented as physical change.
 
+## A neuron is a cell
+
+A neuron is bounded by a membrane about five nanometers thick separating two salt solutions: potassium concentrated inside, sodium outside. The sodium-potassium pump moves three sodium ions out and two potassium ions in per molecule of ATP, and because the resting membrane leaks potassium more easily than sodium, the inside sits about 70 millivolts negative: the resting potential. Every signal is a brief departure from it, and most of the gray matter's energy budget goes to pumping back the ions that signaling lets through (Attwell and Laughlin).
+
 ## The parts of a neuron, and what each part is for
 
-A typical neuron is polarized: many inputs, one output.
-- Dendrites: where most synaptic inputs arrive. Dendrites are not just "wires." Their geometry and membrane properties shape how signals decay and combine.
-- Soma (cell body): the integration hub and metabolic center.
-- Axon initial segment (AIS): the spike trigger zone with a high density of voltage-gated sodium channels.
-- Axon: the transmission line built to regenerate a signal repeatedly.
+A typical neuron is polarized: many inputs, one output (Cajal's law of dynamic polarization). The numbers are lopsided: a CA1 pyramidal neuron carries about 30,000 excitatory and 1,700 inhibitory synapses (Megías and colleagues), a Purkinje cell on the order of 200,000, and all of them are reduced to one axon carrying one signal.
+- Dendrites: where most synaptic inputs arrive. Dendrites are not just "wires." Their geometry sets how signals decay and combine, and their voltage-gated channels and NMDA receptors let them generate local dendritic spikes.
+- Soma (cell body): holds the nucleus and metabolic machinery and sums what the dendrites deliver. It has a low density of sodium channels, so it relays rather than decides.
+- Axon initial segment (AIS): the spike trigger zone, the first few tens of micrometers of the axon, with a sodium-channel density about fifty times that of the nearby dendrites (Kole and colleagues).
+- Axon: the transmission line built to regenerate a signal repeatedly, myelinated in long-range axons and mostly unmyelinated locally in cortex.
 - Axon terminals: the output interface that converts a spike into chemical release.
 
-You should be able to say: dendrites and soma integrate; the AIS decides; the axon transmits.
+You should be able to say: dendrites integrate (with active parts of their own), the soma relays, the AIS decides, and the axon transmits, while the spike also travels back into the dendrites to tell the synapses that the neuron fired.
 
 ## What counts as an input to dendrites
 
 The immediate input to a dendrite is usually chemical.
 At a chemical synapse, a presynaptic neuron releases neurotransmitter molecules into the synaptic cleft. Those molecules bind to receptors on the postsynaptic membrane. Receptor activation changes ion flow across the membrane, producing a local change in voltage.
 
-That local voltage change is a postsynaptic potential. It is graded, local, and temporary.
+That local voltage change is a postsynaptic potential. It is graded, local, and temporary. Loewi's 1921 frog-heart experiment showed that the message is chemical: fluid from a heart slowed by vagus stimulation slowed a second heart.
+
+Not every synapse is chemical. Electrical synapses (gap junctions), common between inhibitory interneurons, connect two cells' interiors directly, with no transmitter and almost no delay; they help synchronize activity, and mice lacking connexin 36 show weakened gamma oscillations (Connors and Long).
+
+## Quanta, failures, and noise
+
+Transmitter is released in fixed packets, quanta, each the contents of one vesicle. Fatt and Katz (1952) saw spontaneous half-millivolt events at the frog neuromuscular junction, and del Castillo and Katz (1954) found that in low calcium the evoked response fluctuated in steps of that size, with counts following the statistics of independent random events. In the brain an impulse often releases one vesicle or none: more than half of impulses at single hippocampal synapses fail (Allen and Stevens), and in connected cortical pyramidal pairs the response's standard deviation is about half its mean (Markram and colleagues). A neuron's input is a sample from a distribution, not a clean number.
 
 ## EPSPs and IPSPs: excitation and inhibition in plain terms
 
@@ -42,17 +52,27 @@ Synaptic inputs come in two broad functional flavors:
 
 A neuron's firing is governed by the balance of EPSPs and IPSPs over time. Inhibition is not a mere "brake"; it is a core part of computation and stabilization.
 
-## Integration is passive: why location and timing matter
+Real synaptic potentials are small: Markram and colleagues measured an average of 1.3 millivolts at the soma (about 0.15 to 5.5 across connections), and Song and colleagues found a long-tailed distribution with most connections weak. Threshold is about 15 millivolts above rest, so tens of coincident inputs are needed.
 
-Postsynaptic potentials spread through dendrites and soma mostly passively.
-1) Distance matters: far synapses often have less influence at the soma/AIS than near synapses.
+The chapter's worked example: with 0.5-millivolt EPSPs, 30 inputs arriving within a couple of milliseconds sum to 15 millivolts and fire the cell. Spread over a tenth of a second with a 20-millisecond time constant, the same 30 give only about 3 millivolts on average (rate times size times time constant). Add ten 1-millivolt IPSPs to the burst and about 50 EPSPs are needed. What drives a neuron is how many inputs are active together, and against how much inhibition.
+
+## Integration: a passive baseline and active dendrites
+
+The baseline is Rall's cable theory: treated as a passive cable, a dendrite attenuates a voltage change and smears it in time as it spreads toward the soma.
+1) Distance matters: far synapses often have less influence at the soma and AIS than near synapses (some neurons partly compensate by making distal synapses stronger).
 2) Timing matters: inputs that arrive close together can sum before they decay.
 
-This is why neurons do not behave like crisp boolean logic. They behave like physical integrators whose behavior depends on geometry, membrane properties, and recent history.
+For small, scattered inputs this passive account is a good approximation. But dendrites are not passive cables. They carry voltage-gated sodium, calcium, and potassium channels and NMDA receptors, and they can fire their own regenerative events:
+- NMDA spikes: enough coactive neighboring synapses on a thin basal branch trigger a local plateau lasting tens of milliseconds, confined to that branch (Schiller and colleagues, 2000).
+- Calcium spikes: a zone near the top of the apical dendrite of layer 5 pyramidal neurons fires broad calcium spikes that drive bursts of output (Larkum, Zhu, and Sakmann).
 
-## Where spikes start, and why the soma typically does not propagate them
+So a dendrite is a set of semi-independent compartments, each able to detect when its own inputs coincide and to amplify them: roughly linear for weak, scattered input and nonlinear when inputs cluster. Dendritic spikes also matter for learning: distal CA1 synapses can be strengthened by a local dendritic spike even when the neuron does not fire (Golding, Staff, and Spruston). This is why neurons do not behave like crisp boolean logic: their behavior depends on geometry, active membrane properties, and recent history.
 
-Most spikes start at the AIS. The soma is optimized for integration and maintenance, not for regenerative propagation. In some neurons, spikes can back-propagate into dendrites under some conditions, but the canonical forward spike begins near the AIS and proceeds down the axon.
+## Where spikes start, and where they go
+
+Spikes start at the AIS, not the soma. Eccles's group inferred this in 1957 from spinal motor neurons, and Palmer and Stuart located the origin in cortical pyramidal neurons about 35 micrometers down the axon. The soma has a low sodium-channel density and does not initiate the spike.
+
+Once initiated, the spike travels both ways. It runs forward down the axon, and it invades the soma at full amplitude and actively back-propagates into the dendrites, carried by the dendrites' own voltage-gated sodium channels rather than merely leaking into them (Stuart and Sakmann, 1994). Back-propagation weakens with distance, can fail in the finest distal branches, and is regulated by potassium channels and inhibition, but over much of the tree it tells each synapse that the neuron has just fired. That report is how a synapse learns whether its input helped: Chapter 5 shows the back-propagating spike relieving the NMDA receptor's magnesium block. It also couples inputs: a back-propagating spike coinciding with weak distal apical input can trigger a dendritic calcium spike and a burst (Larkum and colleagues).
 
 ## Action potential propagation: what travels
 
@@ -62,15 +82,23 @@ A spike does not propagate because ions physically travel from the AIS to the te
 - Segment 2 reaches threshold and opens its own channels.
 - Segment 1 becomes refractory, preventing immediate re-firing.
 
-What travels is a pattern of membrane state change, regenerated at each step.
+What travels is a pattern of membrane state change, regenerated at each step. Nothing travels the length of the axon except causation.
+
+The mechanism (Hodgkin and Huxley): past threshold, sodium channels open and the inflow opens more (positive feedback, to about +40 millivolts); within a millisecond they inactivate while slower potassium channels repolarize the membrane. The refractory period of a millisecond or two makes propagation one-way and limits firing to a few hundred impulses per second.
+
+Myelin changes the speed. In a myelinated axon sodium channels are concentrated at the nodes, and the spike jumps from node to node (saltatory conduction, shown by Huxley and Stämpfli in 1949). The fastest myelinated axons conduct at about 100 meters per second, against about 1 meter per second for thin unmyelinated fibers, and at lower metabolic cost.
 
 ## Coding: where information lives
 
-Spikes are all-or-nothing events with fairly stereotyped amplitude. Information tends to live in:
-- timing (precise spike times),
+Spikes are all-or-nothing events with fairly stereotyped amplitude. Adrian and Zotterman (1926) showed that a heavier weight on a stretch receptor produced more impulses per second, not larger ones. Information tends to live in:
+- timing (precise spike times; Mainen and Sejnowski showed millisecond-reproducible timing to fluctuating input),
 - rate (how often spikes occur),
 - patterns across populations,
 - and context (neuromodulatory state).
+
+Speed argues against pure rate codes: if an animal-detection signal appears about 150 milliseconds after a flash (Thorpe and colleagues) and passes through about ten stages, each stage has time for one spike or none. How circuits weigh rate, timing, and synchrony is an active research question.
+
+One qualification to all-or-none: small changes in spike shape modulate release. Terminal spikes in hippocampal mossy fibers broaden up to threefold during high-frequency firing (Geiger and Jonas), and subthreshold somatic voltage spreads down the axon and changes how much each later spike releases (Alle and Geiger; Shu, McCormick, and colleagues). The axon carries a mainly digital signal with an analog component.
 
 ## Plasticity: why learning must be physical
 
@@ -78,13 +106,30 @@ A neuron cannot store a variable the way a computer can. Learning is implemented
 
 Memory persists because structure persists.
 
+Hebb proposed the rule in 1949; Bliss and Lømo found long-term potentiation (LTP) in the rabbit hippocampus in 1973. What changes is physical: more transmitter per impulse, more receptors, and a larger spine (Matsuzaki, Kasai, and colleagues showed that potentiating a single spine also enlarges it). The synapse that stores a past experience is the same one that transmits the next impulse, so every use of a memory runs through, and may alter, the stored change. Chapter 5 develops this.
+
+## Why neurons look inefficient, and why they are not
+
+Judged as switches, neurons are slow (a spike lasts about a millisecond, about ten million times longer than a 100-picosecond transistor switch), noisy, and expensive (about 2 percent of body mass, about 20 percent of resting energy). Noise even sets a floor on wiring: axons thinner than about a tenth of a micrometer would fire spontaneously from single-channel noise (Faisal, White, and Laughlin). These costs are tolerable because the brain computes with populations (a coincidence of many noisy synapses is a reliable vote), with parallelism, and with elements that rewire themselves while they work. Sterling and Laughlin argue that, under these constraints, neural design is close to efficient.
+
+## A neuron in context
+
+The same neuron with the same wiring and input can fire very differently depending on its chemical setting: neuromodulators such as dopamine, acetylcholine, and noradrenaline change how neurons fire and how their synapses learn. They decide much of when physical changes are made and kept, and they are the subject of Chapter 3.
+
+## Implications for artificial intelligence
+
+- The McCulloch-Pitts unit (weighted sum and threshold, 1943) is the ancestor of every deep-network unit, but a biological neuron is closer to a small network: Poirazi and Mel modeled a pyramidal cell as a two-layer network of dendritic subunits, and Beniaguev, Segev, and London needed five to eight layers to mimic a cortical neuron (one hidden layer sufficed without NMDA receptors). Human cortical dendrites can compute exclusive-or (Gidon, Larkum, and colleagues), which a single artificial unit cannot.
+- The brain sends sparse, all-or-none events whose cost scales with how many are sent, a reason to take event-driven, spiking hardware seriously.
+- Synaptic failure may play a role loosely like dropout, though this is an analogy, not an established equivalence.
+- Both store knowledge in weights; the difference is how they change. Artificial weights are set by a separate training procedure and fixed during use unless trained online; synapses change during use by local rules, including the back-propagating spike.
+
 ## Practical summary
 
-\- Dendrites receive chemical inputs that produce graded voltage changes (EPSPs/IPSPs).
-- Those voltage changes sum in space and time, decaying with distance and time.
-- If the AIS crosses threshold, the neuron generates a spike.
-- The spike propagates by local regeneration along the axon.
-- Learning occurs when synapses and cellular properties change physically.
+\- Dendrites receive chemical inputs, released in unreliable quanta, that produce small graded voltage changes (EPSPs/IPSPs).
+- Those voltage changes sum in space and time, decaying with distance and time in the passive baseline, while clustered inputs can trigger active dendritic spikes.
+- If the AIS crosses threshold, the neuron generates a spike; the soma relays rather than decides.
+- The spike propagates by local regeneration along the axon (saltatory in myelinated axons) and back-propagates actively into the dendrites, telling synapses the neuron fired.
+- Learning occurs when synapses and cellular properties change physically, and neuromodulators shape much of when those changes are made and kept.
 
 # Labs
 
@@ -114,6 +159,8 @@ To feel, numerically, why neurons must integrate many weak synaptic inputs, and 
 Notebook, pen/pencil, calculator (recommended).
 
 ### Given parameters (use exactly these)
+
+These parameters model the passive baseline described in the Student Notes; they leave out the active dendritic events (NMDA and calcium spikes) that clustered inputs can trigger.
 
 V_rest = -70 mV
 V_th = -55 mV

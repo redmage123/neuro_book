@@ -17,6 +17,8 @@ Your goal is to be able to state, in plain language, what the brain was actually
 
 We experience the brain from the inside, continuously. That intimacy produces confidence without understanding: we feel we know what memory or perception is because we have memories and perceptions. The chapter's point is that experience and mechanism are different levels. The brain does not expose its implementation by being used. Keep this in mind whenever an explanation "feels obviously right"; that feeling is a product of the system under study, not evidence about it.
 
+The chapter's example is Nisbett and Wilson's stocking experiment: shoppers choosing among four identical pairs preferred the rightmost by about four to one and explained the choice by knit and sheerness, never by position. Fluent reasons are not access to causes.
+
 ## The brain is not a digital computer
 
 The chapter lists the defining properties of a designed computer and then denies each of them for the brain. You should be able to reproduce both columns:
@@ -28,66 +30,95 @@ The chapter lists the defining properties of a designed computer and then denies
 - Noise: suppressed in a computer; present everywhere in the brain and, as later sections argue, exploited.
 - Self-modification: a computer's hardware is fixed while it runs; the brain rewires itself while it is running.
 
+Know the numbers behind the contrast: about 86 billion neurons and on the order of a hundred trillion synapses; a spike of about a millisecond and a synaptic delay of about half a millisecond, against transistors that switch in picoseconds. The brain is roughly a million times slower per step, yet it can tell whether a briefly flashed photograph contains an animal within about 150 milliseconds (Thorpe and colleagues, 1996). That leaves room for only about a hundred sequential steps (Feldman and Ballard's hundred-step constraint), so perception must be massively parallel and shallow, not a long serial program.
+
+The contrast is one of emphasis rather than kind. Von Neumann himself showed in 1952 that reliable computation can be built from unreliable components by redundancy and majority voting.
+
 The differences trace back to different goals. Computers are built to produce correct answers to well-specified problems. Brains evolved to keep organisms alive in uncertain, hostile environments. Precision is useful only when it serves survival; flexibility, robustness, and speed frequently matter more.
 
-The chapter's honest formulation is worth memorizing: brains and computers are both physical systems capable of computation under radically different constraints. Neither is a model of the other.
+The chapter's honest formulation is worth memorizing: brains and computers are both physical systems capable of computation under radically different constraints. Neither is a model of the other. Marr's three levels (what is computed, the procedure, the hardware) keep these apart: two systems can compute the same thing while sharing nothing at the level of procedure or hardware.
 
 ## The brain is a physical system
 
-Every thought corresponds to physical change. Signals are ions crossing membranes; components are proteins changing shape, channels opening and closing, molecules diffusing through crowded cells.
+Every thought corresponds to physical change. Signals are ions crossing membranes; components are proteins changing shape, channels opening and closing, molecules diffusing through crowded cells. The decisive demonstration is Hodgkin and Huxley's 1952 model of the squid giant axon: four differential equations for a sodium and a potassium current reproduced the impulse's shape, threshold, and conduction velocity (18.8 meters per second computed against 21.2 measured), with nothing left over.
+
+The energy budget is the constraint that shapes everything else. The brain is about 2 percent of body mass and uses about 20 percent of resting energy, roughly 20 watts. Attwell and Laughlin's budget for rodent gray matter puts about 47 percent on action potentials, 34 percent on glutamate's effects on receiving cells, and 13 percent on resting potentials; Lennie calculated that the cortex can afford only about one neuron in a hundred firing at any moment. Sparse codes, low firing rates, and short wiring follow from that budget.
 
 The consequences follow directly from physics:
-- Physical processes take time, so learning is slow because molecular change is slow.
+- Physical processes take time, so lasting learning is slow because molecular change is slow (one of two reasons; see the next note).
 - Physical changes persist, so memory persists because structure persists.
 - Physical systems consume energy and are noisy, so cognition is energy-limited and variable.
 - Physical systems are affected by their chemistry, so fatigue, intoxication, and disease change cognition by changing metabolism and signaling.
 
 The chapter's strongest statement here is that biology is not an imperfect implementation of abstract computation. Biology is the source of the computation. There is no cleaner process underneath.
 
+## Why learning is slow
+
+The chapter gives two reasons, and they are different in kind:
+1) Lasting change is molecular construction. Early potentiation of a synapse takes a minute or two (receptors already waiting near the membrane are inserted), but change that lasts beyond a few hours needs new protein synthesis and structural growth, which take hours; blocking protein synthesis spares the early change and erases the late one. Kandel's Aplysia work shows the same split: one tail shock gives minutes of sensitization with no new protein, while five spaced shocks give days to weeks that depend on gene expression.
+2) Fast change is dangerous. A system that rewrote itself on every experience would overwrite what it already knew, as McCloskey and Cohen's catastrophic interference shows for artificial networks. In the complementary learning systems account (McClelland, McNaughton, and O'Reilly, 1995), the hippocampus learns in one exposure and replays to the cortex, which integrates slowly and interleaved with old knowledge. Slow cortical learning is a requirement of stability, not a hardware limitation. Chapter 5 elaborates both reasons.
+
 ## No reset button
 
 A computer can be restarted, cleared, and reinitialized. A brain cannot be returned to an earlier state without destroying it. Every experience leaves some trace, and development, learning, aging, and injury accumulate into a continuous, irreversible history.
+
+The chapter's key experiment is Wiesel and Hubel's 1963 monocular deprivation: closing one eye of a newborn kitten during a sensitive period left almost every visual cortical neuron answering only to the open eye, largely permanently, while the same closure in an adult cat did nothing. Knudsen found the same logic in owl auditory maps, birdsong, and human language.
 
 Three consequences to carry forward:
 1) Learning is always incremental and constrained by what is already there.
 2) Habits form because the system carries its past forward.
 3) Early experiences can have outsized effects because they set the initial conditions for all later learning.
 
-The same logic applies to evolution. It cannot redesign from scratch; it modifies what exists. Workable solutions persist once they support survival, even when better ones exist in principle. Historical contingency is a defining feature of living systems, not a flaw.
+The same logic applies to evolution. It cannot redesign from scratch; it modifies what exists. Workable solutions persist once they support survival, even when better ones exist in principle. Historical contingency is a defining feature of living systems, not a flaw. Jacob called evolution a tinkerer, not an engineer; the recurrent laryngeal nerve, which loops down around an artery near the heart and back up to the larynx (several meters round trip in a giraffe), is the standard example. Gould and Lewontin add the caution that not every feature is an adaptation; some are byproducts.
 
 ## The brain as an adaptive control system
 
-The chapter's positive proposal: view the brain as an adaptive control system embedded in a body, regulating behavior in an environment that is uncertain, dynamic, and only partially observable. Perception and action are continuously coupled. The system adjusts its own internal organization based on the consequences of its behavior.
+The chapter's positive proposal: view the brain as an adaptive control system embedded in a body, regulating behavior in an environment that is uncertain, dynamic, and only partially observable. Perception and action are continuously coupled. The system adjusts its own internal organization based on the consequences of its behavior. What it controls is a set of internal variables that must stay in bounds (Cannon's homeostasis; Ashby's essential variables), and learning is the controller changing its own organization when old behavior no longer keeps them there. The sentence to remember: the brain generates behavior, and the world corrects it.
 
 Under this view:
-- Perception is active inference shaped by prior experience and biological need, not passive recording.
+- Perception is an active process of inference shaped by prior experience and biological need, not passive recording (Helmholtz's "unconscious inference," ancestor of the modern view of the brain as a prediction machine).
 - Learning is how the controller adapts.
 - Memory is the persistence of those adaptations.
-- The objective is viability, not truth. Accuracy matters only insofar as it serves survival, and when precision conflicts with speed, energy, or robustness, precision often loses.
+- The objective is viability, not truth. Accuracy matters only insofar as it serves survival, and when precision conflicts with speed, energy, or robustness, precision often loses. Friston's free-energy principle is one contemporary, contested attempt to formalize this; whether it adds anything to Ashby is disputed.
 
-This is why cognition is full of heuristics, biases, and shortcuts. They are trade-offs that favor survival under uncertainty, not bugs.
+This is why cognition is full of heuristics, biases, and shortcuts: Simon's satisficing, the systematic errors Tversky and Kahneman documented, and Gigerenzer and Brighton's finding that simple rules often predict better than complex models when data are few and noisy. They are trade-offs that favor survival under uncertainty.
 
-## Noise, redundancy, and the myth of optimization
+## Noise, degeneracy, and the myth of optimization
 
-Engineers remove noise and redundancy. The brain keeps both and uses them:
-- Populations of neurons average over the noise of individual cells.
-- Redundant pathways provide resilience when synapses fail or neurons die.
-- Feedback stabilizes dynamics.
-- Slow learning prevents catastrophic instability; inhibition prevents runaway excitation; distributed representations remove single points of failure.
+Engineers suppress noise, and they use redundancy deliberately, by duplication: error-correcting memory, mirrored disks, triple-redundant flight computers. The brain is built from far noisier parts, and its redundancy is of a different kind.
 
-"Optimization" in biology means maintaining function across a wide range of conditions with limited resources, not maximizing a benchmark score. Judged by that standard, the brain is not inefficient.
+The noise is measurable. Allen and Stevens (1994) found that more than half of the impulses arriving at single hippocampal synapses evoked no response; Shadlen and Newsome found that the spike-count variance of cortical neurons to repeated identical stimuli is about as large as the mean.
+
+The brain uses rather than eliminates this variability:
+- Populations of neurons average over the failures of their members.
+- Feedback stabilizes dynamics, and homeostatic plasticity (Turrigiano and Nelson) scales a neuron's synapses over hours and days to hold its average activity in a working range.
+- Inhibition prevents runaway excitation (Chapter 4); slow cortical learning is itself a stabilizing device (Chapter 5); distributed representations remove single points of failure.
+
+Degeneracy (Edelman and Gally) is the ability of structurally different elements to perform the same function: many different neuron combinations can produce the same movement, many synaptic configurations can store the same memory. Unlike duplicated copies, which all fail under the same unanticipated condition, degenerate elements offer many partially independent answers, and they are raw material for evolution. Recovery after stroke is degeneracy at work: surviving tissue is not a spare copy but can be taught to do part of the lost tissue's job.
+
+"Optimization" in biology means maintaining function across a wide range of conditions with limited resources, not maximizing a benchmark score. Judged by that standard, and by the 20-watt budget, Sterling and Laughlin argue the nervous system is near-optimal. Nor does the brain optimize nothing: there is no single global objective minimized by gradient descent, but many circuits are well described as minimizing a local error or cost, such as the reward prediction error signaled by a large population of dopamine neurons (Chapter 3), sensory prediction error (Chapter 6), and near-optimal cue combination (Chapter 6).
 
 ## Why this matters before we study neurons
 
-The mechanisms in Chapter 2 (electrical signaling, chemical communication, physical change with use) look arbitrary or overcomplicated without this frame, and intelligible with it. The sentence to keep: the brain is not an engineered solution to a clean problem; it is an evolved solution to a messy one.
+The mechanisms in Chapter 2 (electrical signaling, chemical communication, physical change with use) look arbitrary or overcomplicated without this frame, and intelligible with it. The sentence to keep: the brain is not an engineered solution to a clean problem; it is an evolved solution to a messy one. The chapter closes on Cajal's 1899 drawing of a Purkinje cell (Golgi stain): a dendritic tree with on the order of 200,000 inputs and a single axon that is the only output of the cerebellar cortex, a component whose shape is a wiring solution and whose synapses help the cerebellum learn to correct movements (Chapter 4).
+
+## Implications for artificial intelligence
+
+The chapter draws four lessons and a caution:
+- Energy: the 20-watt budget forced sparse activity, low rates, local wiring, and prediction; as power becomes the binding constraint for AI, these economies are a design guide.
+- Noise: artificial networks are deterministic and made robust only as an afterthought; noise injection and distributed representations rediscover the brain's strategy.
+- No reset: catastrophic interference is still unsolved in general for artificial networks. The brain's answer, a fast learner replaying into a slow one, was arrived at independently in machine learning as experience replay (Lin 1992 predates the discovery of hippocampal replay in 1994; the two are convergent, not a borrowing).
+- Control: most artificial systems are trained and then frozen; the brain generates behavior, observes consequences, and corrects, never frozen. Reinforcement learning faces the same problems of partial observability and delayed, noisy feedback.
+- Caution: the brain's solutions are not the only ones. Some respond to constraints silicon does not share (no exact copies, no clock, no reset) and would be foolish to imitate; the point is to know which is which.
 
 ## Practical summary
 
 - Computational vocabulary is useful but imports assumptions (precision, modularity, central control, clocking, noise-free operation) that the brain does not satisfy.
-- The brain is matter. Every cognitive property is a property of tissue: slow, energy-limited, noisy, persistent.
+- The brain is matter. Every cognitive property is a property of tissue: slow, energy-limited (about 20 watts), noisy, persistent.
+- Learning is slow for two reasons: lasting change is molecular construction, and fast change would overwrite old knowledge (complementary learning systems).
 - There is no reset. Learning is incremental, history-dependent, and early experience sets the initial conditions.
-- The brain is an adaptive controller whose objective is viability, not truth. Heuristics and biases are trade-offs.
-- Noise and redundancy are exploited, not eliminated. Biological optimization means robustness under constraint.
+- The brain is an adaptive controller whose objective is viability, not truth. It generates behavior, and the world corrects it. Heuristics and biases are trade-offs.
+- Noise is exploited, not eliminated, and the brain's redundancy is degeneracy rather than duplication. Biological optimization means robustness under constraint, and many circuits do minimize local errors even though there is no single global objective.
 - Suspend the intuition that apparent defects are design errors. Ask instead what problem the brain was actually solving.
 
 # Labs

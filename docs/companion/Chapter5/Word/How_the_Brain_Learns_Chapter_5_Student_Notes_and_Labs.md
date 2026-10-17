@@ -7,7 +7,7 @@ subtitle: "Plasticity and Memory: How Experience Becomes Structure"
 
 ## What this chapter is for
 
-Every earlier chapter ended by pointing at this one. Chapter 1 said there is no reset button. Chapter 2 said learning must be physical change. Chapter 3 said neuromodulators decide when change is allowed. Chapter 4 built the hippocampal loop and deferred the question of how its synapses change. Chapter 5 answers it: how activity becomes a lasting alteration of tissue, how that alteration is kept stable, how it is made durable, and why it is deliberately allowed to fade.
+Every earlier chapter ended by pointing at this one. Chapter 1 said there is no reset button. Chapter 2 said learning must be physical change. Chapter 3 said neuromodulators decide whether much of that change is kept. Chapter 4 built the hippocampal loop and deferred the question of how its synapses change. Chapter 5 answers it: how activity becomes a lasting alteration of tissue, how that alteration is kept stable, how it is made durable, and why it is deliberately allowed to fade.
 
 If you are coming from software or machine learning, this chapter is designed to correct three instincts:
 1) thinking of memory as storage with write and read operations,
@@ -26,7 +26,9 @@ Four groups, all modifications of machinery that is also doing its ordinary job:
 - Strength of an existing synapse: presynaptic release probability; postsynaptic receptor number (receptors are inserted from or removed to a reserve within minutes).
 - Structure: dendritic spines grow, shrink, appear, and vanish. A stable core persists for life; a changeable fringe tracks recent experience.
 - Intrinsic excitability: ion channel density changes how many spikes a given input produces. Faster, less specific.
-- New synapses and, in the dentate gyrus, new neurons. Slowest.
+- New synapses and, in the dentate gyrus, new neurons, at least in rodents. Slowest.
+
+Whether the adult human dentate gyrus makes new neurons is unresolved: one 2018 postmortem study found them undetectable after childhood, while studies in 2018 and 2019 found them into old age. The disagreement turns on tissue fixation and on which markers count as proof of a young neuron.
 
 ## Hebb's rule and its problem
 
@@ -34,13 +36,13 @@ Four groups, all modifications of machinery that is also doing its ordinary job:
 
 ## The coincidence detector
 
-AMPA receptors do fast transmission: glutamate binds, sodium enters. NMDA receptors also bind glutamate but are plugged by a magnesium ion at rest. The plug is expelled only when the membrane is already depolarized. So the NMDA receptor conducts only when presynaptic release AND postsynaptic depolarization coincide: a molecular AND gate for Hebb's two conditions. What it admits is calcium, the signal that starts the plasticity cascade.
+AMPA receptors do fast transmission: glutamate binds, sodium enters. NMDA receptors also bind glutamate but are plugged by a magnesium ion at rest. The plug is expelled only when the membrane is already depolarized, by many simultaneous AMPA inputs or by an action potential back-propagating from the axon into the dendrite (the back-propagating spike of Chapter 2). So the NMDA receptor conducts only when presynaptic release AND postsynaptic depolarization coincide: a molecular AND gate for Hebb's two conditions. What it admits is calcium, the signal that starts the plasticity cascade.
 
 ## LTP and LTD
 
-Long-term potentiation (strengthening) and long-term depression (weakening) are both downstream of calcium. Large, brief calcium rises activate kinases, which drive extra AMPA receptors into the synapse. Modest, prolonged rises activate phosphatases, which remove them. One ion, two directions, decided by amount and timing.
+Long-term potentiation (strengthening) and long-term depression (weakening) are both downstream of calcium. LTP was first measured in the hippocampus in 1973; LTD was established in the cerebellum in 1982 and convincingly in the hippocampus only in 1992, two decades after LTP. Large, brief calcium rises activate kinases, which drive extra AMPA receptors into the synapse. Modest, prolonged rises activate phosphatases, which remove them. One ion, two directions, decided by amount and timing.
 
-Numbers to remember: one second at 100 Hz potentiates for hours in a slice and weeks in an animal; fifteen minutes at 1 Hz depresses the same synapse. Early LTP (an hour or two) uses existing proteins; late LTP needs new protein synthesis and comes with visible spine growth. Block protein synthesis within an hour of learning and the memory forms but does not last.
+Numbers to remember: one second at 100 Hz potentiates for hours in a slice and weeks in an animal; fifteen minutes at 1 Hz depresses the same synapse. Early LTP (an hour or two) uses existing proteins; late LTP needs new protein synthesis and comes with visible spine growth. Block protein synthesis within an hour of learning and the memory forms but does not last. Induction and the early phase need nothing from outside the synapse; whether the change lasts is a separate question (see the third factor below).
 
 ## Timing is causation
 
@@ -55,31 +57,37 @@ Inhibitory synapses are plastic too and track excitation. Together these are the
 
 ## The third factor
 
+Chapter 3's three-factor learning rule: a synapse changes when it was recently active, when its neuron fired, and when a neuromodulatory signal says something significant happened. Pre- and postsynaptic activity alone can induce LTP and LTD, as the slice experiments show; the third factor decides whether, how strongly, and for how long the change is kept.
+
 Early LTP sets a transient tag at the synapse (an hour or two). Late LTP needs proteins made in the cell body; only tagged synapses capture them. A weak event that tags but does not trigger synthesis fades, unless something, such as dopamine, triggers synthesis within the tag's lifetime. A synapse active during an unremarkable moment can be consolidated retroactively by a reward an hour later. This is synaptic tagging and capture: Chapter 3's eligibility trace at the level of molecules.
 
 ## From synapse to engram
 
-A memory is a sparse ensemble (a few percent of cells in a region) whose mutual connections have been strengthened. Engram cells can now be genetically labeled, reactivated with light (producing the learned behavior with no cue), silenced (blocking recall despite the cue), and even combined to implant a memory of an event that never happened. Recall is pattern completion: a cue activates a few engram cells, the strengthened recurrent connections drive the rest, and the whole pattern returns. Recall is a dynamical event, not a lookup.
+A memory is a sparse ensemble (a few to a few tens of percent of the cells in a region: about 2 to 6 percent in the dentate gyrus, 10 to 20 percent in the lateral amygdala) whose mutual connections have been strengthened. The engram (a term coined in 1904) is now an experimental object: engram cells can be genetically labeled, reactivated with light by optogenetics (producing the learned behavior, such as freezing, with no cue; the fear memory depends on the hippocampus and amygdala of Figure 5.6), silenced (blocking recall despite the cue), and even combined to implant a memory of an event that never happened. Recall is pattern completion: a cue activates a few engram cells, the strengthened recurrent connections drive the rest, and the whole pattern returns. Recall is a dynamical event, not a lookup.
 
 ## Two clocks
 
-Synaptic consolidation (minutes to hours): the early-to-late LTP transition. During this window the memory can be blocked by drugs, interference, or injury.
+Synaptic consolidation (hours): the early-to-late LTP transition. During this window the memory can be blocked by drugs, interference, or injury.
 
-Systems consolidation (weeks to years): the memory moves from hippocampal dependence to cortical independence. The hippocampus holds a rapidly formed index binding the cortical regions that represented the experience; repeated reactivation strengthens direct cortical connections until the index is unnecessary.
+Systems consolidation (weeks to years): the memory moves from hippocampal dependence to cortical independence. The hippocampus holds a rapidly formed index binding the cortical regions that represented the experience; repeated reactivation strengthens direct cortical connections until the index is unnecessary (Figure 5.7A). Hippocampal patients lose recent memories but keep old ones; H.M.'s gap covered roughly the eleven years before his surgery.
 
-Why two systems (McClelland, McNaughton, and O'Reilly, 1995): a network that learns fast enough to capture one experience overwrites what it knows (catastrophic interference, a mathematical property of distributed representations). A network slow enough to avoid interference cannot capture a single experience. Solution: a fast, sparse hippocampal learner and a slow, statistical cortical learner, with the fast one training the slow one by interleaved replay.
+This standard account is contested. Multiple-trace theory and its successor, trace-transformation theory, hold that only a schematic, semanticized version becomes independent of the hippocampus, while the detailed, re-experienceable episode stays hippocampal for as long as it exists. The evidence: H.M. and similar patients could recount the facts of their remote past but not relive particular episodes, and in rats memories rich in contextual detail stay sensitive to hippocampal lesions at any age.
+
+Why two systems (McClelland, McNaughton, and O'Reilly, 1995): a network that learns fast enough to capture one experience overwrites what it knows (catastrophic interference, a mathematical property of distributed representations). A network slow enough to avoid interference cannot capture a single experience. Solution: a fast, sparse hippocampal learner and a slow, statistical cortical learner, with the fast one training the slow one by interleaved replay (Figure 5.7B).
 
 ## Sleep
 
-Place-cell sequences from the day replay during slow-wave sleep, compressed about twentyfold, inside sharp-wave ripples that drive cortex. Disrupting ripples impairs memory; prolonging them improves it; cueing a memory during sleep strengthens it preferentially. Sleep also scales synapses down overall, preserving ratios while restoring a sustainable baseline. Sleep is the second half of learning.
+Place-cell sequences from the day replay during slow-wave sleep, compressed about twentyfold, inside sharp-wave ripples that drive cortex. Replay also runs, forward and in reverse, during ripples in waking pauses, and silencing those waking ripples impairs spatial learning. Disrupting ripples impairs memory; prolonging them improves it; cueing a memory during sleep strengthens it preferentially. Slow-wave stages dominate the first half of the night and carry the ripples; REM stages lengthen toward morning (Figure 5.8).
+
+The synaptic homeostasis hypothesis says sleep also scales synapses down overall, preserving ratios while restoring a sustainable baseline; cortical synapses are about 18 percent smaller after sleep than after waking. It is contested: in mice, REM sleep after motor learning both prunes new spines and strengthens the survivors, so the night's net effect is a reweighting rather than a uniform discount. On either view, sleep is the second half of learning.
 
 ## Recall changes the record
 
-Reactivation reopens the plasticity window: for some hours after retrieval a consolidated memory is labile and must be reconsolidated. This produces drift (each recall blends in the present context; confident eyewitnesses who have retold a story many times) and permits revision (a reactivated fear memory given corrective information in the window is weakened more durably). A record that changes when read is a bad database and a good adaptive system.
+Reactivation reopens the plasticity window: for some hours after retrieval a consolidated memory is labile and must be reconsolidated. This produces drift (each recall blends in the present context; confident eyewitnesses who have retold a story many times) and may permit revision. In rats, a fear memory reactivated and then extinguished within the window is weakened more durably than one extinguished outside it. A 2010 study reported the same in people, but a preregistered replication with a larger sample found no persistent attenuation and other laboratories report both successes and failures, so whether reconsolidation can be exploited in patients is unresolved. A record that changes when read is a bad database and a good adaptive system.
 
 ## Forgetting is a mechanism
 
-The forgetting curve (Ebbinghaus, 1885) drops steeply in hours and days, then slowly; meaning changes the starting point, not the shape. Retrieval, spaced retrieval especially, sleep, and emotional significance all slow it. Forgetting is also actively produced: adult-born dentate neurons rewire circuits and accelerate loss of recent memories; signaling proteins shrink unused spines. These cost energy, which is the evidence that forgetting is function. Flexibility requires generalization, and generalization requires that specifics go.
+The forgetting curve (Ebbinghaus, 1885) drops steeply in hours and days, then slowly, close to a power law; meaning changes how fast material is learned far more than the shape of the loss. Retrieval, spaced retrieval especially, sleep, and emotional significance all slow it. Forgetting is also actively produced: in rodents, where adult neurogenesis is not in doubt, adult-born dentate neurons rewire circuits and accelerate loss of recent memories; signaling proteins shrink unused spines. These cost energy, which is the evidence that forgetting is function. Flexibility requires generalization, and generalization requires that specifics go.
 
 ## Kinds of memory, kinds of circuit
 
@@ -92,11 +100,11 @@ Patient H. M. lost new episodic memory but learned mirror drawing normally while
 
 ## Why learning is slow
 
-Minutes for early LTP, hours and new protein for late LTP, weeks for systems consolidation, thousands of repetitions for a skill. The slowness is also a design requirement: the stability-plasticity dilemma is solved by quarantining fast learning in the hippocampus and letting everything else change at a pace that protects what is there. Slowness is the price of not overwriting yourself.
+Minutes for early LTP, hours and new protein for late LTP, weeks to years for systems consolidation, thousands of repetitions for a skill. The slowness is also a design requirement: the stability-plasticity dilemma is solved by quarantining fast learning in the hippocampus and letting everything else change at a pace that protects what is there. Slowness is the price of not overwriting yourself.
 
 ## Implications for artificial intelligence
 
-1) Catastrophic interference is the central unsolved problem of continual learning; the brain's answer is architectural (two rates plus replay). Experience replay is a direct borrowing.
+1) Catastrophic interference is the central unsolved problem of continual learning; the brain's answer is architectural (two rates plus replay). Experience replay in reinforcement learning (1992) predates the first recordings of hippocampal replay (1994): a convergence, not a borrowing.
 2) Local rules plus a broadcast modulator can be enough; the brain is an existence proof.
 3) Stability must be engineered: sliding threshold, scaling, inhibitory plasticity; per-unit homeostasis is underexplored.
 4) Forgetting should be a mechanism: spend effort to remove specifics and keep gist.
@@ -110,8 +118,10 @@ Minutes for early LTP, hours and new protein for late LTP, weeks for systems con
 - Sliding threshold and synaptic scaling keep the whole neuron in range.
 - Tagging and capture is where the third factor plugs in.
 - A memory is a sparse engram; recall is pattern completion.
-- Two clocks: synaptic (hours) and systems (weeks to years); two learners and replay solve catastrophic interference.
-- Sleep replays and rescales. Recall reconsolidates. Forgetting is active and adaptive.
+- LTP 1973 (hippocampus); LTD 1982 (cerebellum) and 1992 (hippocampus).
+- Two clocks: synaptic (hours) and systems (weeks to years); two learners and replay solve catastrophic interference. The standard consolidation model is contested by multiple-trace and trace-transformation theory.
+- Sleep replays and, probably, rescales. Recall reconsolidates; whether that can be used to update human memories is unresolved. Forgetting is active and adaptive.
+- Adult human neurogenesis is disputed.
 - Kinds of memory are kinds of circuit.
 
 # Labs

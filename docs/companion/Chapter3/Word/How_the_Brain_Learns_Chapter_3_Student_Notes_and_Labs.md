@@ -9,20 +9,20 @@ subtitle: "Neuromodulation"
 
 Chapters 1 and 2 gave you a neuron that integrates inputs and sometimes fires. Chapter 3 answers a question that model cannot answer on its own: given that neurons are firing all the time, when does the brain actually learn, and what decides which synapses change?
 
-The chapter's answer is that fast electrical signaling and learning are separate processes, coupled by a slow chemical layer called neuromodulation. A handful of small brainstem and basal forebrain nuclei broadcast chemicals across most of the brain. Those chemicals do not carry sensory content. They carry context: safe or threatened, better or worse than expected, stable or surprising. Plasticity is permitted only when that context says it should be.
+The chapter's answer is that fast electrical signaling and learning are coupled by a chemical layer called neuromodulation. A handful of small brainstem and basal forebrain nuclei broadcast chemicals across most of the brain. Those chemicals do not carry sensory content. They carry context: safe or threatened, better or worse than expected, stable or changed. Pre- and postsynaptic activity alone can induce Hebbian potentiation and depression (Chapter 5), but in the intact brain much of that plasticity is gated and scaled by this context, which decides whether, how strongly, and in which direction a change is expressed and consolidated.
 
 If you are coming from machine learning, this chapter is designed to correct three instincts:
-1) treating learning as something that happens on every forward pass,
-2) assuming an error signal can always be traced back to the parameter that caused it, and
+1) assuming the decision about when to learn is imposed from outside, by a switch between training and deployment,
+2) assuming an error signal can always be traced back exactly to the parameter that caused it, and
 3) reading "dopamine" as "reward."
 
-Your goal is to be able to explain, in plain language, why the brain cannot run backpropagation, what it does instead, and why that alternative is a reasonable design under uncertainty rather than a defect.
+Your goal is to be able to explain, in plain language, why the brain does not run exact backpropagation as deep networks do (how it approximates credit assignment is an open question), what the neuromodulatory systems contribute instead, and why that approach is a reasonable design under uncertainty rather than a defect.
 
 ## Two timescales, one circuit
 
 Synaptic transmission is fast (milliseconds), spatially precise, and short-lived. It moves information.
 
-Neuromodulation is slow (seconds to minutes, sometimes hours), spatially diffuse, and persistent. It does not move information. It changes how circuits respond to information: it raises or lowers excitability, biases competition between pathways, and gates whether synapses are allowed to change.
+Neuromodulation is spatially diffuse and slow in its action. The signals themselves can be fast: a dopamine neuron's burst at a surprise lasts about a tenth of a second, and locus coeruleus neurons respond to a salient stimulus with a similar latency. What is slow is the effect. Most neuromodulator receptors are G-protein-coupled receptors that set off chains of chemical reactions inside the cell, so their effects on excitability and synaptic strength unfold over seconds to minutes and sometimes longer. Neuromodulation does not carry detailed sensory content. It changes how circuits respond to information: it raises or lowers excitability, biases competition between pathways, and decides whether, how strongly, and in which direction synapses change (Figure 3.2 in the chapter).
 
 The same wiring therefore behaves differently depending on chemical state. This is why the "rigid machine" picture from the start of the chapter fails: identical inputs do not produce identical outcomes, because the circuit is never in exactly the same chemical state twice.
 
@@ -30,9 +30,9 @@ You should be able to say: synapses carry the message; neuromodulators set the t
 
 ## Volume transmission versus synaptic transmission
 
-At a classical synapse, neurotransmitter crosses a gap of tens of nanometers and acts within microseconds to milliseconds on one postsynaptic cell.
+At a classical synapse, a fast transmitter such as glutamate or GABA crosses a cleft about 20 nanometers wide, acts on one postsynaptic partner, and is cleared within milliseconds.
 
-Neuromodulators are often released from varicosities along the axon rather than at a tight synapse. They diffuse through extracellular space over hundreds of nanometers to micrometers and act over milliseconds to minutes on every receptor they reach. This is called volume transmission (Figure 3.1 in the chapter).
+Neuromodulators are often released from varicosities along the axon rather than at a tight synapse. They diffuse through extracellular space over micrometers and reach receptors on many cells and synapses at once, with effects that last seconds to minutes. This is called volume transmission (Figure 3.1 in the chapter).
 
 The engineering consequence: a neuromodulator cannot address a single synapse. It addresses a region. Any precision in the resulting learning has to come from somewhere else (see eligibility traces below).
 
@@ -48,21 +48,23 @@ These labels describe chemical influence, not meaning. A dopaminergic neuron doe
 
 ## Why the systems are diffuse
 
-Neuromodulatory nuclei contain very few cells, yet one cell can influence tens of thousands of synapses through widely branching axons.
+Neuromodulatory nuclei contain very few cells (Figure 3.3 in the chapter maps the four systems). The human nucleus basalis of Meynert holds roughly 200,000 cholinergic neurons per hemisphere, and the whole basal forebrain cholinergic system is a few hundred thousand cells, against about 16 billion cortical neurons. One cell compensates with the size of its axon: Matsuda and colleagues (2009) found that a single rat nigrostriatal dopamine neuron's arbor is about half a meter long and covers on average 2.7 percent of the striatum's volume (up to about 6 percent), with release sites estimated at several hundred thousand per neuron in the rat and more than a million in the human. One cell can speak to hundreds of thousands of synapses at once.
 
 To an engineer this looks wasteful. It is not. The signal being sent is global by nature. "Outcomes are better than expected" or "the environment just became unpredictable" is information every circuit needs at once. Broadcasting it from a small source is cheaper and more coherent than computing it locally in millions of places. Diffuse projection lets a few hundred thousand neurons coordinate billions without a central controller.
 
-## Dopamine encodes prediction error, not reward
+## Dopamine neurons signal reward prediction error, not reward
 
-The chapter's most important correction: dopamine activity tracks the difference between what was expected and what occurred.
+The chapter's most important correction comes from Wolfram Schultz's recordings of single midbrain dopamine neurons in monkeys working for juice: a large population of dopamine neurons signals a reward prediction error, the difference between the reward received and the reward predicted (Figure 3.5 in the chapter).
 
-- Outcome better than expected: dopamine increases above baseline.
-- Outcome exactly as expected: dopamine stays near baseline.
-- Outcome worse than expected: dopamine dips below baseline.
+- Outcome better than expected: a burst above baseline.
+- Outcome exactly as expected: firing stays near baseline.
+- Outcome worse than expected (predicted juice withheld): a dip below baseline, timed to when the reward was due.
 
-Two consequences follow. First, a fully predicted reward produces almost no dopamine response, even though the reward is still pleasant. Second, once a cue reliably predicts a reward, the dopamine response moves earlier in time, to the cue (Figure 3.6 in the chapter). The signal is about surprise, and surprise moves to wherever the new information first arrives.
+Two consequences follow. First, a fully predicted reward produces almost no response, even though the reward is still pleasant. Second, once a cue reliably predicts a reward, the burst moves earlier in time, to the cue. Schultz, Dayan, and Montague (1997) showed that this is what the error term of Sutton's temporal-difference learning looks like as learning proceeds (Figure 3.6 in the chapter). The causal test came later: optogenetically driving dopamine neurons when a reward was already predicted made rats learn about a cue they would otherwise have ignored (Steinberg et al. 2013).
 
-Dopamine says that learning should happen now. It does not say what should be learned, or which neurons were responsible.
+Hold the account with the chapter's caution. It describes the phasic response of a large population of dopamine neurons, not every dopamine neuron or everything dopamine does. Dopamine neurons are heterogeneous: some respond to aversive events, novelty, or salience, and some carry signals tied to movement and position, and what the slow striatal dopamine ramps mean is an active debate. Note also that this reward prediction error is a single number about value. Chapter 6 introduces a sensory prediction error, which is high-dimensional and about content; the two share a name and a logic but are different signals.
+
+The dopamine signal says when to learn and in which direction (bursts favor potentiation, dips the opposite change, at striatal synapses carrying different dopamine receptors). It does not say which synapses should change: it is one scalar broadcast to the entire striatum and much of cortex.
 
 ## The credit assignment problem
 
@@ -72,47 +74,53 @@ In an artificial network this is solved by construction: the architecture is lay
 
 The brain has none of those conditions. It receives no labels. Outcomes are delayed, noisy, and ambiguous. Circuits are recurrent and overlapping, and each neuron takes part in many functions at once. By the time an outcome is known, the activity that caused it has been overwritten.
 
-The chapter's claim is stronger than "this is hard." It says the question "which synapse caused this?" often has no well-defined answer. Credit assignment in the brain is ill-posed, not merely unsolved.
+Izhikevich called this last difficulty the distal reward problem. And because thousands of synapses usually contribute and none is decisive, the question "which synapse caused this outcome?" often has no single answer.
+
+The brain has no known way to do what backpropagation does exactly, and whether and how it approximates it is an open question. Crick (1989) objected that nothing in cortex looked like a way to send each synapse its share of a global error. The objection has weakened without disappearing: random feedback weights are enough for a network to learn, dendritic bursts in pyramidal cells can carry an error signal separate from the forward signal, and Lillicrap and colleagues (2020) argue the brain may approximate backpropagation-like learning through its abundant feedback connections. Chapters 5 and 6 return to this. The chapter's narrower point: whatever the brain does about credit assignment, it is not the clean procedure of the artificial case, and much of what it does instead is visible in the neuromodulatory systems.
 
 ## Eligibility traces: the physical workaround
 
 If a global signal cannot identify the responsible synapse, how does any specificity arise?
 
-Each synapse keeps a short-lived chemical memory of its own recent activity. When a synapse is used, molecular processes put it into a transient modifiable state, an eligibility trace, which decays over seconds. If a neuromodulatory signal arrives while the trace is still present, the synapse changes. If the signal arrives after the trace has faded, nothing happens.
+Each synapse keeps a short-lived chemical memory of its own recent activity. When a synapse is used, molecular processes put it into a transient modifiable state, an eligibility trace, which decays over seconds to minutes. If a neuromodulatory signal arrives while the trace is still present, the synapse changes. If the signal arrives after the trace has faded, nothing happens (Figure 3.7 in the chapter). The windows have been measured: in striatal slices, a spine enlarged only when dopamine arrived about 0.3 to 2 seconds after the activity (Yagishita et al. 2014); in hippocampal slices, dopamine applied within about a minute after a pairing turned depression into potentiation, but not after ten minutes (Brzosko et al. 2015).
 
-This produces what is often called a three-factor learning rule:
+This produces what the chapter calls a three-factor learning rule (written out in Figure 3.8 of the chapter):
 
 change in strength = (learning rate) x (eligibility trace at the moment the signal arrives) x (prediction error)
 
-Factor one and two are local to the synapse and say "I was recently involved." Factor three is global and says "something significant just happened." Neither factor alone is enough. The trace is the brain's answer to the temporal gap between action and outcome, and it supplies the locality that volume transmission cannot.
+Factors one and two (presynaptic and postsynaptic activity, Hebb's factors, combined into the trace) are local to the synapse and say "I was recently involved." Factor three, the neuromodulator, is global and says "something significant just happened." Within this rule neither is enough alone, and the sign of the pairing and the sign of the signal together set the direction of change. (Remember the caveat from the notes above: Hebbian plasticity can be induced by activity alone in slices; the three-factor rule describes how neuromodulators gate and scale much of it.) The trace is the brain's answer to the temporal gap between action and outcome, and it supplies the locality that volume transmission cannot. Chapter 5 describes its molecular form, synaptic tagging and capture.
 
-## Bias, not optimization
+## Bias, and local rather than global objectives
 
 Each update is small and probabilistic. A synapse that was active by coincidence just before a reward will be strengthened a little too, and nothing prevents that. Over many trials, however, synapses that genuinely tend to precede success accumulate more strengthening than synapses that were merely present.
 
-The result is a bias: a statistical tendency toward activity patterns that have tended to work. The chapter is careful with the word. Bias here is not an error term to be minimized. It is the mechanism. The brain does not descend a loss function; it shifts probabilities.
+The result is a bias: a statistical tendency toward activity patterns that have tended to work, which is Thorndike's law of effect (1911) with a mechanism. The chapter is careful with the word. Bias here does not mean error; it means the gradual shaping of probability under uncertainty.
+
+The chapter is equally careful about loss functions. No single global objective is handed to the brain and minimized by gradient descent. But many circuits are well described as minimizing a local error or cost: the temporal-difference error that dopamine signals is one, and Chapter 6 adds sensory prediction error and near-optimal cue combination. The accurate statement is that the brain has many local objectives and no global one, and neuromodulators are among the signals that define them.
 
 ## The other neuromodulators regulate how, not what
 
-Dopamine is one of several systems, and the chapter frames the others by the kind of context they supply:
-- Norepinephrine: alertness and responsiveness, especially under uncertainty or surprise.
-- Serotonin: stability, patience, damping of impulsive reaction.
-- Acetylcholine: attention, and the balance between encoding new information and retrieving stored information.
+Dopamine is the best understood system because reward is easy to manipulate in experiments. The chapter's section on norepinephrine, serotonin, and acetylcholine ties each of the others to a context of its own:
+- Norepinephrine (locus coeruleus): surprise and arousal. Aston-Jones and Cohen proposed a phasic mode, in which bursts sharpen responses to task-relevant events, and a tonic mode, in which a high baseline favors disengaging and exploring. In Yu and Dayan's account, norepinephrine reports unexpected uncertainty (the world has changed), and acetylcholine reports expected uncertainty (the world is noisy but stable).
+- Serotonin (raphe nuclei): the least settled. It has been tied to patience, aversion, behavioral inhibition, and the regulation of plasticity, and no unification has succeeded. One concrete result: dorsal raphe serotonin neurons in rats raised their firing while the rats waited for a delayed reward and dropped it when they gave up (Miyazaki, Miyazaki, and Doya 2011).
+- Acetylcholine (basal forebrain and brainstem): the balance between taking in new information and using old. Hasselmo showed it suppresses the recurrent synapses that complete stored patterns while sparing incoming inputs, so high acetylcholine (attentive waking) favors encoding and low acetylcholine (slow-wave sleep) favors recall and replay.
 
-Together they regulate the mode of processing rather than its content.
+Together they regulate the mode of processing rather than its content: how strongly to respond, how much to trust the current model, whether to persist or switch, and whether to write or to read.
 
 ## Reference: the four major neuromodulatory systems
 
-The chapter names the systems by their chemistry and their role but not by their anatomy. Use this table for Lab 3.5 and as a lookup when later chapters refer to a nucleus by name.
+The chapter maps the systems in Figure 3.3 and the cholinergic system on its own in Figure 3.4. Use this table for Lab 3.5 and as a lookup when later chapters refer to a nucleus by name.
 
 | System | Source nuclei (location) | Main targets | Context it signals | Typical timescale |
 |---|---|---|---|---|
-| Dopamine (dopaminergic) | Ventral tegmental area and substantia nigra pars compacta (midbrain) | Striatum, nucleus accumbens, prefrontal cortex | Reward prediction error; salience of unexpected events | Phasic bursts and dips of about 100 ms to 1 s on a slowly varying tonic level |
-| Norepinephrine (noradrenergic) | Locus coeruleus (pons) | Almost the entire cortex, hippocampus, thalamus, cerebellum | Arousal, surprise, uncertainty; a signal to reset or re-engage networks | Phasic responses of hundreds of ms; tonic level shifts over minutes |
-| Serotonin (serotonergic) | Raphe nuclei, chiefly the dorsal and median raphe (brainstem) | Widespread cortex, hippocampus, striatum, amygdala | Patience and waiting, mood and stability, damping of impulsive responses | Seconds to minutes; among the slowest modulatory signals |
-| Acetylcholine (cholinergic) | Basal forebrain (nucleus basalis of Meynert, medial septum) for cortex and hippocampus; pedunculopontine and laterodorsal tegmental nuclei for thalamus and brainstem | Cortex, hippocampus, thalamus | Attention and expected uncertainty; the balance between encoding new information and retrieving stored information | Seconds, with faster local release in cortex |
+| Dopamine (dopaminergic) | Ventral tegmental area and substantia nigra pars compacta (midbrain) | Striatum, nucleus accumbens, prefrontal cortex | Reward prediction error, signaled by a large population of neurons; subpopulations also respond to novelty, salience, aversive events, and movement | Bursts of about 100 ms and dips of a few hundred ms on a slowly varying tonic level |
+| Norepinephrine (noradrenergic) | Locus coeruleus (pons) | Almost the entire cortex, hippocampus, thalamus, cerebellum | Arousal and surprise; unexpected uncertainty (the world has changed); phasic and tonic modes of cortical gain | Phasic responses of hundreds of ms; tonic level shifts over minutes |
+| Serotonin (serotonergic) | Raphe nuclei, chiefly the dorsal and median raphe (brainstem) | Widespread cortex, hippocampus, striatum, amygdala | Least settled: patience and waiting, aversion, behavioral inhibition, regulation of plasticity | Seconds to minutes; among the slowest modulatory signals |
+| Acetylcholine (cholinergic) | Nucleus basalis of Meynert (to all of neocortex; roughly 200,000 cholinergic neurons per hemisphere in humans), medial septum (to hippocampus), pedunculopontine and laterodorsal tegmental nuclei of the brainstem (to thalamus) | Cortex, hippocampus, thalamus | Expected uncertainty; the balance between encoding new information (high acetylcholine) and recall (low acetylcholine) | Seconds, with faster local release in cortex |
 
-Two cautions. First, every one of these chemicals is also used in fast, point-to-point synapses somewhere in the nervous system; the table describes their modulatory role, which is the chapter's subject. Second, the "context" column is a summary of current understanding, not a settled fact. Serotonin in particular has several proposed roles, and the chapter commits only to the broad framing of stability and damping.
+Scale, for reference: the whole basal forebrain cholinergic system is a few hundred thousand cells against about 16 billion cortical neurons, and a single rat nigrostriatal dopamine axon covers on average about 2.7 percent of striatal volume (up to about 6 percent).
+
+Two cautions. First, every one of these chemicals is also used in fast, point-to-point synapses somewhere in the nervous system; the table describes their modulatory role, which is the chapter's subject. Second, the "context" column is a summary of current understanding, not a settled fact. Dopamine neurons are heterogeneous, and serotonin in particular has several proposed roles that no account has yet unified; the chapter offers stability (holding a course of action) only as one account.
 
 ## What physically changes
 
@@ -120,27 +128,34 @@ A synapse is a molecular machine, not a gap. Learning can change receptor densit
 
 ## Neuromodulation as the gatekeeper of plasticity
 
-If synapses changed every time neurons fired, the brain would be unstable: every stray coincidence would be learned and every memory would be overwritten by ongoing activity. Separating activity from learning, and gating learning on chemical context, is the chapter's candidate design principle for biological intelligence.
+If synapses changed every time neurons fired, the brain would be unstable: every stray coincidence would be learned and every memory would be overwritten by ongoing activity (the stability-plasticity dilemma, to which Chapter 5 returns). Gating much of learning on chemical context is the chapter's candidate design principle for biological intelligence. The evidence includes depletion experiments: kittens whose visual cortex lacked both norepinephrine and acetylcholine failed to rewire after one eye was closed, and in adult rats pairing a tone with nucleus basalis or ventral tegmental area stimulation expanded the tone's share of auditory cortex.
 
-The clinical evidence supports it. Drugs, neuromodulatory disorders, and deep brain stimulation change learning and behavior dramatically without rewiring circuits, by changing the chemical context those circuits operate in.
+## Clinical evidence
+
+The chapter's rewritten Clinical Evidence section rests on cases where neuromodulatory tone has been altered in humans:
+- Parkinson's disease: Ehringer and Hornykiewicz (1960) found striatal dopamine almost absent; L-DOPA (Carlsson's animal work in 1957, Cotzias's oral dosing in 1967) remains the standard treatment. Frank, Seeberger, and O'Reilly (2004) showed that patients off medication learned better from bad outcomes and on medication better from good ones: same patients, same task, different dopamine tone.
+- Antipsychotics block dopamine receptors; their clinical dose tracks binding to what is now called the D2 receptor (Creese, Burt, and Snyder 1976), and their parkinsonian side effects are dopamine loss produced by pharmacology.
+- Alzheimer's disease: the nucleus basalis loses most of its neurons (Whitehouse et al. 1982). Cholinesterase inhibitors raise acetylcholine levels and give a modest but consistent cognitive benefit at six months (Cochrane review), as expected from raising tone without restoring lost cells.
+- Deep brain stimulation (Figure 3.9 in the chapter) relieves Parkinson's symptoms but is electrical: it acts on circuit activity, not on transmitter levels, and how it works is still debated. It is "neuromodulation" only in the clinical sense of the word, not the chapter's.
 
 ## Implications for artificial intelligence
 
 The chapter draws four lessons for AI design:
-1) Separating activity from learning improves stability. Not every forward pass should be a learning opportunity.
-2) Learning rules themselves should depend on state: uncertainty, novelty, and context should modulate how much the system updates.
-3) Approximate credit assignment can be sufficient. Probabilistic biasing over time produces robust behavior without exact gradients.
-4) The goal of biological learning is viability under uncertainty, not minimization of a loss. Success is defined operationally.
+1) The brain separates activity from learning from the inside. In an artificial network a training/deployment switch imposed from outside makes that separation; the brain runs and learns continuously and decides internally, from neuromodulatory context, whether a moment of activity may change the wiring. A system that keeps learning after deployment needs something of this kind.
+2) Learning rules themselves can depend on state: uncertainty, novelty, and context modulate how much the system updates (Doya's 2002 mapping of the four systems onto error signal, learning rate, exploration, and discounting).
+3) Approximate credit assignment can be sufficient. Networks trained with random feedback weights learn almost as well as with exact backpropagation, and the brain broadcasts a single number to a whole region and still learns.
+4) Neuromodulation reframes the objective. No single loss function is handed to the brain; it reduces many local errors, the temporal-difference error among them, under the constraint that it must remain viable while it learns. Success is defined operationally.
 
 ## Practical summary
 
-- Fast synaptic signaling moves information; slow neuromodulation sets the chemical context in which that information is processed.
+- Fast synaptic signaling moves information; neuromodulation, fast to signal but slow to act, sets the chemical context in which that information is processed.
 - Neuromodulatory nuclei are small and project diffusely because the signal they carry is global by nature.
-- Dopamine encodes reward prediction error. Predicted rewards produce no response; the response migrates to the earliest predictive cue.
-- The brain cannot solve credit assignment precisely; the question is often ill-posed.
+- A large population of dopamine neurons signals a reward prediction error (the population is heterogeneous). Predicted rewards produce no response; the response migrates to the earliest predictive cue.
+- The brain does not run exact backpropagation; how it approximates credit assignment is an open question, and neuromodulators are a large part of what it does instead.
 - Eligibility traces plus a global modulatory signal form a three-factor rule that bridges the gap between action and outcome.
-- Updates are small and probabilistic; learning is the accumulation of bias, not the descent of a loss function.
-- Plasticity is gated. Nothing changes unless context says it should.
+- Updates are small and probabilistic; learning is the accumulation of bias. There is no single global loss, but many circuits minimize local errors such as the temporal-difference error.
+- Much plasticity is gated: activity alone can induce Hebbian change, but neuromodulators decide whether, how strongly, and in which direction it is expressed and consolidated.
+- Norepinephrine signals surprise and unexpected uncertainty, serotonin is the least settled (patience, aversion, inhibition), and acetylcholine sets the balance between encoding and recall.
 
 # Labs
 
@@ -295,17 +310,17 @@ trial 12: 1, 6, 5, 4; outcome 6
 Check: with this sequence, after 12 trials you should have w1 = 0.30, w2 = 0.00, w3 = 0.20, w4 = 0.05.
 
 6) Notice that S3 ended with substantial strength although it has no causal role. Find the trials on which it was rewarded, and check whether S1 was also active on those trials.
-7) Write 8-12 sentences: did the learner find the causal synapse? Why did S3 get credit it did not deserve? Is that a bug, and what would happen to S3 over 100 more trials? Relate your answer to the chapter's phrase "bias as a learning strategy."
+7) Write 8-12 sentences: did the learner find the causal synapse? Why did S3 get credit it did not deserve? Is that a bug, and what would happen to S3 over 100 more trials? Relate your answer to the chapter's statement that "Bias here does not mean error."
 
 ### Optional code extension (Python, about 25 lines)
 
 Simulate the same model for 1,000 trials with random rolls and plot the four strengths over time. Then make the outcome noisier (reward with probability 0.6 when S1 is active, 0.4 when inactive) and see how many trials it takes for S1 to separate from the others. The brain lives at the noisy end of this spectrum.
 
-## Lab 3.4 - Gated Versus Ungated Plasticity (why activity alone must not cause learning)
+## Lab 3.4 - Gated Versus Ungated Plasticity (why activity alone should not decide learning)
 
 ### Purpose
 
-To make the chapter's design principle concrete: if synapses changed whenever neurons fired, the system would be unstable.
+To make the chapter's design principle concrete: if synapses changed whenever neurons fired, with no neuromodulatory gate, the system would be unstable.
 
 ### Given parameters
 

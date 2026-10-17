@@ -14,7 +14,7 @@ If you come from software or machine learning, the chapter is designed to correc
 2) treating illusions and hallucinations as bugs, and
 3) treating attention as a spotlight that selects, rather than a gain that weights evidence by its reliability.
 
-Your goal is to be able to explain, in plain language, why the inverse problem forces the brain to use priors, how a prior and a likelihood combine, what predictive coding says travels up and down the cortical hierarchy and why that explains repetition suppression and the mismatch response, why attention is precision, how two senses are combined, why the world does not jump when your eyes do, and where priors come from.
+Your goal is to be able to explain, in plain language, why the inverse problem forces the brain to use priors, how a prior and a likelihood combine, what predictive coding says travels up and down the cortical hierarchy and which observations (expectation suppression, omission responses, and the mismatch negativity) test it, how sensory prediction error differs from Chapter 3's reward prediction error, why attention is precision, how two senses are combined, why the world does not jump when your eyes do, and where priors come from.
 
 ## The problem perception solves
 
@@ -22,29 +22,30 @@ The retinal image is a two-dimensional projection and is ambiguous: many arrange
 
 ## The senses deliver evidence, not pictures
 
-- About 100 million rods and 6 million cones, but only about 1 million ganglion-cell axons per eye: 100-to-1 compression before the brain. What is kept: contrast, change, edges (Chapter 4).
+- About 92 million rods and 4.6 million cones (Curcio et al. 1990), but only about 1 million ganglion-cell axons per eye: about 97-to-1, roughly a hundred-to-one compression before the brain. What is kept: contrast, change, edges (Chapter 4).
 - Information rate of the optic nerve: on the order of 10 megabits per second.
-- High acuity only in the fovea, about 2 degrees wide (a thumbnail at arm's length). The blind spot is about 6 degrees across, 15 degrees to the side, and you have never seen it.
+- High acuity only in the fovea, whose region of highest acuity covers one to two degrees (a thumbnail at arm's length). The blind spot is about 6 degrees across, 15 degrees to the side, and you have never seen it.
 - The eye jumps about three times a second (saccades); vision is suppressed during each jump.
 - The stable scene is not an input. It is an output.
 
 ## Bayes in one paragraph
 
 Prior: a distribution over possible states of the world encoding what is usually true. Likelihood: for each possible state, how probable are the sensations just received. Posterior is proportional to prior times likelihood, and it leans toward whichever is more precise (Figure 6.2). Sharp evidence: the posterior follows the senses. Noisy evidence: the posterior stays near the prior. Neither extreme is a failure.
-Priors are learned structure: the statistics of a lifetime of input, written into synaptic weights by the plasticity of Chapter 5. Example: light comes from above, so a disc shaded lighter on top is a bump and the same disc upside down is a dent (Figure 6.3).
+Priors are learned structure: the statistics of a lifetime of input, written into synaptic weights by the plasticity of Chapter 5. Example: light comes from above, so a disc shaded lighter on top is a bump and the same disc upside down is a dent (Figure 6.3). Chicks reared under light from below still assume light from above, so the prior is partly in place before experience, but it is not fixed: the adult prior is above and slightly left, and Adams, Graf, and Ernst (2004) shifted it by having observers touch shaded discs whose felt shape agreed with a rotated light source. The shift transferred to an untrained lightness task. A prior is in the weights, and the weights can be rewritten.
 
 ## The hierarchy
 
-Retina to LGN (thalamus) to V1 to V2 to V4 to IT along the ventral stream (Figure 6.4). At each stage receptive fields grow (a fraction of a degree in V1, most of the visual field in IT) and preferences become more abstract (oriented edge, contour, shape part, object or face), building invariance to position, size, and lighting. The feedforward sweep reaches IT in about 100 ms; humans categorize animal/non-animal in about 150 ms. Convolutional networks reproduce this sweep.
-But feedback connections outnumber feedforward ones, and the LGN gets only about a tenth of its synapses from the retina. The visual system is a loop whose downward half is larger than its upward half.
+Retina to LGN (thalamus) to V1 to V2 to V4 to IT along the ventral stream (Figure 6.4). At each stage receptive fields grow (a fraction of a degree in V1, most of the visual field in IT) and preferences become more abstract (oriented edge, contour, shape part, object or face), building invariance to position, size, and lighting. The feedforward sweep reaches IT in about 100 ms; humans categorize animal/non-animal in about 150 ms. Convolutional networks were modeled on this sweep (Fukushima's neocognitron, 1980) and the best predict IT responses.
+But feedback connections are at least as numerous as feedforward ones. Markov and colleagues (2014) counted more feedback than feedforward pathways in the macaque, but a pathway count is not an axon or synapse count, and "outnumber" is not established at every stage. At the thalamus it plainly holds: the LGN gets only about a tenth of its synapses from the retina. The visual system is a loop whose downward half is at least as large as its upward half.
 
 ## Predictive coding
 
 Each level holds a hypothesis about the level below and sends it down as a prediction. The lower level sends up only the difference: the prediction error. The upper level revises, and the loop repeats until error is small (Figure 6.5A). What ascends is not the image but its surprise.
-Three predictions, all observed:
-- Expected stimuli evoke less activity: repetition suppression (Figure 6.5B).
+This sensory prediction error is not Chapter 3's reward prediction error. That one is a single number about value, broadcast by a large population of dopamine neurons; this one is a high-dimensional pattern of errors about content, one per feature per level, passed between cortical layers within the sensory hierarchy, with no reward in it.
+The predictions, all observed:
+- Expected stimuli evoke less activity. Repetition suppression (Figure 6.5B) is consistent with this but is weak evidence on its own, since fatigue or sharpened tuning would also produce it. The decisive test holds repetition fixed and varies expectation: Summerfield and colleagues (2008) found that the same repeated face suppressed the fusiform face area more when the repeat was expected. This expectation suppression has since been separated in time from repetition suppression in human auditory cortex.
 - An omitted expected stimulus evokes activity: a prediction with nothing to cancel it.
-- The mismatch negativity, 100-200 ms after a deviant tone, present in sleeping adults and newborns.
+- The mismatch negativity, 100-200 ms after a deviant tone, present (attenuated) in sleeping adults and in newborns; it reflects a violated prediction, not the tone itself.
 - End-stopping in V1 (a line that stops inside the receptive field excites more than one that continues) fell out of the first predictive-coding model of V1 (1999) without being designed in.
 Proposed mapping onto the Chapter 4 microcircuit: error units in superficial layers (project forward, gamma), prediction units in deep layers (project backward, alpha/beta). A model, not settled, but testable.
 
@@ -54,7 +55,7 @@ An illusion is what inference looks like when the prior is right about the world
 
 | Illusion | What is seen | The prior it reveals |
 |---|---|---|
-| Checker-shadow (Figure 6.6) | identical greys look different | surfaces in shadow reflect less light; discount the illuminant |
+| Checker-shadow (Figure 6.6) | identical grays look different | surfaces in shadow reflect less light; discount the illuminant |
 | Light-from-above discs (Figure 6.3) | bumps become dents when rotated | light comes from above |
 | Kanizsa triangle (Figure 6.7A) | a white triangle with no drawn edges | aligned gaps are caused by an occluding surface |
 | Müller-Lyer (Figure 6.7B) | equal lines look unequal | fins are corners at different depths (one account; debated) |
@@ -73,6 +74,7 @@ Cost: what is not attended is barely seen. The gorilla in the basketball video; 
 ## Combining the senses
 
 If the brain weights by precision, the estimate from two senses should lie between them, closer to the more reliable one, and be narrower than either. Ernst and Banks (2002): vision plus touch judging a bar's width, with visual noise varied. Observed weights matched the computed optimum at every noise level (Figure 6.8). The senses are pooled sources of evidence, not separate channels to a viewer.
+This is the sense in which the book says the brain optimizes: there is no single global objective trained by gradient descent, but circuits such as this one (and the dopamine error of Chapter 3) behave as if minimizing a well-defined local cost, here the variance of the estimate.
 
 ## Perception is active
 
@@ -82,10 +84,10 @@ Two consequences of a brain that moves its sensors:
 
 ## Learning the priors
 
-Some priors are built in (newborn face orientation; light from above in several species). Most of sensory cortex is learned from input statistics, and the learning is slow, gated, and windowed, as Chapter 5 predicts.
+Some priors are present at or near birth (newborns orient to faces; chicks reared under light from below still assume light from above), but present at birth is not fixed for life, as the Adams experiment shows. Most of sensory cortex is learned from input statistics, and the learning is slow, gated, and windowed, as Chapter 5 predicts.
 - Critical period (Hubel and Wiesel): one eye closed for weeks early in life permanently loses its cortical representation; the same closure in an adult does nothing. Kittens raised among vertical stripes had almost no horizontal-edge neurons. The window is controlled by inhibitory maturation and neuromodulators.
 - Olshausen and Field (1996): a model trained only to represent natural image patches sparsely learned localized, oriented, band-pass filters (Figure 6.10), the receptive fields Hubel and Wiesel found in V1. Edges are what the world contains. The receptive fields of sensory cortex are the priors of the natural world made into tissue.
-- Adult recalibration continues: prism goggles (minutes), inverting goggles (days), single-color rooms (weeks). Slow in the deep layers, fast at the edges, like Chapter 5's two clocks.
+- Adult recalibration continues: prism goggles (reaching errors vanish in minutes); inverting goggles (motor adaptation in six to ten days, but whether the world ever looks upright again is disputed; a controlled 1999 study found no perceptual re-inversion); a colored filter worn a few hours a day for several days shifts perceived pure yellow for a week or two afterward (Neitz et al. 2002). Slow at the core, fast at the periphery, like Chapter 5's two clocks.
 
 ## When inference goes wrong
 
@@ -94,18 +96,19 @@ Some priors are built in (newborn face orientation; light from above in several 
 
 ## Implications for artificial intelligence
 
-1) The feedforward sweep is reproduced: deep convolutional networks predict IT responses. Gradient descent and evolution found the same solution to the same statistical problem.
-2) The loops are not: no feedback, no prediction, no error signal at inference time. Adversarial examples are evidence without priors.
+1) The feedforward sweep is reproduced: deep convolutional networks predict IT responses. Gradient descent and evolution found a similar solution to the same statistical problem. The match is partial: networks lean on texture where humans lean on shape, and diverge from IT outside their training distribution.
+2) The loops are not: no feedback, no prediction, no error signal at inference time. Adversarial examples are not "evidence without priors": a trained classifier is all priors, stored in its weights, but has no way to check them. The vulnerability is better explained by near-linear behavior in high dimensions and reliance on features invisible to us (briefly glimpsed, such images can fool humans too). A brain would compare its prediction with the input and look again.
 3) Precision is missing: nothing estimates input reliability per channel, and nothing plays norepinephrine's role of saying "distrust the model now."
-4) Generative models are the right direction: a system that can generate its data has a prior and a likelihood. Whether predictive coding can replace backpropagation as a learning rule is open.
+4) Generative models are the right direction: a system that can generate its data has a prior and a likelihood. Whether predictive coding can replace backpropagation as a learning rule is open; the strongest results show predictive-coding networks can approximate backpropagation, not surpass it.
 5) Perception should be active: sampling where uncertainty is greatest is an easier problem; an agent without a forward model cannot tell what it did from what the world did.
 
 ## Practical summary
 
 - The retinal image does not determine the world; perception is inference from evidence plus priors.
 - Posterior is proportional to prior times likelihood; weights are set by relative precision.
-- Priors are learned structure (Chapter 5), stored in synaptic weights; some are innate.
-- The cortical hierarchy sends predictions down and errors up; expected input is quiet, surprise is loud.
+- Priors are learned structure (Chapter 5), stored in synaptic weights; some are present at birth, and even those (light from above) can be retrained in adults.
+- The cortical hierarchy sends predictions down and errors up; expected input is quiet, surprise is loud. Expectation suppression, not repetition suppression alone, is the decisive evidence.
+- Sensory prediction error (high-dimensional, about content) is a different signal from Chapter 3's reward prediction error (a scalar about value).
 - Illusions are correct inferences from the wrong picture; each reveals a prior.
 - Attention is precision: gain on errors, implemented by biased competition, gamma synchrony, and acetylcholine.
 - Senses are combined by precision weighting, near-optimally.
@@ -187,7 +190,7 @@ Sequence: x = 1.0 for six steps (tone A), then x = 0.3 (tone B, the oddball), th
 ### Procedure
 
 1) With η = 0.5, tabulate p before each step and the error e for all eleven steps. (Check: errors for the six A's are 1.0, 0.5, 0.25, 0.125, 0.062, 0.031; the oddball error is −0.684; the first A after it gives 0.358.)
-2) Mark on your table which errors a physiologist would call repetition suppression and which the mismatch response. Note that the oddball's error is larger in magnitude than the oddball's own value. Explain why.
+2) Mark on your table which errors a physiologist would call repetition suppression and which the mismatch response. Note that the oddball's error is larger in magnitude than the oddball's own value. Explain why. (In this model repetition and expectation always coincide, so it cannot distinguish prediction from fatigue; say what experiment would, as the chapter's expectation-suppression study does.)
 3) Repeat with η = 0.1. (Check: after six A's, p = 0.469; the oddball error is −0.169.) The slow learner shows a smaller mismatch. Why? What has it failed to do?
 4) Now remove the oddball and instead omit the seventh stimulus entirely (treat it as x = 0). With η = 0.5, what is the error at that step? This is the omission response of the chapter. What does the circuit "see" when nothing arrives?
 5) Suppose the error unit's output is multiplied by a gain g before it is transmitted upward (attention as precision). With g = 2 on the oddball step only, what is transmitted? With g = 0.25? Which one corresponds to the gorilla going unnoticed?
@@ -273,7 +276,7 @@ To integrate the chapter on one page: the chain from an ambiguous image to a sta
 ### Procedure
 
 1) Draw an eye and the retinal image. Beside it, draw three different world states that could have produced it (as in Figure 6.1). Label this "the inverse problem."
-2) Draw the ventral hierarchy as a column of boxes (retina, LGN, V1, V2, V4, IT). Give each box a receptive field circle of increasing size and a note on what it prefers. Draw feedforward arrows up and thicker feedback arrows down. Mark the 100 ms sweep.
+2) Draw the ventral hierarchy as a column of boxes (retina, LGN, V1, V2, V4, IT). Give each box a receptive field circle of increasing size and a note on what it prefers. Draw feedforward arrows up and feedback arrows down, the feedback at least as thick. Mark the 100 ms sweep.
 3) Inside two adjacent boxes, draw the prediction units (deep layers) and error units (superficial layers), the prediction arrow down, the subtraction, and the error arrow up. Label the rhythms (gamma up, alpha/beta down).
 4) Add a "prior" label to the feedback arrows and connect it with a dashed line to a synapse labeled "Chapter 5: learned weights," with a note on the critical period.
 5) Add a gain knob on the error units labeled "attention = precision," and draw two neuromodulatory inputs to it from Chapter 3: acetylcholine (trust the senses) and norepinephrine (the world changed).
