@@ -105,7 +105,7 @@ def fig_affect_circumplex():
     ax.text(0, -1.22, "deactivated", ha="center", va="top", fontsize=10, color=GRAY, weight="bold")
     words = {"alarmed": 100, "afraid": 114, "angry": 127, "distressed": 145, "frustrated": 160,
              "sad": 200, "gloomy": 212, "bored": 235, "tired": 248, "sleepy": 262, "calm": 300, "relaxed": 315,
-             "content": 330, "serene": 340, "pleased": 7, "happy": 19, "delighted": 33, "excited": 52, "aroused": 80}
+             "content": 330, "serene": 340, "pleased": 5, "happy": 14, "delighted": 33, "excited": 52, "aroused": 80}
     for w, deg in words.items():
         a = np.deg2rad(deg); x, y = np.cos(a), np.sin(a)
         col = GRAY if w in ("aroused", "sleepy", "tense") else GREEN if x > 0 else INH
