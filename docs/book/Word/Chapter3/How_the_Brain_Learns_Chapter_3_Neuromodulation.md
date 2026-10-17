@@ -33,11 +33,11 @@ Learning, however, is not fast. Learning requires stability. It requires that so
 
 Neuromodulators operate on slower timescales---seconds to minutes, sometimes longer.[^3] They do not carry detailed sensory information. Instead, they regulate how neural circuits respond to information. They alter excitability, bias competition between neural pathways, and gate whether synapses are permitted to change.[^4]
 
-![Figure 3.1. Synaptic transmission (A) versus volume transmission (B).](images/figure_3_1.png)
+![Figure 3.1. Synaptic transmission (A) versus volume transmission (B). A fast transmitter crosses a cleft tens of nanometres wide to receptors on one partner cell. A neuromodulator released from an axonal varicosity diffuses through the extracellular space and reaches receptors on many cells and synapses, over seconds to minutes.](images/fig_transmission.png)
 
 This separation between fast signaling and slow control allows the same neural circuitry to behave very differently depending on internal state.
 
-![Figure 3.2. Neuromodulators create chemical context at synapses.](images/figure_3_2.png)
+![Figure 3.2. Neuromodulators create chemical context at synapses. The same synapse receiving the same three presynaptic spikes gives a small response when the modulator level is low (left) and a larger response when it is high (right). High modulator also opens the synapse to lasting change.](images/fig_context.png)
 
 # A Note on Neurotransmitter-Based Naming
 
@@ -60,13 +60,13 @@ Neuromodulatory neurons are few in number but extraordinarily influential.
 
 Small clusters of cells---often located in the brainstem or basal forebrain---send axons that project widely across the cortex, hippocampus, basal ganglia, and other regions.[^5] A single neuromodulatory neuron can influence tens of thousands of synapses.[^6]
 
-![Figure 3.3. Major neuromodulatory systems in the brain.](images/figure_3_3.png)
+![Figure 3.3. Major neuromodulatory systems in the brain, on a schematic midsagittal view with the front at the left. Small nuclei in the brainstem and basal forebrain send dopamine, norepinephrine, serotonin, and acetylcholine across cortex, striatum, thalamus, hippocampus, and cerebellum.](images/fig_systems.png)
 
 From an engineering perspective, this architecture may seem inefficient. Why broadcast a signal so broadly rather than target specific circuits?
 
 The answer is that neuromodulators provide global context, not local instruction. They signal whether the organism is safe or threatened, whether outcomes are better or worse than expected, whether the environment is stable or unpredictable.[^7]
 
-![Figure 3.4. The cholinergic system projections.](images/figure_3_4.png)
+![Figure 3.4. The cholinergic system. The nucleus basalis of Meynert reaches all of neocortex, the medial septum reaches the hippocampus, and the pedunculopontine and laterodorsal tegmental nuclei of the brainstem reach the thalamus.](images/fig_cholinergic.png)
 
 Diffuse projection allows a small number of neurons to coordinate the behavior of millions without centralized control.[^8]
 
@@ -78,11 +78,11 @@ Dopamine encodes prediction error---the difference between what was expected and
 
 When outcomes are better than expected, dopamine activity increases. When outcomes are worse than expected, dopamine activity decreases. When expectations are met, dopamine remains near baseline.[^11]
 
-![Figure 3.5. Dopamine encodes reward prediction error.](images/figure_3_5.png)
+![Figure 3.5. Dopamine neurons encode reward prediction error. Simulated spike rasters and firing-rate histograms. An unpredicted reward evokes a burst (A). After learning, the burst moves to the cue and the predicted reward evokes nothing (B). When a predicted reward is withheld, firing dips below baseline at the moment the reward was due (C).](images/fig_rpe.png)
 
 Learning depends on surprise. If the world unfolds exactly as predicted, there is nothing new to learn. Dopamine marks the moments when predictions fail.[^12]
 
-![Figure 3.6. Dopamine signals shift to predictive cues after learning.](images/figure_3_6.png)
+![Figure 3.6. Dopamine signals shift to predictive cues after learning. A temporal-difference simulation: the prediction error within a trial starts at the reward and, over trials, migrates backward to the cue (A), so the error at the reward falls to zero while the error at the cue rises to the full reward value (B).](images/fig_td.png)
 
 Crucially, dopamine does not specify what should be learned. It does not identify which neurons were responsible. It signals only that learning should occur now.[^13]
 
@@ -120,9 +120,9 @@ Synapses maintain short-lived biochemical states known as eligibility traces.[^1
 
 When a synapse is active, molecular processes place it into a transient modifiable state. These traces decay over seconds.[^20] If a neuromodulatory signal arrives while the trace persists, the synapse is modified. If not, the trace fades without lasting effect.
 
-![Figure 3.7. Eligibility traces bridge temporal gaps between activity and learning signals.](images/figure_3_7.png)
+![Figure 3.7. Eligibility traces bridge the gap between activity and the learning signal. A pre-then-post spike pair sets a trace that decays over seconds. A dopamine pulse that arrives while the trace persists changes the synaptic weight (A). The same pulse arriving after the trace has decayed changes nothing (B).](images/fig_eligibility.png)
 
-![Figure 3.8. Mathematical representation of eligibility traces.](images/figure_3_8.png)
+![Figure 3.8. The three-factor rule written out. The eligibility trace e rises with each spike pairing according to the spike-timing window (B), decays, and is multiplied by the dopamine signal (C); the weight changes only while both are present (D).](images/fig_math.png)
 
 Eligibility traces allow learning to bridge the temporal gap between action and outcome without explicit causal knowledge.
 
@@ -160,9 +160,9 @@ Neuromodulation gates plasticity so that learning occurs only when conditions wa
 
 Pharmacology, neuromodulatory disorders, and interventions such as deep brain stimulation demonstrate that altering neuromodulatory tone can profoundly change learning and behavior without rewiring underlying circuitry.[^27]
 
-![Figure 3.9. Deep brain stimulation system with electrode placement.](images/figure_3_9.png)
+![Figure 3.9. Deep brain stimulation hardware in place. A lead enters through a burr hole in the skull and ends in the subthalamic nucleus; an extension cable under the skin connects it to a pulse generator implanted below the collarbone.](images/fig_dbs.png)
 
-![Figure 3.10. Neurostimulator system schematic.](images/figure_3_10.png)
+![Figure 3.10. The neurostimulator system. The implantable pulse generator holds the battery, pulse circuitry, controller, and a telemetry radio for an external programmer; the lead ends in four electrode contacts in the target nucleus (A). Stimulation is a train of brief biphasic pulses, typically near 130 Hz with a pulse width of about 60 µs (B).](images/fig_stimulator.png)
 
 # Implications for Artificial Intelligence
 
@@ -196,7 +196,7 @@ Chapter 4: Circuits, Networks, and Coordinated Behavior
 
 ## Figure Attribution
 
-Figures 3.1 to 3.10 were supplied by the author. Their original sources have not been identified in this edition and must be confirmed, with reproduction permission where required, before publication. Several appear to be reproduced from published work: Figure 3.1 (synaptic versus volume transmission) and Figure 3.3 (the neuromodulatory systems) have the form of journal review figures; Figure 3.5 (panels a–c, including the "Backpropamine" scheme) appears to come from a paper on neuromodulated plasticity; Figure 3.7 carries a *Current Opinion in Neurobiology* imprint; and Figure 3.8 uses the notation of the reward-modulated spike-timing-dependent plasticity models of Izhikevich (2007) and Frémaux and Gerstner (2016). Figures 3.9 and 3.10 are medical illustrations of deep brain stimulation of unidentified origin.
+Figures 3.1 to 3.10 were drawn for this book. The spike rasters, histograms, and curves in Figures 3.2 and 3.5 to 3.8 are illustrative simulations, not recorded data. The brain outlines in Figures 3.3, 3.4, and 3.9 are schematic; nuclei are placed approximately and the hardware in Figures 3.9 and 3.10 is generic rather than any manufacturer's design.
 
 ## Epigraph
 

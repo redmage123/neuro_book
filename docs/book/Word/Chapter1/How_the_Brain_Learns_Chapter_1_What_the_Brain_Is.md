@@ -49,7 +49,7 @@ Even the brain's apparent inefficiencies make sense in this light. Synapses fail
 
 To understand the brain, we must abandon the idea that biology is merely an imperfect implementation of abstract computation. Biology is the source of the computation.
 
-![Figure 1.2. Sagittal MRI of the human brain, illustrating large-scale anatomical organization shaped by biological development rather than explicit design.](images/figure_1_2.png)
+![Figure 1.2. Sagittal MRI of the human brain, illustrating large-scale anatomical organization shaped by biological development rather than explicit design.](images/mri_midsagittal.jpg)
 
 # Time, Change, and the Absence of Reset
 
@@ -107,7 +107,7 @@ Chapter 2: Neurons --- The Brain's Signaling Cells
 
 Figure 1.1: "Von Neumann Architecture" diagram by Wikimedia Commons user Kapooht, CC BY-SA 3.0, via Wikimedia Commons.
 
-Figure 1.2: T1-weighted midsagittal magnetic resonance image of a human head; believed to be a public-domain or Creative Commons image from Wikimedia Commons (source file to be confirmed).
+Figure 1.2: "Mri brain side view" (midsagittal magnetic resonance image of a human head) by Oliver Stollmann, free-use attribution license, via Wikimedia Commons.
 
 Figure 1.3: Santiago Ramón y Cajal, drawing of a Purkinje cell from the human cerebellum (1899), ink on paper, Instituto Cajal (CSIC), Madrid; public domain.
 

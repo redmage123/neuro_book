@@ -72,4 +72,4 @@ reference list of every work cited. Do not edit the .docx or .pdf
 files by hand; edit the markdown and rebuild.
 
 Requirements: `pandoc`, LibreOffice (`soffice`), Python 3 with `python-docx` (only for
-regenerating the reference document) and `matplotlib` (only for redrawing the figures of Chapters 4 to 6).
+regenerating the reference document) and `matplotlib` (only for redrawing the figures of Chapters 2 to 6).

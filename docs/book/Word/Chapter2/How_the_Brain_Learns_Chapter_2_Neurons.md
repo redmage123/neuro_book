@@ -23,7 +23,7 @@ Like all cells, neurons are bounded by a membrane.[^3] Inside that membrane is a
 
 What distinguishes neurons from most other cells is excitability: the ability to generate electrical signals, transmit them over distance, influence other cells, and modify those influences over time.[^5]
 
-![Figure 2.1. What a Neuron Is --- and What It Is Not](images/figure_2_1.png)
+![Figure 2.1. A neuron is a living cell. A membrane separates two salt solutions; pumps burn ATP continuously to keep sodium out and potassium in, and gated channels let ions cross when the cell signals. Nothing here is a logic gate.](images/fig_cell.png)
 
 # The Polarized Structure of Neurons
 
@@ -37,7 +37,7 @@ Extending from the soma is the axon, a long, thin projection capable of transmit
 
 This polarized structure---many inputs, one output---is fundamental.[^7]
 
-![Figure 2.2. The Polarized Structure of Neurons](images/figure_2_2.png)
+![Figure 2.2. The polarized plan of a neuron. Thousands of inputs arrive on the dendrites and soma; a single axon, decided at the initial segment and insulated by myelin, carries the one output to the terminals. Signals travel one way.](images/fig_polarized.png)
 
 # The Physical Form of Inputs to a Neuron
 
@@ -47,7 +47,7 @@ At a typical chemical synapse, an incoming action potential in a presynaptic neu
 
 The crucial point is this: the immediate input to a neuron is not an electrical spike, but a small, local chemical event that produces a graded electrical change.[^10]
 
-![Figure 2.3. The Physical Form of Inputs to a Neuron](images/figure_2_3.png)
+![Figure 2.3. A chemical synapse. An action potential arriving at the terminal opens calcium channels; calcium triggers vesicles to release neurotransmitter into the cleft; the transmitter binds receptors on the postsynaptic membrane and produces a small graded potential, then is cleared by reuptake, breakdown, and diffusion.](images/figure_2_3.png)
 
 # Excitatory and Inhibitory Postsynaptic Potentials (EPSPs and IPSPs)
 
@@ -61,7 +61,7 @@ An inhibitory postsynaptic potential (IPSP) hyperpolarizes the membrane or stabi
 
 EPSPs and IPSPs are graded, local, and short-lived. Neurons continuously sum thousands of such inputs across their dendritic tree and soma. Firing reflects the balance of excitation and inhibition over time.[^13]
 
-![Figure 2.4. Excitatory and Inhibitory Postsynaptic Potentials (EPSPs and IPSPs)](images/figure_2_4.png)
+![Figure 2.4. Excitatory and inhibitory postsynaptic potentials. A: one EPSP depolarizes the membrane a few millivolts. B: one IPSP hyperpolarizes it. C: five EPSPs in quick succession sum to threshold and trigger an action potential. D: an EPSP and an IPSP arriving together nearly cancel. Traces are simulations with exponential synaptic kernels, not recordings.](images/fig_psp.png)
 
 # Dendrites and Soma: Passive Integration
 
@@ -79,7 +79,7 @@ This region is densely packed with voltage-gated sodium channels.[^15] If the in
 
 This is the transformation from graded input to discrete output.
 
-![Figure 2.5. The Axon Initial Segment: Where Spikes Begin](images/figure_2_5.png)
+![Figure 2.5. The axon initial segment. Top: voltage-gated sodium channels are sparse in the soma and densest in the first stretch of axon, which therefore has the lowest threshold. Bottom: the soma's graded sum of inputs (blue) crosses threshold there and the initial segment fires a stereotyped spike (red). Simulated traces.](images/fig_ais.png)
 
 # How the Action Potential Propagates
 
@@ -89,7 +89,7 @@ Each segment of axon opens sodium channels, injecting current into neighboring r
 
 Nothing travels the length of the axon except causation.
 
-![Figure 2.6. How the Action Potential Propagates](images/figure_2_6.png)
+![Figure 2.6. How the action potential travels. A: in a bare axon, sodium entering the active patch spreads inside and brings the next patch to threshold, while the patch behind is refractory; the spike is regenerated at every point. B: in a myelinated axon, channels are confined to the nodes and the spike jumps from node to node.](images/fig_propagation.png)
 
 # Why the Soma Does Not Propagate Spikes
 
@@ -101,19 +101,19 @@ Evolution separated integration, decision, and transmission into distinct region
 
 Action potentials are uniform in size.[^18] Information is encoded in timing, firing rate, and coordination across neurons.[^19]
 
-![Figure 2.7. Timing, Not Amplitude, Carries Information](images/figure_2_7.png)
+![Figure 2.7. Spikes are all the same size. A: a stronger stimulus produces more spikes, not larger ones. B: the same number of spikes arranged as bursts carries a different message. Information lies in rate and timing. Simulated traces.](images/fig_timing.png)
 
 # Plasticity: Learning as Physical Change
 
 Synapses strengthen or weaken with use.[^20] Learning is physical reconfiguration, not information storage.
 
-![Figure 2.8. Plasticity: Learning as Physical Change](images/figure_2_8.png)
+![Figure 2.8. Learning as physical change. Before: a weak synapse with few vesicles and few receptors gives a small EPSP. After repeated correlated activity, the same synapse holds more vesicles, a larger spine head and more receptors, and the EPSP more than doubles. Simulated traces.](images/fig_plasticity.png)
 
 # Why Neurons Look Inefficient --- and Why They Are Not
 
 Neurons are slow, noisy, and metabolically expensive.[^21] These properties enable robustness and adaptability.
 
-![Figure 2.9. Why Neurons Look Inefficient --- and Why They Are Not](images/figure_2_9.png)
+![Figure 2.9. Slow, noisy and expensive. A: a spike lasts about a millisecond, ten million times longer than a transistor switch. B: the same stimulus gives a different spike pattern on every trial (simulated raster). C: the brain is about 2 percent of body mass but uses about 20 percent of resting energy.](images/fig_costs.png)
 
 # Looking Ahead
 
@@ -123,17 +123,15 @@ The next chapter introduces neuromodulators---signals that change how neurons op
 
 Next Chapter: Chapter 3 --- Neuromodulation: How Chemical Context Shapes Neural Behavior
 
-![Figure 2.10. Looking Ahead](images/figure_2_10.png)
+![Figure 2.10. The same input, a different output. With no neuromodulator present the neuron responds to a train of input spikes with three spikes; with a neuromodulator present it responds with eleven. The wiring has not changed. Chapter 3 explains how chemical context does this. Schematic.](images/fig_context.png)
 
 # References and Attribution
 
 ## Figure Attribution
 
-Figures 2.3 and 2.7 are the same image, the chemical synapse figure from *Anatomy and Physiology* by OpenStax (Rice University), licensed CC BY 4.0, via openstax.org.
+Figures 2.1, 2.2, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, and 2.10 were drawn for this book. The voltage traces in Figures 2.4, 2.5, 2.7, and 2.8 and the spike raster in Figure 2.9 are illustrative simulations, not recorded data.
 
-Figure 2.2 ("Structure of a neuron") carries a Healthline Media watermark and is reproduced from healthline.com; it is copyrighted and will need permission or replacement before publication.
-
-Figures 2.1 (action-potential propagation through gap junctions), 2.5 (axosomatic synapse and axon hillock), 2.6 (saltatory conduction), and 2.8 (EPSP and IPSP summation) are textbook-style diagrams whose original sources were not recorded when the chapter was assembled; provenance to be confirmed. Figures 2.4, 2.9, and 2.10 are reproduced from research publications (dendritic input maps, dendritic attenuation curves, and the molecular organization of the axon initial segment) at low resolution; their sources were likewise not recorded. All provenance notes above are provided by the author.
+Figure 2.3: the chemical synapse figure from *Anatomy and Physiology* by OpenStax (Rice University), licensed CC BY 4.0, via openstax.org.
 
 ## References
 
