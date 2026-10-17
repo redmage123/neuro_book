@@ -65,8 +65,11 @@ python3 docs/build.py --docx       # skip the PDF step
   review-ready artifact.
 
 The house style (Letter page, Cambria body, Calibri headings, numbered figure captions, epigraphs
-as block quotes) is documented in `memory-bank/systemPatterns.md`. Do not edit the .docx or .pdf
+as block quotes) is documented in `memory-bank/systemPatterns.md`. Every chapter cites its sources
+with footnotes (pandoc `[^n]` markers, rendered as Word footnotes) and ends with a
+"References and Attribution" section: figure attribution, epigraph source, and an alphabetical
+reference list of every work cited. Do not edit the .docx or .pdf
 files by hand; edit the markdown and rebuild.
 
 Requirements: `pandoc`, LibreOffice (`soffice`), Python 3 with `python-docx` (only for
-regenerating the reference document) and `matplotlib` (only for redrawing Chapter 4's figures).
+regenerating the reference document) and `matplotlib` (only for redrawing the figures of Chapters 4 to 6).

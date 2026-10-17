@@ -61,6 +61,8 @@ setfont(st("Definition"), BODY, 11, color=BLACK); para(st("Definition"), before=
 para(st("Figure"), align=WD_ALIGN_PARAGRAPH.CENTER, before=8, after=0)
 para(st("CaptionedFigure"), align=WD_ALIGN_PARAGRAPH.CENTER, before=8, after=0)
 setfont(st("VerbatimChar"), "Consolas", 9.5)
+setfont(st("FootnoteText"), BODY, 9, color=BLACK); para(st("FootnoteText"), before=0, after=3, line=1.0, left=0, first=0)
+st("FootnoteReference").font.superscript = True
 for sec in doc.sections:
     sec.page_width = Inches(8.5); sec.page_height = Inches(11)
     sec.left_margin = sec.right_margin = sec.top_margin = sec.bottom_margin = Inches(1)

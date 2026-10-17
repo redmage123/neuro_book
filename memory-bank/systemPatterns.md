@@ -40,10 +40,17 @@ docs/
   companions use `#` for Student Notes / Labs, `##` for sections, `###` for lab parts; companions are built with
   hard line breaks (one line = one line); figures are `![Figure N.M. caption](images/file)` alone in a paragraph;
   images live in `images/` beside the source. Figure numbering is N.M in every chapter.
+- Citations (since 2026-10-17): every main chapter uses pandoc footnotes `[^n]` placed after the sentence making the
+  claim (definitions at the end of the file). Footnote text = full author-date citation(s), joined by "; ", plus an
+  optional note. Each chapter ends with `# References and Attribution` containing `## Figure Attribution` (the former
+  Figure Credits), `## Epigraph` (source edition) and `## References` (every cited work, alphabetical). Word footnotes
+  are styled Footnote Text (Cambria 9) / Footnote Reference (superscript) in reference.docx. Rule: cite only works
+  verified to exist; omit volume/pages rather than guess. Companions carry no footnotes (they cite the chapter). Helper for a new chapter: docs/style/footnote_lib.py
+  (apply(path, REFS, NOTES, epigraph_source, figure_attribution) inserts markers at exact anchor sentences and appends the section).
 - Do not edit the .docx/.pdf by hand; edit the .md and rebuild.
 
 ## Naming Conventions
-- Main book: `How_the_Brain_Learns_Chapter_N_<ShortTitle>.{md,docx,pdf}` (Chapter_0_Foundations, Chapter_1_What_the_Brain_Is, Chapter_2_Neurons, Chapter_3_Neuromodulation, Chapter_4_Circuits); front matter `How_the_Brain_Learns_Front_Matter`
+- Main book: `How_the_Brain_Learns_Chapter_N_<ShortTitle>.{md,docx,pdf}` (Chapter_0_Foundations, Chapter_1_What_the_Brain_Is, Chapter_2_Neurons, Chapter_3_Neuromodulation, Chapter_4_Circuits, Chapter_5_Plasticity_and_Memory, Chapter_6_Perception_as_Inference); front matter `How_the_Brain_Learns_Front_Matter`
 - Companion: `How_the_Brain_Learns_Chapter_N_Student_Notes_and_Labs.{docx,pdf}`
 - No version or descriptor suffixes any more (git history holds earlier versions)
 
