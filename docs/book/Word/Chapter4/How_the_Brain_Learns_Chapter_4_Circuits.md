@@ -325,7 +325,7 @@ Schultz, W., Dayan, P., & Montague, P. R. (1997). A neural substrate of predicti
 
 Shadlen, M. N., & Newsome, W. T. (1998). The variable discharge of cortical neurons: Implications for connectivity, computation, and information coding. *Journal of Neuroscience*, 18(10), 3870–3896.
 
-Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Yale University Press.
+Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Charles Scribner's Sons.
 
 Sherrington, C. S. (1940). *Man on His Nature*. Cambridge University Press.
 
@@ -365,9 +365,9 @@ Yin, H. H., & Knowlton, B. J. (2006). The role of the basal ganglia in habit for
 
 [^1]: Azevedo, F. A. C., Carvalho, L. R. B., Grinberg, L. T., Farfel, J. M., Ferretti, R. E. L., Leite, R. E. P., Jacob Filho, W., Lent, R., & Herculano-Houzel, S. (2009). Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain. *Journal of Comparative Neurology*, 513(5), 532–541.
 
-[^2]: Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Yale University Press; Liddell, E. G. T., & Sherrington, C. S. (1924). Reflexes in response to stretch (myotatic reflexes). *Proceedings of the Royal Society B*, 96, 212–242.
+[^2]: Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Charles Scribner's Sons; Liddell, E. G. T., & Sherrington, C. S. (1924). Reflexes in response to stretch (myotatic reflexes). *Proceedings of the Royal Society B*, 96, 212–242.
 
-[^3]: Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Yale University Press. Sherrington introduced the term reciprocal innervation in a series of notes to the Royal Society from 1893 onward and summarized the principle in the 1906 lectures.
+[^3]: Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Charles Scribner's Sons. Sherrington introduced the term reciprocal innervation in a series of notes to the Royal Society from 1893 onward and summarized the principle in the 1906 lectures.
 
 [^4]: Pouille, F., & Scanziani, M. (2001). Enforcement of temporal fidelity in pyramidal cells by somatic feed-forward inhibition. *Science*, 293(5532), 1159–1163.
 

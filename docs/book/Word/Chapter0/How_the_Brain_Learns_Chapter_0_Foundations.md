@@ -334,6 +334,8 @@ Anfinsen, C. B. (1973). Principles that govern the folding of protein chains. *S
 
 Azevedo, F. A. C., Carvalho, L. R. B., Grinberg, L. T., Farfel, J. M., Ferretti, R. E. L., Leite, R. E. P., Jacob Filho, W., Lent, R., & Herculano-Houzel, S. (2009). Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain. *Journal of Comparative Neurology*, 513(5), 532–541.
 
+Barresi, M. J. F., & Gilbert, S. F. (2019). *Developmental Biology* (12th ed.). Sinauer Associates.
+
 Berg, H. C. (1993). *Random Walks in Biology* (expanded ed.). Princeton University Press.
 
 Bianconi, E., Piovesan, A., Facchin, F., Beraudi, A., Casadei, R., Frabetti, F., Vitale, L., Pelleri, M. C., Tassani, S., Piva, F., Perez-Amodio, S., Strippoli, P., & Canaider, S. (2013). An estimation of the number of cells in the human body. *Annals of Human Biology*, 40(6), 463–471.
@@ -359,8 +361,6 @@ Fick, A. (1855). Ueber Diffusion. *Annalen der Physik und Chemie*, 94, 59–86.
 Fischer, E. (1894). Einfluss der Configuration auf die Wirkung der Enzyme. *Berichte der deutschen chemischen Gesellschaft*, 27(3), 2985–2993.
 
 Galvani, L. (1791). *De viribus electricitatis in motu musculari commentarius*. Bologna: Ex Typographia Instituti Scientiarum.
-
-Gilbert, S. F., & Barresi, M. J. F. (2019). *Developmental Biology* (12th ed.). Sinauer Associates.
 
 Goldman, D. E. (1943). Potential, impedance, and rectification in membranes. *Journal of General Physiology*, 27(1), 37–60.
 
@@ -486,7 +486,7 @@ Whitman, W. B., Coleman, D. C., & Wiebe, W. J. (1998). Prokaryotes: The unseen m
 
 [^32]: Azevedo, F. A. C., Carvalho, L. R. B., Grinberg, L. T., Farfel, J. M., Ferretti, R. E. L., Leite, R. E. P., Jacob Filho, W., Lent, R., & Herculano-Houzel, S. (2009). Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain. *Journal of Comparative Neurology*, 513(5), 532–541.
 
-[^33]: Gilbert, S. F., & Barresi, M. J. F. (2019). *Developmental Biology* (12th ed.). Sinauer Associates.
+[^33]: Barresi, M. J. F., & Gilbert, S. F. (2019). *Developmental Biology* (12th ed.). Sinauer Associates.
 
 [^34]: Waddington, C. H. (1957). *The Strategy of the Genes*. London: Allen & Unwin. Waddington's "epigenetic landscape" is the standard image of progressively restricted cell fate.
 
