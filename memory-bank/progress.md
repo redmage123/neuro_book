@@ -14,18 +14,19 @@
 - Chapter 10: What Artificial Intelligence Gets Right and Wrong: Machine Learning Measured Against the Brain (main book + companion, 2026-10-18; 7 figures, all drawn by make_figures.py, Figure 10.5 a real simulation; 103 citations logged; literary and expert reviews to 5/5)
 - Chapter 11: Integrating Brain Mechanisms into AI Models: What Machines Could Borrow from Biology (main book + companion, 2026-10-18; 7 figures, all drawn by make_figures.py, Figures 11.2 and 11.3 real simulations; 89 citations logged; literary and expert reviews to 5/5)
 - Chapter 12: The Brain as a Predictive, Adaptive System: Is There One Principle Beneath the Mechanisms? (main book + companion, 2026-10-18; 7 figures by make_figures.py, Figures 12.2-12.5 computed; 70 citations logged; literary and expert reviews to 5/5)
+- Chapter 13: Why the Brain Works the Way It Does: Constraints, Trade-offs, and the Shape of a Solution (main book + companion, 2026-10-18; 7 figures by make_figures.py, Figures 13.2-13.6 computed; 65 citations logged; literary and expert reviews to 5/5)
 - PDF and Word formats maintained for all chapters
 - Directory structure supports independent chapter review
 
 ## What's Left to Build
 - Convert Chapter 0 markdown to Word/PDF format
-- Chapters 13-15 (Chapter 13 announced as "Why the Brain Works the Way It Does: Constraints, Trade-offs, and the Shape of a Solution"; subtitle provisional; then 14 Implications for Learning, Work, and Technology, 15 A Coherent Model of the Human Brain)
+- Chapters 14-15 (Chapter 14 announced as "Implications for Learning, Work, and Technology: What the Brain's Design Asks of the World We Have Built"; subtitle provisional; then 15 A Coherent Model of the Human Brain)
 - Final style sheet compliance review
 - License finalization before public release
 - Additional glossary entries as chapters expand
 
 ## Current Status
-**Phase:** Active writing — Chapters 0-12 drafted with companions; Chapter 13 (Why the Brain Works the Way It Does) next
+**Phase:** Active writing — Chapters 0-13 drafted with companions; Chapter 14 (Implications for Learning, Work, and Technology) next
 
 | Component | Status |
 |-----------|--------|
@@ -44,7 +45,8 @@
 | Chapter 10 | ✓ Complete (book + companion, 2026-10-18) |
 | Chapter 11 | ✓ Complete (book + companion, 2026-10-18) |
 | Chapter 12 | ✓ Complete (book + companion, 2026-10-18) |
-| Chapters 13-15 | Not started |
+| Chapter 13 | ✓ Complete (book + companion, 2026-10-18) |
+| Chapters 14-15 | Not started |
 
 ## Recent Addition: Chapter 0 (Foundations)
 Added prerequisite chapter addressing reader feedback about assumed knowledge. Covers:
