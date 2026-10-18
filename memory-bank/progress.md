@@ -11,18 +11,19 @@
 - Chapter 7: Emotion and the Body: How Internal States Tell the Brain What Matters (main book + companion, 2026-10-17; 7 figures, all drawn by make_figures.py; reviewed by literary and expert agents and revised)
 - Chapter 8: Decision-Making Under Uncertainty: How the Brain Chooses When It Cannot Be Sure (main book + companion, 2026-10-17; 7 figures, all drawn by make_figures.py; literary and expert reviews to 5/5)
 - Chapter 9: Habits, Skills, and Automaticity: How Practice Turns Choices into Routines (main book + companion, 2026-10-18; 7 figures, all drawn by make_figures.py; literary and expert reviews to 5/5)
+- Chapter 10: What Artificial Intelligence Gets Right and Wrong: Machine Learning Measured Against the Brain (main book + companion, 2026-10-18; 7 figures, all drawn by make_figures.py, Figure 10.5 a real simulation; 103 citations logged; literary and expert reviews to 5/5)
 - PDF and Word formats maintained for all chapters
 - Directory structure supports independent chapter review
 
 ## What's Left to Build
 - Convert Chapter 0 markdown to Word/PDF format
-- Chapters 10+ (Chapter 10 announced as "What Artificial Intelligence Gets Right and Wrong: Machine Learning Measured Against the Brain"; subtitle provisional, title from the front-matter Contents plan)
+- Chapters 11+ (Chapter 11 announced as "Integrating Brain Mechanisms into AI Models: What Machines Could Borrow from Biology"; title from the front-matter Contents plan, subtitle provisional; Chapter 10's subtitle was also provisional and the author did not object)
 - Final style sheet compliance review
 - License finalization before public release
 - Additional glossary entries as chapters expand
 
 ## Current Status
-**Phase:** Active writing — Chapters 0-9 drafted with companions; Chapter 10 (What Artificial Intelligence Gets Right and Wrong) next
+**Phase:** Active writing — Chapters 0-10 drafted with companions; Chapter 11 (Integrating Brain Mechanisms into AI Models) next
 
 | Component | Status |
 |-----------|--------|
@@ -37,7 +38,9 @@
 | Chapter 6 | ✓ Complete (book + companion, 2026-10-16) |
 | Chapter 7 | ✓ Complete (book + companion, 2026-10-17) |
 | Chapter 8 | ✓ Complete (book + companion, 2026-10-17) |
-| Chapters 9+ | Not started |
+| Chapter 9 | ✓ Complete (book + companion, 2026-10-18) |
+| Chapter 10 | ✓ Complete (book + companion, 2026-10-18) |
+| Chapters 11+ | Not started |
 
 ## Recent Addition: Chapter 0 (Foundations)
 Added prerequisite chapter addressing reader feedback about assumed knowledge. Covers:
