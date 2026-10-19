@@ -254,7 +254,7 @@ After devaluation, the food's goal value is 0, and the animal knows it (a goal-d
 
 1) Compute H after n = 1 to 12 presses. (Check: 0.30, 0.51, 0.66, 0.76, 0.83, 0.88, 0.92, 0.94, 0.96, 0.97, 0.98, 0.99.)
 2) After devaluation, the drive for L is 0.6 × H. For moderate training (n = 3) and extended training (n = 12), compute the drive for L and compare it with R's 0.5. (Check: 0.39 against 0.5, so the animal switches to R; 0.59 against 0.5, so it keeps pressing L.)
-3) Find the smallest amount of training after which the habit alone outweighs the alternative. (Check: six presses, where 0.6 × H = 0.53; at five it is 0.50, a tie.)
+3) Find the smallest amount of training after which the habit alone outweighs the alternative. (Check: six presses, where 0.6 × H = 0.53; at five it is 0.499, just short of 0.5, so R still narrowly wins.)
 4) Change the habit weight from 0.6 to 0.4. Can any amount of training now produce a habit that survives devaluation? (Check: no, because 0.4 × H never exceeds 0.4.) What might the habit weight correspond to in the brain (think of the infralimbic experiments of Smith and Graybiel)?
 5) Compare this model with the model-free learner of Lab 8.6, in which habits are cached values. Which predicts that a habit can persist even when the animal has experienced the devalued outcome?
 6) Write 6-10 sentences: which striatal region carries H, what the popcorn experiment of Neal and Wood adds about context, and why the failures to produce habits by overtraining in people (de Wit) might mean the human habit weight builds over months rather than hours.

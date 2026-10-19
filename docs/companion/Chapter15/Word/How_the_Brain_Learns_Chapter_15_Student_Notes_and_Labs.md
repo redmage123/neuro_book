@@ -65,7 +65,7 @@ Your goal is to be able to state the eight statements and the evidence for each,
 
 ## What is settled and what is open
 
-- Settled: engrams (mostly rodent work), dopamine prediction errors, fast and slow memory, energy constraints, adaptation at every level, neuromodulatory reconfiguration (shown mainly in small circuits). Probable: prediction as the cortex's general strategy, three-factor rules, replay in sleep, habit circuits, body-anchored value (Figure 15.5).
+- Settled: engrams (mostly rodent work), reward prediction errors, fast and slow memory, energy constraints, adaptation at every level, neuromodulatory reconfiguration (shown mainly in small circuits). Probable: prediction as the cortex's general strategy, three-factor rules, replay in sleep, habit circuits, body-anchored value (Figure 15.5).
 - Open: credit assignment in cortex (Lillicrap et al. 2020; Payeur et al. 2021), dendritic computation (Gidon et al. 2020; Beaulieu-Laroche et al. 2018), what sleep does to synapses (Tononi and Cirelli 2014; de Vivo et al. 2017; Yang et al. 2014), glia (Adamsky et al. 2018; Agulhon et al. 2010), molecular storage (Langille and Gallistel 2020), one principle.
 - Beyond the book: consciousness.
 

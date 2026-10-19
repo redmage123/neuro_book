@@ -52,14 +52,14 @@ Spike-timing-dependent plasticity: presynaptic spike a few to a few tens of mill
 
 Local rules do not keep total input in range. Two whole-cell mechanisms do:
 - The sliding threshold (Bienenstock, Cooper, and Munro, 1982): the calcium level separating LTD from LTP moves with the neuron's recent average activity. After intense firing it rises; after quiet it falls. The more a neuron fires, the harder its inputs are to strengthen.
-- Synaptic scaling: if firing stays too high for hours, every excitatory synapse is multiplied by the same factor below one; too low, above one. Ratios between synapses, where the learned information lives, survive. Timescale about a day.
+- Synaptic scaling, the form of homeostatic plasticity introduced in Chapter 1: if firing stays too high for hours, every excitatory synapse is multiplied by the same factor below one; too low, above one. Ratios between synapses, where the learned information lives, survive. Timescale a day or two.
 Inhibitory synapses are plastic too and track excitation. Together these are the cellular counterpart of Chapter 4's excitation-inhibition balance.
 
 ## The third factor
 
-Chapter 3's three-factor learning rule: a synapse changes when it was recently active, when its neuron fired, and when a neuromodulatory signal says something significant happened. Pre- and postsynaptic activity alone can induce LTP and LTD, as the slice experiments show; the third factor decides whether, how strongly, and for how long the change is kept.
+Chapter 3's three-factor learning rule: a synapse changes lastingly when it was recently active, when its neuron fired, and when a neuromodulatory signal says something significant happened. Pre- and postsynaptic activity alone can induce LTP and LTD, as the slice experiments show; the third factor decides whether, how strongly, and for how long the change is kept.
 
-Early LTP sets a transient tag at the synapse (an hour or two). Late LTP needs proteins made in the cell body; only tagged synapses capture them. A weak event that tags but does not trigger synthesis fades, unless something, such as dopamine, triggers synthesis within the tag's lifetime. A synapse active during an unremarkable moment can be consolidated retroactively by a reward an hour later. This is synaptic tagging and capture: Chapter 3's eligibility trace at the level of molecules.
+Early LTP sets a transient tag at the synapse (an hour or two). Late LTP needs proteins made in the cell body; only tagged synapses capture them. A weak event that tags but does not trigger synthesis fades, unless something, such as dopamine, triggers synthesis within the tag's lifetime. A synapse active during an unremarkable moment can be consolidated retroactively by a reward an hour later. This is synaptic tagging and capture, a slower, molecular relative of Chapter 3's eligibility trace that works over hours rather than seconds.
 
 ## From synapse to engram
 
@@ -73,7 +73,7 @@ Systems consolidation (weeks to years): the memory moves from hippocampal depend
 
 This standard account is contested. Multiple-trace theory and its successor, trace-transformation theory, hold that only a schematic, semanticized version becomes independent of the hippocampus, while the detailed, re-experienceable episode stays hippocampal for as long as it exists. The evidence: H.M. and similar patients could recount the facts of their remote past but not relive particular episodes, and in rats memories rich in contextual detail stay sensitive to hippocampal lesions at any age.
 
-Why two systems (McClelland, McNaughton, and O'Reilly, 1995): a network that learns fast enough to capture one experience overwrites what it knows (catastrophic interference, a mathematical property of distributed representations). A network slow enough to avoid interference cannot capture a single experience. Solution: a fast, sparse hippocampal learner and a slow, statistical cortical learner, with the fast one training the slow one by interleaved replay (Figure 5.7B).
+Why two systems, the complementary learning systems theory (McClelland, McNaughton, and O'Reilly, 1995): a network that learns fast enough to capture one experience overwrites what it knows (catastrophic interference, a mathematical property of distributed representations). A network slow enough to avoid interference cannot capture a single experience. Solution: a fast, sparse hippocampal learner and a slow, statistical cortical learner, with the fast one training the slow one by interleaved replay (Figure 5.7B).
 
 ## Sleep
 
@@ -96,11 +96,11 @@ Not storage tiers but different circuits with different mechanisms:
 - Procedural: basal ganglia and cerebellum (Chapter 4), dopamine-gated striatal plasticity and climbing-fiber LTD; no episode recalled.
 - Emotional: amygdala; fast, durable LTP, hard to erase, only suppressed.
 - Working: persistent activity and seconds-long synaptic facilitation in prefrontal and parietal cortex, no structural trace.
-Patient H. M. lost new episodic memory but learned mirror drawing normally while denying he had seen the task.
+Patient H.M. lost new episodic memory but learned mirror drawing normally while denying he had seen the task.
 
 ## Why learning is slow
 
-Minutes for early LTP, hours and new protein for late LTP, weeks to years for systems consolidation, thousands of repetitions for a skill. The slowness is also a design requirement: the stability-plasticity dilemma is solved by quarantining fast learning in the hippocampus and letting everything else change at a pace that protects what is there. Slowness is the price of not overwriting yourself.
+Minutes to form early LTP, which lasts an hour or two; hours and new protein for late LTP; weeks to years for systems consolidation; thousands of repetitions for a skill. The slowness is also a design requirement: the stability-plasticity dilemma is solved by quarantining fast learning in the hippocampus and letting everything else change at a pace that protects what is there. Slowness is the price of not overwriting yourself.
 
 ## Implications for artificial intelligence
 
@@ -197,7 +197,7 @@ To show that the timing rule strengthens a circuit's causal order and weakens it
 
 Three neurons A, B, C fire once each: A at 0 ms, B at 10 ms, C at 20 ms.
 For a synapse from pre to post, the timing difference is dt = t_post - t_pre.
-Window: if dt > 0, change = 1.0 * exp(-dt / 17); if dt < 0, change = -0.5 * exp(dt / 34).
+Window: if dt > 0, change = 1.0 * exp(-dt / 17); if dt < 0, change = -0.5 * exp(dt / 34); if dt = 0 (both spikes at the same moment), no change.
 Useful values: exp(-10/17) = 0.555, exp(-20/17) = 0.308, exp(-10/34) = 0.745, exp(-20/34) = 0.555.
 
 ### Procedure
@@ -255,7 +255,7 @@ Learning step (delta rule, learning rate 0.5): error = target - out; w1_next = w
 Part A - Sequential learning (one fast learner)
 1) Train on A four times in a row. Record w1, w2 after each step. (Check: after four steps, w = (0.784, 0.392), and the output for A is 0.98.)
 2) Compute the output for B at this point.
-3) Now train on B four times in a row. (Check: w = (0.476, -0.223).)
+3) Now train on B four times in a row. (Check: w = (0.477, -0.223).)
 4) Compute the output for A. It was 0.98. What is it now? This is catastrophic interference.
 
 Part B - Interleaved learning (replay)

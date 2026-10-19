@@ -36,10 +36,10 @@ Your goal is to be able to explain the three ways of borrowing, why copying has 
 
 ## A memory that learns in use
 
-- The hippocampal index (Teyler and DiScenna 1986) and retrieval-augmented models (Lewis 2020); RETRO's 2-trillion-token database matched models 25 times larger (Borgeaud 2022). Retrieval never consolidates.
+- The hippocampal index (Teyler and DiScenna 1986) and retrieval-augmented models (Lewis 2020); RETRO's two-trillion-token database matched models 25 times larger (Borgeaud 2022). Retrieval never consolidates.
 - Hopfield networks (1982; Nobel Prize 2024): capacity about 0.14N (Amit 1985). Modern Hopfield networks: dense memories (Krotov and Hopfield 2016); one recall step equals attention (Ramsauer 2021) (Figure 11.3).
 - Fast weights (Ba 2016; Schmidhuber 1992); linear attention as a fast-weight memory (Schlag 2021); transformers and the hippocampal formation (Whittington 2022).
-- Storing by surprise: Titans (Behrouz 2025). Figure 11.7 maps the brain's memory systems onto a deployed model's.
+- Storing by surprise: Titans (Behrouz 2025). Figure 11.4 maps the brain's memory systems onto a deployed model's.
 
 ## Learning when to learn
 
@@ -50,10 +50,10 @@ Your goal is to be able to explain the three ways of borrowing, why copying has 
 
 ## Local rules and the cost of moving data
 
-- Horowitz (2014): a DRAM read costs hundreds of times a multiplication (Figure 11.4). Backpropagation adds stored activations and backward traffic.
+- Horowitz (2014): a DRAM read costs hundreds of times a multiplication (Figure 11.5). Backpropagation adds stored activations and backward traffic.
 - Cortex spends about 35 times more on communication than computation (Levy and Calvert 2021).
 - Hardware: NorthPole (Modha 2023); analog in-memory chip (Ambrogio 2023); Hala Point (Intel 2024).
-- Spikes have no useful slope; surrogate gradients (Neftci 2019) (Figure 11.5); e-prop combines eligibility traces with a broadcast learning signal (Bellec 2020), the three-factor rule of Chapter 3.
+- Spikes have no useful slope; surrogate gradients (Neftci 2019) (Figure 11.6); e-prop combines eligibility traces with a broadcast learning signal (Bellec 2020), the three-factor rule of Chapter 3.
 - Alternatives to backpropagation: equilibrium propagation (Scellier and Bengio 2017), forward-forward (Hinton 2022), physical networks (Wright 2022; Momeni 2025). None yet matches backpropagation at scale.
 - Emergent sparsity in transformers (Li 2023).
 
@@ -61,7 +61,7 @@ Your goal is to be able to explain the three ways of borrowing, why copying has 
 
 - CoastRunners (Clark and Amodei 2016); specification gaming (Krakovna 2020).
 - Reward models are proxies (Christiano 2017; Ouyang 2022); over-optimization lowers true quality (Gao 2023), Goodhart's law.
-- Homeostatic reward saturates and turns negative past the set point (Keramati and Gutkin 2014) (Figure 11.6); feeling machines (Man and Damasio 2019). Borrow saturation and balance, not self-concern; the KL penalty in language-model training is a version (Ouyang 2022).
+- Homeostatic reward saturates and turns negative past the set point (Keramati and Gutkin 2014) (Figure 11.7); feeling machines (Man and Damasio 2019). Borrow saturation and balance, not self-concern; the KL penalty in language-model training is a version (Ouyang 2022).
 - Curiosity as prediction error (Pathak 2017) is captured by a noisy television (Burda 2019); curiosity as learning progress (Gottlieb 2013; Kidd and Hayden 2015; Schmidhuber 1991).
 
 ## Knowing when to stop and think
@@ -117,7 +117,7 @@ General rules:
 
 ### Purpose
 
-To reproduce the argument of Figure 11.4: why fetching weights, not arithmetic, dominates the energy of running a large network, and why computing where the memory is would help.
+To reproduce the argument of Figure 11.5: why fetching weights, not arithmetic, dominates the energy of running a large network, and why computing where the memory is would help.
 
 ### Given values
 
@@ -179,7 +179,7 @@ A network has 200 hidden units. Each task uses a fixed random 20 percent of them
 
 ### Purpose
 
-To compute the homeostatic reward of Figure 11.6 and see why it cannot be hacked by taking more.
+To compute the homeostatic reward of Figure 11.7 and see why it cannot be hacked by taking more.
 
 ### Given values
 

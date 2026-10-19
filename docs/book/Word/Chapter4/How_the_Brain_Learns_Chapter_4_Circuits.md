@@ -13,7 +13,7 @@ The previous chapters built a neuron and then surrounded it with chemical contex
 
 A single neuron cannot walk, breathe, decide, or remember. It cannot even compute a difference between two inputs in a way that outlasts the inputs themselves. Every capacity that we recognize as behavior belongs to groups of neurons connected in particular ways. The unit of function in the nervous system is not the neuron. It is the circuit.
 
-This creates a problem of description. The human brain contains on the order of 86 billion neurons and, in the neocortex alone, roughly 150 trillion synapses.[^1] No account at the level of individual connections is possible, and none would be illuminating if it were. What makes circuits intelligible is that the nervous system reuses a small number of wiring patterns, at every scale, in every region. Learn the patterns and the regions become variations on a theme.
+This creates a problem of description. The human brain contains about 86 billion neurons and, in the neocortex alone, about 164 trillion synapses.[^1] No account at the level of individual connections is possible, and none would be illuminating if it were. What makes circuits intelligible is that the nervous system reuses a small number of wiring patterns, at every scale, in every region. Learn the patterns and the regions become variations on a theme.
 
 This chapter is about those patterns, the ways they are stacked into larger structures, and the rhythms that coordinate them. It ends where Chapter 1 began: with a system that produces coordinated behavior without anyone in charge.
 
@@ -39,7 +39,7 @@ Feedback inhibition closes a loop. The target's own output recruits an interneur
 
 Lateral inhibition lets neighbors suppress one another. The neuron receiving the strongest input wins and silences its competitors. The consequences include sharpened contrast, winner-take-all selection, and the ability to represent a stimulus by which neuron is active rather than by how active everything is.[^6]
 
-Recurrent excitation lets activity feed back on itself. A pattern of firing can be sustained after its input has gone, which is the basis of working memory and of pattern completion.[^7] It is also the most dangerous motif in the brain. Without inhibition to contain it, recurrent excitation is a seizure.
+Recurrent excitation lets activity feed back on itself. A pattern of firing can be sustained after its input has gone, which is the basis of working memory, the holding of information in mind for seconds, and of pattern completion, described below.[^7] It is also the most dangerous motif in the brain. Without inhibition to contain it, recurrent excitation is a seizure.
 
 Disinhibition is inhibition of an inhibitor. A target is held silent by default; an input that suppresses the inhibitor releases the target. This sounds like a roundabout way to excite something, but it has a property direct excitation lacks: the default state is off, so nothing happens unless the circuit is explicitly opened. The basal ganglia, discussed below, are built almost entirely from it.[^8]
 
@@ -167,7 +167,7 @@ Second, selection by disinhibition is a different control strategy from choosing
 
 Third, rhythm may be a routing mechanism. Fixed weights cannot change which parts of a network talk to each other, so artificial systems add attention mechanisms to do it (Chapter 6 returns to attention).[^48] The brain, on the coherence hypothesis, does it with phase. Oscillatory gating offers a way to reconfigure effective connectivity without changing parameters, at low cost.
 
-Fourth, the brain's wiring budget shapes its architecture. Small-world organization, local clustering, and sparse long-range connections are consequences of paying for every axon. Artificial networks pay far less per connection than an axon costs, in parameters, memory, and arithmetic rather than in volume and metabolism, and they are correspondingly dense; the literature on pruning and sparsity exists because even that smaller cost adds up. As energy becomes the binding constraint on large models, the brain's economies are worth studying.
+Fourth, the brain's wiring budget shapes its architecture. Small-world organization, local clustering, and sparse long-range connections are consequences of paying for every axon. Artificial networks pay far less per connection than an axon costs, in parameters, memory, and arithmetic rather than in volume and metabolism, and they are correspondingly dense; the literature on pruning and sparsity exists because even that smaller cost adds up.
 
 Finally, the cortex suggests that general computation can come from a single repeated circuit with different inputs. The question of what that circuit is doing, in a form abstract enough to transfer, remains open. It is one of the most important open problems in both neuroscience and machine learning.
 
@@ -353,6 +353,8 @@ Sporns, O., Tononi, G., & Kötter, R. (2005). The human connectome: A structural
 
 Sur, M., Garraghty, P. E., & Roe, A. W. (1988). Experimentally induced visual projections into auditory thalamus and cortex. *Science*, 242(4884), 1437–1441.
 
+Tang, Y., Nyengaard, J. R., De Groot, D. M. G., & Gundersen, H. J. G. (2001). Total regional and global number of synapses in the human brain neocortex. *Synapse*, 41(3), 258–273.
+
 Tremblay, R., Lee, S., & Rudy, B. (2016). GABAergic interneurons in the neocortex: From cellular properties to circuits. *Neuron*, 91(2), 260–292.
 
 Treves, A., & Rolls, E. T. (1994). Computational analysis of the role of the hippocampus in memory. *Hippocampus*, 4(3), 374–391.
@@ -379,7 +381,7 @@ Wässle, H. (2004). Parallel processing in the mammalian retina. *Nature Reviews
 
 Yin, H. H., & Knowlton, B. J. (2006). The role of the basal ganglia in habit formation. *Nature Reviews Neuroscience*, 7(6), 464–476.
 
-[^1]: Azevedo, F. A. C., Carvalho, L. R. B., Grinberg, L. T., Farfel, J. M., Ferretti, R. E. L., Leite, R. E. P., Jacob Filho, W., Lent, R., & Herculano-Houzel, S. (2009). Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain. *Journal of Comparative Neurology*, 513(5), 532–541; Pakkenberg, B., Pelvig, D., Marner, L., Bundgaard, M. J., Gundersen, H. J. G., Nyengaard, J. R., & Regeur, L. (2003). Aging and the human neocortex. *Experimental Gerontology*, 38(1–2), 95–99. Azevedo and colleagues count the neurons; Pakkenberg and colleagues estimate about 150 trillion synapses in the neocortex of young adults.
+[^1]: Azevedo, F. A. C., Carvalho, L. R. B., Grinberg, L. T., Farfel, J. M., Ferretti, R. E. L., Leite, R. E. P., Jacob Filho, W., Lent, R., & Herculano-Houzel, S. (2009). Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain. *Journal of Comparative Neurology*, 513(5), 532–541; Pakkenberg, B., Pelvig, D., Marner, L., Bundgaard, M. J., Gundersen, H. J. G., Nyengaard, J. R., & Regeur, L. (2003). Aging and the human neocortex. *Experimental Gerontology*, 38(1–2), 95–99; Tang, Y., Nyengaard, J. R., De Groot, D. M. G., & Gundersen, H. J. G. (2001). Total regional and global number of synapses in the human brain neocortex. *Synapse*, 41(3), 258–273. Azevedo and colleagues count the neurons; Tang and colleagues count about 164 trillion synapses in the neocortex, and Pakkenberg and colleagues give a similar figure of about 150 trillion for young adults.
 
 [^2]: Sherrington, C. S. (1906). *The Integrative Action of the Nervous System*. Charles Scribner's Sons; Liddell, E. G. T., & Sherrington, C. S. (1924). Reflexes in response to stretch (myotatic reflexes). *Proceedings of the Royal Society B*, 96, 212–242.
 

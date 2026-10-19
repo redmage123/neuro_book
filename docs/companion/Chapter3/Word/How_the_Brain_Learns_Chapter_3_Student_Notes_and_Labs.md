@@ -7,7 +7,7 @@ subtitle: "Neuromodulation"
 
 ## What this chapter is for
 
-Chapters 1 and 2 gave you a neuron that integrates inputs and sometimes fires. Chapter 3 answers a question that model cannot answer on its own: given that neurons are firing all the time, when does the brain actually learn, and what decides which synapses change?
+Chapter 2 gave you a neuron that integrates inputs and sometimes fires. Chapter 3 answers a question that model cannot answer on its own: given that neurons are firing all the time, when does the brain actually learn, and what decides which synapses change?
 
 The chapter's answer is that fast electrical signaling and learning are coupled by a chemical layer called neuromodulation. A handful of small brainstem and basal forebrain nuclei broadcast chemicals across most of the brain. Those chemicals do not carry sensory content. They carry context: safe or threatened, better or worse than expected, stable or changed. Pre- and postsynaptic activity alone can induce Hebbian potentiation and depression (Chapter 5), but in the intact brain much of that plasticity is gated and scaled by this context, which decides whether, how strongly, and in which direction a change is expressed and consolidated.
 
@@ -62,7 +62,7 @@ The chapter's most important correction comes from Wolfram Schultz's recordings 
 
 Two consequences follow. First, a fully predicted reward produces almost no response, even though the reward is still pleasant. Second, once a cue reliably predicts a reward, the burst moves earlier in time, to the cue. Schultz, Dayan, and Montague (1997) showed that this is what the error term of Sutton's temporal-difference learning looks like as learning proceeds (Figure 3.6 in the chapter). The causal test came later: optogenetically driving dopamine neurons when a reward was already predicted made rats learn about a cue they would otherwise have ignored (Steinberg et al. 2013).
 
-Hold the account with the chapter's caution. It describes the phasic response of a large population of dopamine neurons, not every dopamine neuron or everything dopamine does. Dopamine neurons are heterogeneous: some respond to aversive events, novelty, or salience, and some carry signals tied to movement and position, and what the slow striatal dopamine ramps mean is an active debate. Note also that this reward prediction error is a single number about value. Chapter 6 introduces a sensory prediction error, which is high-dimensional and about content; the two share a name and a logic but are different signals.
+Hold the account with the chapter's caution. It describes the phasic response of a large population of dopamine neurons, not every dopamine neuron or everything dopamine does. Dopamine neurons are heterogeneous: some respond to aversive events, novelty, or salience, and some carry signals tied to movement and position, and what the slow striatal dopamine ramps mean is an active debate. Note also that this reward prediction error is a single number about value. Chapter 6 introduces a sensory prediction error, which is high-dimensional and about content; the two share a name and a logic but are different signals, and should not be confused.
 
 The dopamine signal says when to learn and in which direction (bursts favor potentiation, dips the opposite change, at striatal synapses carrying different dopamine receptors). It does not say which synapses should change: it is one scalar broadcast to the entire striatum and much of cortex.
 
@@ -76,19 +76,19 @@ The brain has none of those conditions. It receives no labels. Outcomes are dela
 
 Izhikevich called this last difficulty the distal reward problem. And because thousands of synapses usually contribute and none is decisive, the question "which synapse caused this outcome?" often has no single answer.
 
-The brain has no known way to do what backpropagation does exactly, and whether and how it approximates it is an open question. Crick (1989) objected that nothing in cortex looked like a way to send each synapse its share of a global error. The objection has weakened without disappearing: random feedback weights are enough for a network to learn, dendritic bursts in pyramidal cells can carry an error signal separate from the forward signal, and Lillicrap and colleagues (2020) argue the brain may approximate backpropagation-like learning through its abundant feedback connections. Chapters 5 and 6 return to this. The chapter's narrower point: whatever the brain does about credit assignment, it is not the clean procedure of the artificial case, and much of what it does instead is visible in the neuromodulatory systems.
+The brain has no known way to do what backpropagation does exactly, and whether and how it approximates it is an open question. Crick (1989) objected that nothing in cortex looked like a way to send each synapse its share of a global error. The objection has weakened without disappearing: random feedback weights are enough for a network to learn, dendritic bursts in pyramidal cells can carry an error signal separate from the forward signal, and Lillicrap and colleagues (2020) argue the brain may approximate backpropagation-like learning through its abundant feedback connections. Chapters 6, 10, and 11 return to this. The chapter's narrower point: whatever the brain does about credit assignment, it is not the clean procedure of the artificial case, and much of what it does instead is visible in the neuromodulatory systems.
 
 ## Eligibility traces: the physical workaround
 
 If a global signal cannot identify the responsible synapse, how does any specificity arise?
 
-Each synapse keeps a short-lived chemical memory of its own recent activity. When a synapse is used, molecular processes put it into a transient modifiable state, an eligibility trace, which decays over seconds to minutes. If a neuromodulatory signal arrives while the trace is still present, the synapse changes. If the signal arrives after the trace has faded, nothing happens (Figure 3.7 in the chapter). The windows have been measured: in striatal slices, a spine enlarged only when dopamine arrived about 0.3 to 2 seconds after the activity (Yagishita et al. 2014); in hippocampal slices, dopamine applied within about a minute after a pairing turned depression into potentiation, but not after ten minutes (Brzosko et al. 2015).
+Each synapse keeps a short-lived chemical memory of its own recent activity. When a synapse is used, molecular processes put it into a transient modifiable state, an eligibility trace, which decays over seconds to minutes. If a neuromodulatory signal arrives while the trace is still present, the synapse changes. If the signal arrives after the trace has faded, nothing lasting happens (Figure 3.7 in the chapter). The windows have been measured: in striatal slices, a spine enlarged only when dopamine arrived about 0.3 to 2 seconds after the activity (Yagishita et al. 2014); in hippocampal slices, dopamine applied within about a minute after a pairing turned depression into potentiation, but not after ten minutes (Brzosko et al. 2015).
 
 This produces what the chapter calls a three-factor learning rule (written out in Figure 3.8 of the chapter):
 
 change in strength = (learning rate) x (eligibility trace at the moment the signal arrives) x (prediction error)
 
-Factors one and two (presynaptic and postsynaptic activity, Hebb's factors, combined into the trace) are local to the synapse and say "I was recently involved." Factor three, the neuromodulator, is global and says "something significant just happened." Within this rule neither is enough alone, and the sign of the pairing and the sign of the signal together set the direction of change. (Remember the caveat from the notes above: Hebbian plasticity can be induced by activity alone in slices; the three-factor rule describes how neuromodulators gate and scale much of it.) The trace is the brain's answer to the temporal gap between action and outcome, and it supplies the locality that volume transmission cannot. Chapter 5 describes its molecular form, synaptic tagging and capture.
+Factors one and two (presynaptic and postsynaptic activity, Hebb's factors, combined into the trace) are local to the synapse and say "I was recently involved." Factor three, the neuromodulator, is global and says "something significant just happened." Within this rule neither is enough alone, and the sign of the pairing and the sign of the signal together set the direction of change. (Remember the caveat from the notes above: Hebbian plasticity can be induced by activity alone in slices; the three-factor rule describes how neuromodulators gate and scale much of it.) The trace is the brain's answer to the temporal gap between action and outcome, and it supplies the locality that volume transmission cannot. Chapter 5 describes a slower relative, synaptic tagging and capture, which works over hours.
 
 ## Bias, and local rather than global objectives
 
@@ -132,7 +132,7 @@ If synapses changed every time neurons fired, the brain would be unstable: every
 
 ## Clinical evidence
 
-The chapter's rewritten Clinical Evidence section rests on cases where neuromodulatory tone has been altered in humans:
+The chapter's Clinical Evidence section rests on cases where neuromodulatory tone has been altered in humans:
 - Parkinson's disease: Ehringer and Hornykiewicz (1960) found striatal dopamine almost absent; L-DOPA (Carlsson's animal work in 1957, Cotzias's oral dosing in 1967) remains the standard treatment. Frank, Seeberger, and O'Reilly (2004) showed that patients off medication learned better from bad outcomes and on medication better from good ones: same patients, same task, different dopamine tone.
 - Antipsychotics block dopamine receptors; their clinical dose tracks binding to what is now called the D2 receptor (Creese, Burt, and Snyder 1976), and their parkinsonian side effects are dopamine loss produced by pharmacology.
 - Alzheimer's disease: the nucleus basalis loses most of its neurons (Whitehouse et al. 1982). Cholinesterase inhibitors raise acetylcholine levels and give a modest but consistent cognitive benefit at six months (Cochrane review), as expected from raising tone without restoring lost cells.
@@ -216,8 +216,8 @@ Part B - Omission
 
 Part C - Sensitivity check
 
-9) Repeat Part A with alpha = 0.05 for 8 trials. How far does V get?
-10) Repeat Part A with alpha = 0.9 for 4 trials. What does the sequence of delta values look like?
+9) Repeat Part A with alpha = 0.05 for eight trials. How far does V get?
+10) Repeat Part A with alpha = 0.9 for four trials. What does the sequence of delta values look like?
 11) Write 6-10 sentences: why does a reliable reward become "invisible" to dopamine, where did the signal go, and what does the omission dip tell the rest of the brain?
 
 ### What to record
@@ -249,7 +249,7 @@ Part A - One synapse, varying delay
 
 1) S1 is active once at t = 0. Dopamine arrives at t = d.
 2) Compute e(d) and delta_w for d = 0, 1, 2, 3, 5, and 10 s. Enter them in a table.
-3) Mark the delay beyond which delta_w is below 0.01 (effectively no learning).
+3) Mark the delay beyond which delta_w is at or below 0.01 (effectively no learning).
 
 Part B - Three synapses, one outcome
 
@@ -325,17 +325,17 @@ To make the chapter's design principle concrete: if synapses changed whenever ne
 ### Given parameters
 
 One synapse between neuron A and neuron B, starting strength w = 0.2.
-Over 10 trials, A and B happen to fire together on every trial (a coincidence driven by shared input noise, not by any useful relationship).
+Over ten trials, A and B happen to fire together on every trial (a coincidence driven by shared input noise, not by any useful relationship).
 Ungated (Hebbian) rule: whenever A and B fire together, w = w + 0.1.
 Gated (three-factor) rule: w = w + 0.1 * delta, where delta is the prediction error on that trial.
-Prediction errors for the 10 trials: 0, 0, 0, +0.5, 0, 0, 0, 0, -0.5, 0.
+Prediction errors for the ten trials: 0, 0, 0, +0.5, 0, 0, 0, 0, -0.5, 0.
 
 ### Procedure
 
 Part A - Coincidence without consequence
 
-1) Run the 10 trials under the ungated rule. Record w after each trial.
-2) Run the same 10 trials under the gated rule. Record w after each trial.
+1) Run the ten trials under the ungated rule. Record w after each trial.
+2) Run the same ten trials under the gated rule. Record w after each trial.
 3) Compare the two final strengths.
 
 Part B - A real relationship
@@ -346,7 +346,7 @@ Part B - A real relationship
 Part C - Scaling up
 
 6) Suppose the neuron has 5,000 synapses and, by chance, 100 of them show coincident activity on any given trial. Under the ungated rule, how many synapses change per trial? Over 1,000 trials? Under the gated rule with delta = 0 on 90 percent of trials?
-7) Write 8-12 sentences: what does gating protect against, what does it cost (think of a genuinely useful coincidence that occurs when delta happens to be zero), and how does this relate to the chapter's claim that "nothing changes unless the context says it should"?
+7) Write 8-12 sentences: what does gating protect against, what does it cost (think of a genuinely useful coincidence that occurs when delta happens to be zero), and how does this relate to the chapter's claim that "no change lasts unless the context says it should"?
 
 ## Lab 3.5 - Neuromodulators as Design Primitives (comparison table and concept map)
 

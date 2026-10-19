@@ -5,7 +5,9 @@
     python3 docs/build.py Chapter3   # build only sources whose path contains "Chapter3"
     python3 docs/build.py --docx     # skip the PDF step
 
-Sources: every *.md under docs/book/Word/<part>/ and docs/companion/Chapter*/Word/.
+Sources: every *.md under docs/book/Word/<part>/ (front matter, chapters, back matter),
+         docs/companion/Chapter*/Word/ and docs/companion/AnswerKey/Word/.
+The whole book as one document is built by docs/build_book.py.
 Outputs: the .docx next to the source; the PDF in the matching pdf/ folder
          (docs/book/pdf/<part>/ or docs/companion/ChapterN/pdf/).
 Style:   docs/style/reference.docx (regenerate with docs/style/make_reference.py).
@@ -21,6 +23,7 @@ REF = DOCS / "style" / "reference.docx"
 def sources():
     yield from sorted((DOCS / "book" / "Word").glob("*/*.md"))
     yield from sorted((DOCS / "companion").glob("Chapter*/Word/*.md"))
+    yield from sorted((DOCS / "companion").glob("AnswerKey/Word/*.md"))
 
 
 def pdf_dir(src: Path) -> Path:

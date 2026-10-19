@@ -77,7 +77,7 @@ Your goal is to be able to explain where trained networks resemble the brain and
 
 ## Bodies
 
-- AlphaGo beat Lee Sedol 4 to 1, but a person placed its stones. Moravec's paradox: perception and movement are hard for machines because evolution hid their difficulty.
+- AlphaGo beat Lee Sedol four games to one, but a person placed its stones. Moravec's paradox: perception and movement are hard for machines because evolution hid their difficulty.
 - Robots now fold laundry from demonstrations (Black 2024), but need far more practice than a child, who has forward models and a cerebellum.
 - A body anchors value (Chapter 7); a model values what training rewarded.
 
@@ -147,7 +147,7 @@ GPT-3 was trained on 3 × 10^11 tokens; Llama 3 on about 1.5 × 10^13 tokens. Tr
 
 ### Procedure
 
-1) At the high rate, how many words has a person heard by age 5, 10, and 20? (Check: 6 × 10^7, 1.2 × 10^8, 2.4 × 10^8. Frank rounds the last to 2 × 10^8.)
+1) At the high rate, how many words has a person heard by ages five, ten, and 20? (Check: 6 × 10^7, 1.2 × 10^8, 2.4 × 10^8. Frank rounds the last to 2 × 10^8.)
 2) How many times more language did GPT-3 and Llama 3 see than a five-year-old? Than a 20-year-old? (Check: GPT-3 5,000 and 1,250; Llama 3 250,000 and 62,500.)
 3) At the high rate, how many years would a person have to listen to hear as much as GPT-3? As Llama 3? (Check: 25,000 years; 1,250,000 years.)
 4) Repeat step 2 with Frank's low estimate. By how many orders of magnitude does the gap change? (Check: it grows by one, a factor of ten.)
@@ -279,7 +279,7 @@ To assemble the chapter, and the AI sections of the earlier chapters, into one a
 
 ### Procedure
 
-1) Copy the eleven properties in Figure 10.7. For each, write one sentence of evidence from this chapter or an earlier one and one citation.
+1) Copy the thirteen properties in Figure 10.7. For each, write one sentence of evidence from this chapter or an earlier one and one citation.
 2) For each property marked "largely absent" or "partly shared", decide whether it is (a) a solution machine learning should borrow, (b) a response to a biological constraint that silicon does not share, or (c) unclear. Defend two of your choices in three sentences each.
 3) Add one property the figure leaves out (candidates: sleep, neuromodulation, embodiment in action, social learning, development) and mark where current systems stand.
 4) Draw arrows between properties that depend on one another (for example, learning from little data and innate structure; lifelong learning and replay; energy and sparse activity).

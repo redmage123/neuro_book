@@ -137,7 +137,7 @@ def fig_measurements():
     fig.tight_layout(); save(fig, "fig_measurements.png")
 
 
-SCALE = [("honeybee\n(under a\nmillion)", 1e6, None), ("fruit fly\nbrain", 139255, 54.5e6), ("NIMCP\nspiking\nnetwork", 2.2e6, 1.5e9),
+SCALE = [("honeybee\n(under a\nmillion)", 1e6, None), ("fruit fly\nbrain", 139255, 54.5e6), ("NIMCP\nspiking\nnetwork", 2.0e6, 1.5e9),
          ("1 mm\u00b3 of\nhuman\ncortex", 16087, 149.9e6), ("human\nneocortex", 16.3e9, 1.64e14), ("whole\nhuman\nbrain", 86e9, None)]
 
 

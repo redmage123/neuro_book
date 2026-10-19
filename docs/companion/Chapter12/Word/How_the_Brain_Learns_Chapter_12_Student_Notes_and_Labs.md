@@ -58,7 +58,7 @@ Your goal is to be able to explain the three reasons to predict, how neurons mat
 
 - Sea legs and their aftereffect ashore (Stoffregen 2013).
 - From milliseconds to evolution (Figure 12.6): sensory adaptation, dark adaptation (Lamb and Pugh 2004), motor adaptation, synaptic scaling (Turrigiano 1998), critical periods (Hensch 2005).
-- Many timescales as inference about disturbances of different durations (Körding 2007).
+- Many timescales as inference about disturbances of different durations (Kording 2007).
 - Priors revised: the slow-speed prior (Snowden 1998; Pretto 2012; Stocker and Simoncelli 2006; Sotiropoulos 2011); chicks prefer biological motion without experience (Vallortigara 2005).
 
 ## One principle? The free-energy principle

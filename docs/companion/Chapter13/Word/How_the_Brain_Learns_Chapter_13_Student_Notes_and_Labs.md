@@ -148,10 +148,10 @@ Cross-sectional area is proportional to d².
 
 ### Procedure
 
-1) For speeds of 1, 10, and 50 m/s, find the diameter needed by each kind of fiber. (Check: bare 1.1, 106, and 2,648 µm; myelinated 0.17, 1.67, and 8.33 µm. The myelinated value at 1 m/s lies outside the rule's range: say why that matters.)
+1) For speeds of 1, 10, and 50 m/s, find the diameter needed by each kind of fiber. (Check: bare 1.1, 106, and 2,657 µm; myelinated 0.17, 1.67, and 8.33 µm. The myelinated value at 1 m/s lies outside the rule's range: say why that matters.)
 2) For each speed, compute the ratio of cross-sectional areas. (Check: about 40, 4,000, and 100,000.)
 3) A signal crosses 10 cm between the hemispheres. Compute the delay for a 1 µm myelinated fiber and for bare axons of 0.5 and 0.2 µm. (Check: 16.7 ms; about 146 ms; about 230 ms.)
-4) A computation needs ten passes back and forth between the hemispheres. Compute the total delay for the myelinated fiber, and compare it with a spoken syllable of about 200 ms.
+4) A computation needs ten one-way crossings between the hemispheres. Compute the total delay for the myelinated fiber, and compare it with a spoken syllable of about 200 ms. (Check: about 167 ms.)
 5) Write 6-10 sentences relating your answer to Ringo's conjecture, and say what evidence would test it.
 
 ## Lab 13.3 - Short Wires or Short Paths
@@ -190,7 +190,7 @@ Hypothetical insect (for this exercise only): genome 1.4 × 10^8 base pairs; 10^
 
 1) Compute the genome's capacity in bits and the wiring list's size in bits for the human. (Check: 6.2 × 10^9; about 3.7 × 10^15; the list is about 590,000 times larger.)
 2) Repeat for the worm. (Check: 8.24 bits per synapse; 2.0 × 10^8 against 5.8 × 10^4; the genome is about 3,500 times larger.)
-3) Repeat for the hypothetical insect. (Check: 16.61 bits per synapse; 1.7 × 10^8 against 2.8 × 10^8; the list would use about 60 percent of the genome.)
+3) Repeat for the hypothetical insect. (Check: 16.61 bits per synapse; 2.8 × 10^8 against 1.7 × 10^8; the list would use about 60 percent of the genome.)
 4) Only a few percent of the human genome codes for proteins. Recompute step 1 using 2 percent of the genome, and say whether the conclusion changes.
 5) Write 6-10 sentences: why is this an upper bound on what development needs, and what supplies the information the genome does not?
 
@@ -220,7 +220,7 @@ Eight neuron designs, each with an energy cost (arbitrary units) and the informa
 1) Plot the eight designs. Identify those that no other design beats on both counts (cheaper or equal, and at least as informative). (Check: A, B, D, E, F, H.)
 2) Explain in one sentence each why C and G are off the front.
 3) Compute bits per unit energy for every design. Which is best by that measure? (Check: B, at about 23.3.)
-4) Suppose the organism values information minus w times energy. Find the best design for w = 1, 10, and 25. (Check: F, D, B.)
+4) Suppose the organism values information minus w times energy. Find the best design for w = 1.5, 10, and 25. (Check: F, D, B.)
 5) Write 6-10 sentences: why is "the most efficient design" not the same as "the best design," and what in an animal's life might set w?
 
 ## Lab 13.6 - Paying for a Brain
@@ -237,7 +237,7 @@ For this exercise, assume a four-year-old's resting metabolic rate is 1,000 kcal
 
 ### Procedure
 
-1) Compute the adult brain's daily cost. (Check: 516 kcal.)
+1) Compute the adult brain's daily cost, and convert it to watts (1 kcal a day is about 0.0484 W). Why might it exceed the round 20 watts of Chapter 1? (Check: 516 kcal; about 25 W.)
 2) Compute the four-year-old's brain glucose equivalent using each figure. (Check: 660 kcal and 645 kcal.) Why are these not exactly the brain's energy use? (Hint: not all glucose is burned.)
 3) Compare the child's figure with the adult's. What does it imply about when the brain is most expensive?
 4) Suppose an ape brain has 30 billion neurons (a round number for this exercise). Compute its cost at the same rate, and compare it with the human brain's.

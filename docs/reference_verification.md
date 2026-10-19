@@ -1344,3 +1344,13 @@ Every citation in Chapter 12 (The Brain as a Predictive, Adaptive System), check
 - (Ch 16) OK: Shapson-Coe, A., Januszewski, M., Berger, D. R., Pope, A., Wu, Y., Blakely, T., Schalek, R. L., Li, P. H., Wang, S., Maitin-Shepard, J., Karlupia, N., Dorkenwald, S., Sjostedt, E., Leavitt, L., Lee, D., Troidl, J., Collman, F., Bailey, L., Fitzmaurice, A., ... Lichtman, J. W. (2024). A petavoxel fragment of human cerebral cortex reconstructed at nanoscale resolution. *Science*, 384(6696), eadk4858. — https://doi.org/10.1126/science.adk4858
 - (Ch 16) OK: Tang, Y., Nyengaard, J. R., De Groot, D. M. G., & Gundersen, H. J. G. (2001). Total regional and global number of synapses in the human brain neocortex. *Synapse*, 41(3), 258–273. — https://doi.org/10.1002/syn.1083
 - (Ch 16) OK: Xiao, S., Liu, Z., Zhang, P., Muennighoff, N., Lian, D., & Nie, J.-Y. (2024). C-Pack: Packed resources for general Chinese embeddings. In *Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval* (pp. 641–649). ACM. — https://doi.org/10.1145/3626772.3657878
+
+## Whole-book consistency pass (2026-10-19)
+
+Citations added to existing chapters by the cross-chapter audit; each was already verified for another chapter or checked at its source.
+
+- (Ch 2) OK: Lennie, P. (2003). The cost of cortical computation. *Current Biology*, 13(6), 493–497. Already verified for Chapter 1; added to support the "one in a hundred" active-neuron estimate beside Attwell and Laughlin's figure.
+- (Ch 4) OK: Tang, Y., Nyengaard, J. R., De Groot, D. M. G., & Gundersen, H. J. G. (2001). Total regional and global number of synapses in the human brain neocortex. *Synapse*, 41(3), 258–273. Already verified for Chapters 13, 15 and 16; Chapter 4 now uses its 164 trillion figure, as the later chapters do.
+- (Ch 3, epigraph) OK: Dale, H. H. (1936). Some recent extensions of the chemical transmission of the effects of nerve impulses. Nobel Lecture, 12 December 1936. Text read in full at nobelprize.org; the epigraph is its opening sentence. Replaces the Cajal epigraph that duplicated Chapter 2's.
+- (Ch 2, epigraph) Spanish original verified in *Recuerdos de mi vida*, vol. II (Madrid: Moya, 1917), chap. VIII, p. 156. The English wording matches the Craigie translation as quoted with p. 363 (MIT Press, 1989) in secondary sources; the page itself still needs checking against a printed copy.
+- (Ch 15 and frontispiece, epigraph) Spanish original verified in *Reglas y consejos sobre investigación científica*, 6th ed. (1923), preface to the second edition, p. x, dated Madrid, 20 December 1898. The English is the book's own translation.

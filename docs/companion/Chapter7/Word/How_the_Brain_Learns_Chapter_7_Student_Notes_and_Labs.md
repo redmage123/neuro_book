@@ -48,23 +48,23 @@ Thesis (one that most competing theories of emotion can accept): emotions are, a
 ## What an emotion is
 
 - James (1884): we perceive the bear, the body reacts, and the feeling is our perception of the body's reaction. "We feel sorry because we cry." Lange made a similar proposal in 1885.
-- Cannon (1927), five objections: cutting viscera from brain does not abolish emotional behavior; the same visceral changes occur in different emotions and in fever and exercise; viscera are poorly innervated; visceral changes are slow; adrenaline injections produce "as if" fear. (Adrenaline, which American physiologists call epinephrine, is a close relative of Chapter 3's norepinephrine.)
+- Cannon (1927), five objections: cutting viscera from brain does not abolish emotional behavior; the same visceral changes occur in different emotions and in fever and exercise; viscera are poorly innervated; visceral changes are slow; epinephrine injections produce "as if" fear. (Epinephrine, also called adrenaline, is a close relative of Chapter 3's norepinephrine.)
 - Most objections have been qualified. The most direct modern test: Hsueh and colleagues (2023) paced mouse hearts with light, raising heart rate without touching the brain; in risky contexts only, the mice became more anxious, through the posterior insula. Garfinkel and colleagues (2014): fearful faces shown during the heart's contraction are detected more readily and judged more intense.
 - Human tests that remove or impose bodily signals give smaller, less consistent effects: spinal cord injury reduces felt emotion little in a well-controlled study (Chwalisz 1988); the forced-smile effect failed a 17-laboratory replication (Wagenmakers 2016), though a meta-analysis finds a small facial feedback effect (Coles 2019).
-- Arousal is interpreted. Schachter and Singer (1962): uninformed volunteers given adrenaline took on a confederate's mood (later replications weaker). Dutton and Aron (1974): half the men who took the interviewer's number on the swaying Capilano bridge called her, against about one in eight on a solid bridge.
+- Arousal is interpreted. Schachter and Singer (1962): uninformed volunteers given epinephrine took on a confederate's mood (later replications weaker). Dutton and Aron (1974): half the men who took the interviewer's number on the swaying Capilano bridge called her, against about one in eight on a solid bridge.
 - Three positions:
 1) basic emotions (Ekman): a few emotions, each an evolved program with its own bodily pattern and universal facial expression;
 2) constructed emotion (Barrett): the brain predicts and regulates the body and categorizes that state in context using learned concepts. Siegel and colleagues (2018): autonomic patterns overlap too much to identify emotions reliably. Barrett and colleagues (2019): facial movements are weak, context-dependent signs of emotion;
 3) survival circuits (LeDoux): circuits for defense, feeding, reproduction, and fluid balance are well studied in animals; the word fear should be kept for the conscious feeling.
-- Shared ground: all three can accept Russell's circumplex (1980), with valence and arousal as axes (core affect), as a description (Figure 7.3); and all agree that emotional states carry an estimate of how things stand for the body that sets priorities.
+- Shared ground: all three can accept Russell's circumplex (1980), with valence and arousal as axes (core affect), as a description (Figure 7.3); and all can accept the chapter's thesis that emotional states carry an estimate of how things stand for the body that sets priorities.
 
 ## Value depends on the body
 
 - Cabanac (1971), alliesthesia: a sweet solution is pleasant to a fasting person and unpleasant after a glucose load. Pleasure tracks usefulness to the body now.
 - Rolls and colleagues (1981): sensory-specific satiety; the food being eaten loses pleasantness faster than foods not yet eaten.
 - Betley and colleagues (2015): AgRP hunger neurons carry a negative teaching signal; mice avoid flavors and places paired with their activation. Eating is reinforcing partly because it ends the state.
-- The reward prediction error that a large population of dopamine neurons signals (Chapter 3) is computed against outcomes whose value depends on the state of the body: juice is a large reward to a thirsty monkey and a small one to a sated monkey.
-- Berridge and Robinson (1998) proposed, from dopamine-depleted rats that still showed liking reactions, separating wanting (dopamine-dependent motivational pull) differs from liking (hedonic impact, which survives dopamine loss and depends on opioid and other systems).
+- The reward prediction error of Chapter 3 is computed against outcomes whose value depends on the state of the body: juice is a large reward to a thirsty monkey and a small one to a sated monkey.
+- Berridge and Robinson (1998) proposed, from dopamine-depleted rats that still showed liking reactions, separating wanting (dopamine-dependent motivational pull) from liking (hedonic impact, which survives dopamine loss and depends on opioid and other systems).
 
 ## The amygdala and learned threat
 
@@ -85,7 +85,7 @@ Thesis (one that most competing theories of emotion can accept): emotions are, a
 
 ## The chemistry of stress
 
-- Two arms (Figure 7.5). Fast: sympathetic nerves and adrenaline from the adrenal medulla, in seconds. Slow: the hypothalamic-pituitary-adrenal (HPA) axis, CRH to ACTH to cortisol, peaking tens of minutes later; cortisol feeds back on hypothalamus, pituitary, and hippocampus to shut itself down.
+- Two arms (Figure 7.5). Fast: sympathetic nerves and epinephrine from the adrenal medulla, in seconds. Slow: the hypothalamic-pituitary-adrenal (HPA) axis, CRH to ACTH to cortisol, peaking tens of minutes later; cortisol feeds back on hypothalamus, pituitary, and hippocampus to shut itself down.
 - Selye (1936): the same triad (enlarged adrenals, shrunken thymus, ulcers) after many different insults. Sapolsky and colleagues (2000): cortisol's actions (permissive, suppressive, stimulatory, preparative, depending on timing) include restraining the stress response itself.
 - Dum, Levinthal, and Strick (2019): neurons controlling the adrenal medulla trace back to motor cortex (trunk and posture) and cingulate regions involved in cognition and affect. Thought, movement, and stress are a few synapses apart.
 - The settings are shaped by experience, starting early: rat pups licked and groomed more in their first days grow up with more hippocampal receptors for cortisol, stronger feedback, and smaller stress responses (Liu 1997). The response in the moment depends on company: holding a partner's hand reduced threat-related brain activity (Coan 2006).
@@ -94,8 +94,8 @@ Thesis (one that most competing theories of emotion can accept): emotions are, a
 
 ## Emotion marks what to remember
 
-- Gold and van Buskirk (1975): adrenaline given after training improves memory, at moderate doses only. It changes what is kept, not what was experienced.
-- McGaugh: adrenaline does not readily enter the brain; its effect is relayed, at least in part, by the vagus to the nucleus of the solitary tract (an interoceptive pathway), which releases norepinephrine in the basolateral amygdala, which modulates consolidation in hippocampus, striatum, and cortex.
+- Gold and van Buskirk (1975): epinephrine given after training improves memory, at moderate doses only. It changes what is kept, not what was experienced.
+- McGaugh: epinephrine does not readily enter the brain; its effect is relayed, at least in part, by the vagus to the nucleus of the solitary tract (an interoceptive pathway), which releases norepinephrine in the basolateral amygdala, which modulates consolidation in hippocampus, striatum, and cortex.
 - Cahill and colleagues (1994): a story with an upsetting middle is remembered better in the middle a week later, unless the listener took propranolol (a beta-adrenergic blocker) an hour before; memory for the neutral parts was unaffected. Since the drug was present during the story, this study does not separate encoding from consolidation; the animal work does. A patient with amygdala damage showed no enhancement (Cahill 1995).
 - Arousal acts much like the third factor of Chapter 3's three-factor learning rule: it helps decide how strongly the traces are kept.
 - Flashbulb memories (Brown and Kulik 1977) are confident, not accurate. Neisser and Harsch (Challenger, 1986); Talarico and Rubin (September 11, 2001): flashbulb memories lose consistency as fast as ordinary ones; what differs is belief in them.
@@ -122,7 +122,7 @@ Treatments with good evidence (exposure therapy, reappraisal in cognitive behavi
 
 1) Value comes from outside. RL rewards are specified by designers; an animal's are generated by its body. Homeostatic reinforcement learning (Keramati and Gutkin 2014): reward is the reduction in distance from set point. Singh and colleagues (2010): an internal reward that differs from the external goal can learn better.
 2) A fixed external reward can be gamed (reward hacking, Amodei 2016). Animals are not immune (addiction), but values anchored to a body the brain cannot simply redefine are constrained.
-3) Emotions are global modes. Simon (1967): an interrupt mechanism for a serial goal-pursuer. Doya (2002): neuromodulators set metaparameters (dopamine: prediction error; serotonin: time horizon; norepinephrine: explore versus exploit; acetylcholine: learning rate). Artificial agents mostly fix such parameters by hand.
+3) Emotions are global modes. Simon (1967): an interrupt mechanism for a serial goal-pursuer. Doya (2002): neuromodulators set metaparameters (dopamine: prediction error; serotonin: time horizon; norepinephrine: explore versus exploit; acetylcholine: learning rate). Later work (Chapter 12) suggests a division: norepinephrine raises the learning rate when the world has changed; acetylcholine weights incoming evidence when the world is noisy but stable. Artificial agents mostly fix such parameters by hand.
 4) Importance should decide what is learned. Prioritized experience replay (Schaul 2016) replays large-error transitions, but artificial agents rarely mark an experience as significant to the agent rather than merely surprising.
 5) Reading emotion is not having it. Affective computing (named by Picard in the mid-1990s) often reads faces, and faces are weak, context-dependent signals (Barrett 2019).
 
@@ -283,7 +283,7 @@ where arousal is between 0 and 1, and b is beta-adrenergic receptor availability
 
 1) Compute kept for the neutral and emotional parts, with placebo and with propranolol. (Check: placebo 0.26 and 0.74; propranolol 0.20 and 0.20.) In the real study the drug was taken an hour before the story; the model treats it as acting only on consolidation. What experiment would justify that?
 2) Which features of Cahill and colleagues' result does the model reproduce? Which term in the rule corresponds to the amygdala, and which to the hippocampus and cortex where the memory is stored?
-3) Gold and van Buskirk found that adrenaline after training helped at moderate doses and not at high ones. Modify the rule so that kept follows an inverted U in arousal. Write your rule and compute it at arousal 0.1, 0.5, and 0.9.
+3) Gold and van Buskirk found that epinephrine after training helped at moderate doses and not at high ones. Modify the rule so that kept follows an inverted U in arousal. Write your rule and compute it at arousal 0.1, 0.5, and 0.9.
 4) A patient whose amygdalae are destroyed (Cahill 1995) has b = 1 but no arousal signal reaching the storage sites. Which term do you set to 0, and what does the patient remember?
 5) The model says nothing about accuracy. Using the flashbulb studies, add a second quantity, confidence, that grows with arousal even while consistency decays over weeks at the same rate for both kinds of memory. Sketch both curves for an emotional and a neutral event.
 6) Write 6-10 sentences: name the three factors of Chapter 3's rule in this setting, explain why a brain should keep emotionally arousing events preferentially, and explain why preferential keeping does not guarantee accuracy.
@@ -319,7 +319,7 @@ To integrate the chapter on one page: how the state of the body becomes a feelin
 
 1) Draw a body with heart, lungs, gut, and immune cells. Draw the two interoceptive routes (vagus to the nucleus of the solitary tract; lamina I) to the brainstem, hypothalamus, amygdala, thalamus, and posterior and anterior insula (Figure 7.2).
 2) Draw the hypothalamus as a controller with a set point, and add a predictive input from cortex labeled "allostasis: act before the error."
-3) Draw the downward arms: sympathetic nerves and adrenaline, and the HPA axis with cortisol feedback (Figure 7.5).
+3) Draw the downward arms: sympathetic nerves and epinephrine, and the HPA axis with cortisol feedback (Figure 7.5).
 4) Add the amygdala circuit for learned threat (Figure 7.4), with the ventromedial prefrontal cortex inhibiting it after extinction.
 5) Add Chapter 3's neuromodulators: norepinephrine from the locus coeruleus driving consolidation through the amygdala, and dopamine carrying a reward prediction error whose value depends on bodily state.
 6) Add the valence and arousal axes as a small inset (Figure 7.3), with an arrow from the insula labeled "core affect."

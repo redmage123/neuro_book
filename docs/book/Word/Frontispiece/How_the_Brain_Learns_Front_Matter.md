@@ -7,7 +7,7 @@ subtitle: "A Systems-Level Introduction to Neuroscience for Engineers and Techno
 
 > *"Every man can, if he so desires, become the sculptor of his own brain."*
 >
-> --- Santiago Ramón y Cajal
+> --- Santiago Ramón y Cajal, *Reglas y consejos sobre investigación científica* (preface to the second edition, 1898)
 
 # Preface
 
@@ -15,11 +15,11 @@ This book is written for readers who are already technically literate but who ha
 
 The central aim of this book is to replace metaphor with mechanism. Wherever possible, explanations are grounded in physical processes that occur in living tissue: the movement of ions, the opening and closing of channels, the release of chemicals, and the slow structural changes that follow experience.
 
-Throughout this book, the brain is treated as an adaptive biological control system. It is not a computer in the conventional sense, nor is it a passive information-processing device. Its primary objective is viability---remaining functional under uncertainty.
+Throughout this book, the brain is treated as an adaptive biological control system. It is not a computer in the conventional sense, nor is it a passive information-processing device. Its primary objective is viability: remaining functional under uncertainty.
 
 This perspective has important consequences. Learning is not instantaneous because physical change is slow and metabolically expensive. Forgetting is not a failure of memory, but a necessary feature of a system that must remain flexible.
 
-The book is organized cumulatively, beginning with the physical foundations of neural signaling and building toward cognition and intelligence.
+The book is organized cumulatively, in six parts. Part I lays the foundations: the physics and chemistry that any living system must obey (Chapter 0, which readers comfortable with both may skim), what kind of system the brain is, and how its cells signal. Part II describes the machinery of learning: the chemical signals that decide when learning happens, the circuits in which it happens, and the plasticity that stores it. Part III builds upward to perception, emotion, decision, and habit. Part IV holds the brain up against machine learning, asking what artificial intelligence gets right and wrong and what it could borrow. Part V draws the threads together: whether one principle lies beneath the mechanisms, why the brain is built the way it is, what its design asks of schools, workplaces, and technology, and finally a single model of how the brain learns. Part VI is a case study: an attempt to build a brain from the book's principles, and what its failures teach.
 
 This is not a book about neuroscience as a collection of facts. It is a book about neuroscience as a way of explaining behavior.
 
@@ -35,7 +35,7 @@ Technically trained readers often bring powerful habits of abstraction to new do
 
 Each chapter is written to be read twice. The first pass should be uninterrupted and relatively quick, with the goal of understanding the narrative arc. The second pass should be slower and more critical, with attention paid to how explanations are grounded in physical processes.
 
-A companion volume, *Student Notes and Laboratory Exercises for How the Brain Learns*, accompanies this text. The companion volume provides summaries, annotated diagrams, and laboratory-style exercises to reinforce understanding.
+A companion volume, *Student Notes and Labs*, accompanies this text. For each of Chapters 1 to 16 it provides a summary of the chapter's argument and a set of laboratory exercises, most of which can be worked by hand or with a few lines of code; printed check values let you confirm your work as you go. An instructor's answer key gives worked solutions and model answers.
 
 The book does not assume memorization as a primary learning strategy. Terminology is introduced sparingly and reused consistently.
 
@@ -44,51 +44,49 @@ Finally, this book rewards patience. Biological intelligence is not optimized fo
 # Contents
 
 Preface\
-How to Use This Book
+How to Use This Book\
+A Note on Levels of Explanation
 
-**Part I --- Physical Foundations of Neural Computation**\
-Chapter 1 What the Brain Is (and Is Not)\
-Chapter 2 Neurons: The Brain's Signaling Cells\
-Chapter 3 Electricity in Living Tissue\
-Chapter 4 Action Potentials: How Neurons Signal
+**Part I: Foundations**\
+Chapter 0. Foundations: The Physical and Chemical Basis of Life\
+Chapter 1. What the Brain Is (and Is Not)\
+Chapter 2. Neurons: The Brain's Signaling Cells
 
-**Part II --- Chemical Communication and the Regulation of Learning**\
-Chapter 5 Synapses: Where Neurons Communicate\
-Chapter 6 Excitation, Inhibition, and Stability\
-Chapter 7 Neuromodulators: The Brain's Control Signals\
-Chapter 8 How the Brain Decides What to Learn
+**Part II: The Machinery of Learning**\
+Chapter 3. Neuromodulation: How Chemical Context Shapes Learning and Behavior\
+Chapter 4. Circuits, Networks, and Coordinated Behavior\
+Chapter 5. Plasticity and Memory: How Experience Becomes Structure
 
-**Part III --- Plasticity and Memory**\
-Chapter 9 Plasticity: How Experience Changes the Brain\
-Chapter 10 Memory Is Not Storage\
-Chapter 11 Habits, Skills, and Automaticity
+**Part III: Mind and Behavior**\
+Chapter 6. Perception as Inference: How the Brain Sees What It Expects\
+Chapter 7. Emotion and the Body: How Internal States Tell the Brain What Matters\
+Chapter 8. Decision-Making Under Uncertainty: How the Brain Chooses When It Cannot Be Sure\
+Chapter 9. Habits, Skills, and Automaticity: How Practice Turns Choices into Routines
 
-**Part IV --- Perception, Emotion, and Decision-Making**\
-Chapter 12 Perception as Inference\
-Chapter 13 Emotion as a Regulatory System\
-Chapter 14 Decision-Making Under Uncertainty
+**Part IV: Brains and Machines**\
+Chapter 10. What Artificial Intelligence Gets Right and Wrong: Machine Learning Measured Against the Brain\
+Chapter 11. Integrating Brain Mechanisms into AI Models: What Machines Could Borrow from Biology
 
-**Part V --- From Biological Brains to Artificial Systems**\
-Chapter 15 What Artificial Intelligence Gets Right---and Wrong\
-Chapter 16 Integrating Brain Mechanisms into AI Models
+**Part V: Synthesis**\
+Chapter 12. The Brain as a Predictive, Adaptive System: Is There One Principle Beneath the Mechanisms?\
+Chapter 13. Why the Brain Works the Way It Does: Constraints, Trade-offs, and the Shape of a Solution\
+Chapter 14. Implications for Learning, Work, and Technology: What the Brain's Design Asks of the World We Have Built\
+Chapter 15. A Coherent Model of the Human Brain: How the Pieces Fit
 
-**Part VI --- Integration and Implications**\
-Chapter 17 The Brain as a Predictive, Adaptive System\
-Chapter 18 Why the Brain Works the Way It Does\
-Chapter 19 Implications for Learning, Work, and Technology\
-Chapter 20 A Coherent Model of the Human Brain
+**Part VI: A Case Study**\
+Chapter 16. NIMCP: Building a Brain from the Book's Principles
 
 Glossary\
-References\
+Bibliography\
 Index
 
 # A Note on Levels of Explanation
 
-One of the greatest sources of confusion in neuroscience---and in discussions about the brain more generally---comes from a failure to distinguish between different levels of explanation. Intelligent readers often assume that disagreement reflects uncertainty or lack of rigor, when in fact it reflects the fact that different questions are being answered at different levels.
+One of the greatest sources of confusion in neuroscience, and in discussions about the brain more generally, comes from a failure to distinguish between different levels of explanation. Intelligent readers often assume that disagreement reflects uncertainty or lack of rigor, when in fact it reflects the fact that different questions are being answered at different levels.
 
 At the most basic level, the brain is a physical system governed by the laws of physics and chemistry. Ions move according to electrochemical gradients. Proteins change shape. Chemical reactions occur with finite speed and nonzero error rates.
 
-At the next level are cells---neurons and glial cells---and their immediate interactions. Here we describe how neurons integrate inputs, generate spikes, and modify their connections in response to activity.
+At the next level are cells (neurons and glial cells) and their immediate interactions. Here we describe how neurons integrate inputs, generate spikes, and modify their connections in response to activity.
 
 Above the cellular level lies the level of circuits and systems. At this scale, we consider populations of neurons and the patterns of activity they sustain.
 
@@ -99,77 +97,3 @@ Problems arise when levels are mixed without acknowledgment. Explaining a behavi
 This book moves deliberately between levels of explanation, but it does so with care.
 
 Understanding levels of explanation is not a preliminary technicality; it is a foundational skill.
-
-# Glossary
-
-Action potential (spike)
-
-:   A brief, all-or-none electrical event generated by a neuron when its membrane voltage crosses a critical threshold. Action potentials propagate along axons and serve as the primary means by which neurons transmit signals over long distances. Information is carried not by the size of the spike, but by its timing and pattern.
-
-Axon
-
-:   A long, slender projection of a neuron specialized for transmitting action potentials to other neurons or target cells.
-
-Behavior
-
-:   Observable actions or responses of an organism to internal or external conditions.
-
-Circuit
-
-:   A group of interconnected neurons whose collective activity performs a specific transformation or regulatory function.
-
-Cognition
-
-:   Processes such as perception, memory, reasoning, and decision-making, treated here as emergent descriptions of neural dynamics.
-
-Dendrite
-
-:   Branching extensions of a neuron specialized for receiving synaptic input.
-
-Excitation
-
-:   Neural processes that increase the likelihood that a neuron will fire an action potential.
-
-Inhibition
-
-:   Neural processes that decrease the likelihood that a neuron will fire, essential for stability and selectivity.
-
-Learning
-
-:   A lasting physical change in neural structure or function that alters future behavior as a result of experience.
-
-Memory
-
-:   The capacity of a system to behave differently because of past experience.
-
-Neuron
-
-:   A specialized cell that processes and transmits information using electrical and chemical signals.
-
-Neuromodulator
-
-:   A chemical signal that alters circuit state and regulates when and how learning occurs.
-
-Plasticity
-
-:   Biological mechanisms that enable learning by changing synaptic strength, excitability, or structure.
-
-Prediction
-
-:   The brain's use of prior experience to anticipate future sensory input or outcomes.
-
-Representation
-
-:   An explanatory description summarizing regularities in neural activity, not a physical stored object.
-
-Stability
-
-:   The ability of a neural system to maintain functional operation despite noise and perturbation.
-
-Synapse
-
-:   The specialized junction through which one neuron communicates with another.
-
-Threshold
-
-:   The membrane voltage at which a neuron generates an action potential.

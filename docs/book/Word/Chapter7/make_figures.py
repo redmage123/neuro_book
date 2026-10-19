@@ -157,7 +157,7 @@ def fig_stress_axes():
     ax.text(3.6, 7.4, "fast: seconds", fontsize=10, color=INH, weight="bold", ha="center")
     box(ax, 3.6, 5.6, 4.4, 1.0, "sympathetic nerves", ec=INH, color=INH)
     box(ax, 3.6, 3.6, 4.4, 1.0, "adrenal medulla", ec=INH, color=INH)
-    box(ax, 3.6, 1.5, 4.8, 1.3, "adrenaline: heart rate, blood\npressure, airways, glucose", fc="#fbeeee", ec=INH, color=INH, fs=8.5)
+    box(ax, 3.6, 1.5, 4.8, 1.3, "epinephrine: heart rate, blood\npressure, airways, glucose", fc="#fbeeee", ec=INH, color=INH, fs=8.5)
     arrow(ax, (7.0, 7.2), (5.0, 6.15), color=INH); arrow(ax, (3.6, 5.05), (3.6, 4.15), color=INH); arrow(ax, (3.6, 3.05), (3.6, 2.2), color=INH)
     # slow arm (right)
     ax.text(14.4, 7.4, "slow: tens of minutes", fontsize=10, color=EXC, weight="bold", ha="center")

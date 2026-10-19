@@ -174,7 +174,7 @@ Each trial also takes 2.3 seconds of fixed time (seeing the stimulus, moving, wa
 1) Compute P and DT for a = 0.5, 1.0, 1.5, 2.0. (Check: P = 0.642, 0.762, 0.851, 0.911; DT = 0.24, 0.90, 1.81, 2.83 s.)
 2) With no error penalty (d = 0), compute the reward rate for each bound. Which bound is best? (Check: 0.252, 0.238, 0.207, 0.178; the lowest bound.)
 3) With d = 6 s, recompute. (Check: 0.137, 0.165, 0.170, 0.161; best at a = 1.5.)
-4) With d = 10 s. (Check: best at a = 1.5 or 2.0, which are nearly tied at 0.152.)
+4) With d = 10 s. (Check: 0.105, 0.137, 0.152, 0.151; a = 1.5 is marginally best, with a = 2.0 nearly tied.)
 5) Explain in two sentences why the best bound rises as errors become more costly. Relate this to the subthalamic nucleus result of Cavanagh and colleagues, and to what instructions such as "be careful" or "hurry" do to people's bounds.
 6) Write 6-10 sentences: what an urgency signal does to this calculation when a deadline approaches, and why a fixed-computation artificial classifier cannot make this trade-off.
 

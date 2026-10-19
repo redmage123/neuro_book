@@ -54,8 +54,10 @@ products:
 
 ```bash
 python3 docs/build.py              # rebuild every .docx and .pdf
-python3 docs/build.py Chapter3     # only the documents whose path contains "Chapter3"
+python3 docs/build.py Chapter3/    # only the documents whose path contains "Chapter3/" (the slash keeps Chapter3 from matching Chapter30)
 python3 docs/build.py --docx       # skip the PDF step
+python3 docs/build_book.py         # the whole book as one document (docs/book/full/): Word, PDF and EPUB,
+                                   # with a paged Contents, consolidated Bibliography and an Index built from the glossary
 ```
 
 - **Word (.docx)** is produced by pandoc from the markdown using the shared style

@@ -30,13 +30,13 @@ The chapter lists the defining properties of a designed computer and then denies
 - Noise: suppressed in a computer; present everywhere in the brain and, as later sections argue, exploited.
 - Self-modification: a computer's hardware is fixed while it runs; the brain rewires itself while it is running.
 
-Know the numbers behind the contrast: about 86 billion neurons and on the order of a hundred trillion synapses; a spike of about a millisecond and a synaptic delay of about half a millisecond, against transistors that switch in picoseconds. The brain is roughly a million times slower per step, yet it can tell whether a briefly flashed photograph contains an animal within about 150 milliseconds (Thorpe and colleagues, 1996). That leaves room for only about a hundred sequential steps (Feldman and Ballard's hundred-step constraint), so perception must be massively parallel and shallow, not a long serial program.
+Know the numbers behind the contrast: about 86 billion neurons and well over a hundred trillion synapses; a spike of about a millisecond and a synaptic delay of about half a millisecond, against transistors that switch in picoseconds. Against a processor's clock, the brain is roughly a million times slower per step, yet it can tell whether a briefly flashed photograph contains an animal within about 150 milliseconds (Thorpe and colleagues, 1996). That leaves room for only about a hundred sequential steps (Feldman and Ballard's hundred-step constraint), so perception must be massively parallel and shallow, not a long serial program.
 
 The contrast is one of emphasis rather than kind. Von Neumann himself showed in 1952 that reliable computation can be built from unreliable components by redundancy and majority voting.
 
 The differences trace back to different goals. Computers are built to produce correct answers to well-specified problems. Brains evolved to keep organisms alive in uncertain, hostile environments. Precision is useful only when it serves survival; flexibility, robustness, and speed frequently matter more.
 
-The chapter's honest formulation is worth memorizing: brains and computers are both physical systems capable of computation under radically different constraints. Neither is a model of the other. Marr's three levels (what is computed, the procedure, the hardware) keep these apart: two systems can compute the same thing while sharing nothing at the level of procedure or hardware.
+The chapter's honest formulation is worth memorizing: brains and computers are both physical systems capable of computation under radically different constraints. Neither is a model of the other. Marr's three levels of analysis (what is computed, the procedure, the hardware) keep these apart: two systems can compute the same thing while sharing nothing at the level of procedure or hardware.
 
 ## The brain is a physical system
 
@@ -91,12 +91,12 @@ The noise is measurable. Allen and Stevens (1994) found that more than half of t
 
 The brain uses rather than eliminates this variability:
 - Populations of neurons average over the failures of their members.
-- Feedback stabilizes dynamics, and homeostatic plasticity (Turrigiano and Nelson) scales a neuron's synapses over hours and days to hold its average activity in a working range.
+- Feedback stabilizes dynamics, and homeostatic plasticity (Turrigiano and Nelson) scales a neuron's synapses over a day or more to hold its average activity in a working range.
 - Inhibition prevents runaway excitation (Chapter 4); slow cortical learning is itself a stabilizing device (Chapter 5); distributed representations remove single points of failure.
 
 Degeneracy (Edelman and Gally) is the ability of structurally different elements to perform the same function: many different neuron combinations can produce the same movement, many synaptic configurations can store the same memory. Unlike duplicated copies, which all fail under the same unanticipated condition, degenerate elements offer many partially independent answers, and they are raw material for evolution. Recovery after stroke is degeneracy at work: surviving tissue is not a spare copy but can be taught to do part of the lost tissue's job.
 
-"Optimization" in biology means maintaining function across a wide range of conditions with limited resources, not maximizing a benchmark score. Judged by that standard, and by the 20-watt budget, Sterling and Laughlin argue the nervous system is near-optimal. Nor does the brain optimize nothing: there is no single global objective minimized by gradient descent, but many circuits are well described as minimizing a local error or cost, such as the reward prediction error signaled by a large population of dopamine neurons (Chapter 3), sensory prediction error (Chapter 6), and near-optimal cue combination (Chapter 6).
+"Optimization" in biology means maintaining function across a wide range of conditions with limited resources, not maximizing a benchmark score. Judged by that standard, and by the 20-watt budget, Sterling and Laughlin argue the nervous system is near-optimal. Nor does the brain optimize nothing: there is no single global objective, but many circuits minimize a local error or cost, such as the reward prediction error of Chapter 3 and the sensory prediction error of Chapter 6.
 
 ## Why this matters before we study neurons
 
@@ -276,9 +276,9 @@ Part A - Asymmetric costs
 
 Part B - The speed-accuracy trade-off
 
-5) Suppose the animal can wait and gather more evidence. Waiting 1 second reduces its misclassification rate from 30 percent to 5 percent, but every second of waiting costs 2 units if a predator really is present (it is closer now).
-6) For a true predator, compare the expected cost of acting immediately against waiting 1 second. For a false alarm, do the same.
-7) Combine the two cases using the 0.05 and 0.95 probabilities and decide whether waiting pays.
+5) Suppose the animal can classify the rustle and act on its verdict, fleeing if it judges "predator" and staying otherwise. Acting immediately, it takes the wrong action 30 percent of the time. Waiting 1 second to gather more evidence cuts that to 5 percent, but if a predator really is present the second of waiting costs 40 units on top of whatever the action costs (the predator is closer now and may strike first).
+6) For a true predator, compare the expected cost of acting immediately against waiting 1 second. For a false alarm, do the same. (Check: for a true predator, 30.7 against 45.95.)
+7) Combine the two cases using the 0.05 and 0.95 probabilities. Compare acting immediately, waiting, and the always-flee rule of Part A, and decide which is best. Then find the cost of waiting at which waiting and acting immediately break even. (Check: 1.82, 2.345, and 1.0; break-even at 29.5 units.)
 
 Part C - Interpretation
 

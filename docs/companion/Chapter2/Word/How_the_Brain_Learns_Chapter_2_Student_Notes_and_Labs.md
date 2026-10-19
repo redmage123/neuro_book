@@ -114,7 +114,7 @@ Judged as switches, neurons are slow (a spike lasts about a millisecond, about t
 
 ## A neuron in context
 
-The same neuron with the same wiring and input can fire very differently depending on its chemical setting: neuromodulators such as dopamine, acetylcholine, and noradrenaline change how neurons fire and how their synapses learn. They decide much of when physical changes are made and kept, and they are the subject of Chapter 3.
+The same neuron with the same wiring and input can fire very differently depending on its chemical setting: neuromodulators such as dopamine, acetylcholine, and norepinephrine change how neurons fire and how their synapses learn. They decide much of when physical changes are made and kept, and they are the subject of Chapter 3.
 
 ## Implications for artificial intelligence
 
@@ -167,7 +167,6 @@ V_th = -55 mV
 EPSP at synapse location A_E = +0.4 mV
 Spatial decay: each distance unit halves the effect at the soma/AIS
 Temporal decay: each EPSP halves after 10 ms if not reinforced
-Time step: 5 ms
 
 ### Setup diagram (do this first)
 
@@ -182,7 +181,7 @@ Branch C: distance unit 3
 
 Part A - Spatial summation, simultaneous inputs
 
-1) Place 4 excitatory synapses on Branch A, 4 on Branch B, 4 on Branch C (12 total).
+1) Place four excitatory synapses on Branch A, four on Branch B, and four on Branch C (12 total).
 2) Compute effective EPSP at AIS using spatial decay:
 Branch A: 0.4 \* (1/2)\^1 = +0.20 mV
 Branch B: 0.4 \* (1/2)\^2 = +0.10 mV
@@ -210,15 +209,21 @@ Part C - Sensitivity check
 12) Repeat Part B computations.
 13) Write 6-10 sentences: what changed and why?
 
+Part D - What it takes to fire
+
+14) How many Branch A synapses must fire at the same instant to bring V from -70 mV to threshold? Compare that number with the 12 inputs of Part A.
+15) Now deliver Branch A inputs in two equal bursts, at t = 0 and t = 10 ms, using the decay rule of step 8. How many inputs per burst, and how many in all, are needed to reach threshold at t = 10 ms?
+16) Record the spike for each case, and write 2-4 sentences on what Parts A to D say about how many coincident inputs a neuron needs.
+
 ### What to record
 
-Diagram, time-by-time table, and spike/no-spike decisions.
+Diagram, time-by-time table, and spike/no-spike decisions. Parts A to C never reach threshold; their lesson is how far a dozen inputs leave the cell from it, and Part D shows what crossing it takes.
 
 ## Lab 2.2 - Excitation-Inhibition Competition (EPSPs vs IPSPs with timing)
 
 ### Purpose
 
-To show that inhibition can dominate outcome depending on timing and location.
+To show that inhibition can dominate outcome depending on timing and location. No condition in this lab reaches threshold (Lab 2.1 Part D shows what that takes), so judge each outcome by how far it leaves the membrane from threshold.
 
 ### Given parameters
 
@@ -226,25 +231,24 @@ Use Lab 2.1 values plus:
 IPSP at synapse location A_I = -0.6 mV
 Assume inhibitory synapses start at distance unit 1
 Same temporal decay rule (halve after 10 ms)
-Time step: 5 ms
 
 ### Setup
 
-1\) Place 10 excitatory synapses on Branch A (distance unit 1).
-2) Place 6 inhibitory synapses near the soma (distance unit 1).
+1\) Place ten excitatory synapses on Branch A (distance unit 1).
+2) Place six inhibitory synapses near the soma (distance unit 1).
 
 ### Procedure
 
 Part A - Excitation alone
 
 1) Effective EPSP at AIS: +0.4 \* 0.5 = +0.20 mV.
-2) At t=0, fire all 10 EPSPs: DeltaV_E = 10\*(+0.20).
+2) At t=0, fire all ten EPSPs: DeltaV_E = 10\*(+0.20).
 3) V_now = V_rest + DeltaV_E. Record spike/no-spike.
 
 Part B - Simultaneous inhibition
 
 4) Effective IPSP at AIS: -0.6 \* 0.5 = -0.30 mV.
-5) At t=0, fire 6 IPSPs with EPSPs: DeltaV_I = 6\*(-0.30).
+5) At t=0, fire six IPSPs with EPSPs: DeltaV_I = 6\*(-0.30).
 6) V_now = V_rest + DeltaV_E + DeltaV_I. Record spike/no-spike.
 
 Part C - Inhibition arrives early
@@ -293,8 +297,8 @@ To make constraints explicit by comparing optimization targets.
 
 ### Procedure
 
-1\) Make a 3-column table: Neuron, CPU, Packet Network.
-2) Add at least 8 rows: speed, energy/op, fault tolerance, noise strategy, learning, reset, repair, objective.
+1\) Make a three-column table: Neuron, CPU, Packet Network.
+2) Add at least eight rows: speed, energy/op, fault tolerance, noise strategy, learning, reset, repair, objective.
 3) Fill each cell with a short concrete statement.
 4) Pick two rows where the neuron looks worst.
 5) Write 10-14 sentences explaining why those weaknesses are adaptive.
@@ -308,7 +312,7 @@ To integrate chemical input -\> graded potentials -\> spike decision -\> propaga
 ### Procedure
 
 1\) Draw a neuron with labeled parts: dendrites, soma, AIS, axon, terminals.
-2) Add 4 synapses: 2 excitatory, 2 inhibitory.
+2) Add four synapses: two excitatory, two inhibitory.
 3) Draw arrows for: neurotransmitter release -\> receptor binding -\> EPSP/IPSP -\> summed V at AIS -\> spike -\> terminal release.
 4) Add one plasticity loop: repeated co-activation -\> stronger synapse.
 5) Add one stabilization loop: increased excitation -\> increased inhibition -\> stabilized firing.

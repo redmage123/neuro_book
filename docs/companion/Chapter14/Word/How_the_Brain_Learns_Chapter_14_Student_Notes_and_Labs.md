@@ -129,7 +129,7 @@ The final test comes 35 days after the review.
 
 ### Procedure
 
-1) For gaps of 0, 2, 7, and 30 days, compute R at the review. (Check: 1.00, 0.90, 0.72, 0.37.)
+1) For gaps of 0, 2, 7, and 30 days, compute R at the review. (Check: 1.00, 0.90, 0.72, 0.375.)
 2) Compute S2 for a successful review at each gap. (Check: 2.0, 5.9, 18.5, 91.5.)
 3) Compute retention at the test if the review succeeded, R(35, S2). (Check: 0.34, 0.60, 0.83, 0.96.)
 4) Compute the expected retention, R × R(35, S2) + (1 − R) × R(35, S0). (Check: 0.34, 0.58, 0.69, 0.57.) Which gap is best among these?
@@ -152,7 +152,7 @@ Kornell and Bjork (2008): 78 percent of participants did better with interleavin
 
 1) Compute the absolute and relative gains from quizzing on the chapter and semester exams. (Check: 13 points, 16.0 percent; 12 points, 17.9 percent.)
 2) Compute the absolute gain from interleaving and the ratio of the two scores. (Check: 23 points; 1.61.)
-3) If the two 78 percent groups in Kornell and Bjork were independent, what is the smallest possible share of participants who both did better with interleaving and judged blocking as good or better? (Hint: 78 + 78 − 100. Check: at least 56 percent.)
+3) Knowing nothing about how the two 78 percent groups in Kornell and Bjork overlap, what is the smallest possible share of participants who both did better with interleaving and judged blocking as good or better? (Hint: 78 + 78 − 100. Check: at least 56 percent.)
 4) Write 6-10 sentences: why might classroom effects be smaller than laboratory ones, and why might students keep using the weaker techniques?
 
 ## Lab 14.3 - Reading an Effect Size
@@ -230,7 +230,7 @@ To connect the chapter's practical claims to the brain mechanisms of earlier cha
 ### Procedure
 
 1) Copy the claims in Figure 14.7.
-2) For each claim, name the brain mechanism it rests on and the chapter where that mechanism was described (use Figure 14.1).
+2) For each claim, name the brain mechanism it rests on and the chapter where that mechanism was described (use Figure 14.2).
 3) Mark claims in which the mechanism is well established but the practical claim failed (for example, plasticity and brain training), and explain the gap.
 4) Add two claims you have encountered outside this book, and place them in the ledger with your reasons.
 5) Write 8-12 sentences: what kind of evidence should a school or company require before adopting a "brain-based" practice?

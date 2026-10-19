@@ -1,3 +1,7 @@
 .venv/
 __pycache__/
 *.pyc
+
+# full-book build intermediates (the PDF and EPUB are kept)
+docs/book/full/*.md
+docs/book/full/*.docx

@@ -19,12 +19,12 @@ Your goal is to be able to describe NIMCP's architecture, map it onto the eight 
 ## A brain built from the book
 
 - NIMCP ("Neuro-Inspired Modular Control Protocol"; trained instance "Athena"): about two million spiking neurons, six neuromodulators, sleep, homeostasis, a staged curriculum.
-- Disclosure: the author's project. The account follows the code as of October 2026.
+- Disclosure: the author's project. The account follows the code as of October 2026 (repository commit 4693efd, 18 October 2026); later versions may differ.
 
 ## What was built
 
 - Conductance-based leaky integrate-and-fire neurons with AMPA, NMDA, and GABA receptors, Dale's principle, PV/SOM/VIP interneurons, 10 percent heterogeneity.
-- About 2 million neurons and about 1.5 billion synapses (not "trillions"); a few hundred to a thousand inputs per neuron.
+- About two million neurons and about 1.5 billion synapses (not "trillions"); a few hundred to a thousand inputs per neuron.
 - An eight-tier generic hierarchy; named "regions" are mostly algorithmic modules; "hemispheres" are a routing rule (Figure 16.1).
 - Backpropagation in a 150,000-unit network does much of the learning; text targets come from pretrained embeddings (Xiao et al. 2024); the parent is an LLM; output uses a lexicon, grammar rules, and in some interfaces Phi-3 (Abdin et al. 2024).
 
@@ -40,7 +40,7 @@ Your goal is to be able to describe NIMCP's architecture, map it onto the eight 
 
 ## What the measurements show
 
-- May 2026: one to 33 different answers to 50 questions, none appropriate; intended word produced 1 of 20 times in every probe; no category structure in word representations (Figure 16.4).
+- May 2026: one to 33 different answers to 50 questions, none appropriate; intended word produced once in 20 tries in every probe; no category structure in word representations (Figure 16.4).
 - Firing-rate warnings of roughly 800 to 900 spikes a second from April to June; training stopped in late June 2026; October restarts killed dozens of times for exceeding memory.
 
 ## Reading the failures through the book
@@ -102,7 +102,7 @@ A cue synapse is active at time steps 0, 1, and 2. Its eligibility trace at time
 
 1) Compute the trace at reward delays d = 2, 5, and 10. (Check: 2.66, 1.83, 0.98.)
 2) What credit does the coincidence rule give at each delay? (Check: credit at d = 2; none at 5 and 10.)
-3) Background synapses fire at random with probability 0.05 per step. Estimate the expected trace of a background synapse at the moment of reward, for τ = 8 (hint: a geometric series). Compare it with your answers in step 1.
+3) Background synapses fire at random with probability 0.05 per step, starting at step 0, as in the simulation behind Figure 16.3. Estimate the expected trace of a background synapse at the moment of reward at each delay, for τ = 8 (hint: a geometric series). Compare it with your answers in step 1. (Check: about 0.13, 0.22, and 0.32.)
 4) Write 6-10 sentences: what sets the best τ for a task, and what happens if τ is much longer than the delays the animal faces?
 
 ## Lab 16.2 - The Cost of Runaway Firing
@@ -113,12 +113,12 @@ To put the firing-rate alerts in terms of work done.
 
 ### Given values
 
-NIMCP's spiking network: 2.2 million neurons, about 682 synapses per neuron. Early firing rate: 26 spikes per second. Alert-level rate: 834 spikes per second. The homeostatic rule can scale weights by at most 2 percent per step.
+NIMCP's spiking network: about 2.0 million neurons, about 750 synapses per neuron. Early firing rate: 26 spikes per second. Alert-level rate: 834 spikes per second. The homeostatic rule can scale weights by at most 2 percent per step.
 
 ### Procedure
 
 1) Compute synaptic events per second at each rate. (Check: about 3.9 × 10^10^ and 1.25 × 10^12^.)
-2) If scaling weights by 0.98 reduced firing in proportion, how many steps would it take to bring 834 down to about 28 spikes a second, a factor of 30? (Check: about 168 steps.)
+2) If scaling weights by 0.98 reduced firing in proportion, how many steps would it take to bring 834 down to the early rate of 26 spikes a second, a factor of about 32? (Check: about 172 steps.)
 3) Compare your answers with Chapter 1's estimate that the cortex can afford about one neuron in a hundred firing at any moment.
 4) Write 6-10 sentences: why might homeostasis that works in a small network fail in a large one? Consider the speed of the controller and the strength of recurrent excitation (Chapter 4).
 
@@ -147,13 +147,13 @@ To compare NIMCP's size with biological nervous systems (Figure 16.5).
 
 ### Given values
 
-NIMCP: 2.2 million neurons, 1.5 billion synapses. Fruit fly brain: 139,255 neurons, 54.5 million synapses. Human neocortex: 16.3 billion neurons, 164 trillion synapses. Honeybee: under a million neurons.
+NIMCP: about 2.0 million neurons, 1.5 billion synapses. Fruit fly brain: 139,255 neurons, 54.5 million synapses. Human neocortex: 16.3 billion neurons, 164 trillion synapses. Honeybee: under a million neurons.
 
 ### Procedure
 
-1) Compute synapses per neuron for NIMCP, the fly, and the human neocortex. (Check: about 682, 391, and 10,061.)
+1) Compute synapses per neuron for NIMCP, the fly, and the human neocortex. (Check: about 750, 391, and 10,061.)
 2) NIMCP has more neurons than a bee. List three things a bee brain has that NIMCP lacks, using Chapters 10 and 13.
-3) If NIMCP's connections per neuron were raised to the cortical figure, how many synapses would it have, and how much memory would that need at 12 bytes per synapse? (Check: about 2.2 × 10^10^ synapses; about 265 GB.)
+3) If NIMCP's connections per neuron were raised to the cortical figure, how many synapses would it have, and how much memory would that need at 12 bytes per synapse? (Check: about 2.0 × 10^10^ synapses; about 241 GB.)
 4) Write 6-10 sentences: is the obstacle to NIMCP's learning more likely to be its size or its organization? Defend your answer.
 
 ## Lab 16.5 - Auditing a Mechanism

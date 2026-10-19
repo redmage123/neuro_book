@@ -52,6 +52,9 @@
 | Chapter 14 | ✓ Complete (book + companion, 2026-10-18) |
 | Chapter 15 | ✓ Complete (book + companion, 2026-10-18) |
 | Chapter 16 | ✓ Complete (book + companion, 2026-10-19; NIMCP case study) |
+| Front matter, glossary, full-book build | ✓ Complete (2026-10-19: Contents in six Parts, 237-term glossary, build_book.py with Index and Bibliography) |
+| Instructor's Answer Key | ✓ Complete (2026-10-19, all 106 labs) |
+| Whole-book consistency audit | ✓ Applied (2026-10-19) |
 
 ## Recent Addition: Chapter 0 (Foundations)
 Added prerequisite chapter addressing reader feedback about assumed knowledge. Covers:

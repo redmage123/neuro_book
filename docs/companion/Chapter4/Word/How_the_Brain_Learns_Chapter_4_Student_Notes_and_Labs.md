@@ -128,6 +128,7 @@ Target neuron E starts at V = -70 mV; threshold V_th = -63 mV.
 Each input spike produces an EPSP of +3 mV at E on the step it arrives.
 Through the interneuron, the same input spike also produces an IPSP of -3 mV at E, arriving 2 steps (2 ms) later.
 Between steps, E's deviation from rest shrinks to 80 percent (V = -70 + 0.8 * (V_previous + 70)) before new inputs are added.
+The model has no reset after a spike: "spike" means only that V is at or above threshold on that step, and V is simply followed onward after a crossing.
 Time step: 1 ms.
 
 ### Setup
@@ -203,13 +204,13 @@ v_next = 0.8 * v + 0.4 * y
 1) Draw the circuit: L and R with mutual inhibitory synapses, a drive arrow onto each, and a "fatigue" label on each.
 2) Make a table with columns: step, x, y, u, v. Run 20 steps. Check: at step 4 you should have x = 0.23, y = 0, u = 0.79; at step 7, y = 0.83.
 3) Mark the steps at which the active side switches. Estimate the period of the rhythm.
-4) Change the fatigue accumulation from 0.4 to 0.2 and rerun 20 steps. What happens to the period, and does the rhythm survive?
+4) Change the fatigue accumulation from 0.4 to 0.2 and rerun 20 steps. Does the rhythm survive? If it does, what happens to its period; if it does not, what state does the circuit settle into?
 5) Set the fatigue accumulation to 0 and run 6 steps. What does the circuit do, and what is that behavior called in the chapter's motif vocabulary?
 6) Write 8-12 sentences: what two ingredients are necessary for alternation, why is the drive allowed to be constant, and what role is left for sensory feedback?
 
 ### Optional code extension (Python, about 20 lines)
 
-Run the model for 400 steps and add a one-step "stone underfoot": at step 150, force x to 0 for one step. Observe how the rhythm recovers. Then add a small sensory feedback term that increases D for whichever side has the higher fatigue, and see whether the rhythm becomes more regular.
+Run the model for 400 steps and add a one-step "stone underfoot": at step 140, after computing that step, force x to 0. Observe how the rhythm recovers. Then try the stone at step 150. Because this model updates both sides at once, a stone early in a burst can lock the two sides into a symmetric two-step cycle (both at 0.474, then both at 0) instead of letting the rhythm recover; that lockup is an artifact of the model, not a lesson about spinal circuits. Then add a small sensory feedback term that increases D for whichever side has the higher fatigue, and see whether the rhythm becomes more regular.
 
 ## Lab 4.4 - Selection by Disinhibition (a paper basal ganglia)
 

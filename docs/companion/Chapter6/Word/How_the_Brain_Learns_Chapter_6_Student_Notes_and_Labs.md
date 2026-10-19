@@ -12,9 +12,9 @@ Chapter 1 said in one sentence that perception is an active process of inference
 If you come from software or machine learning, the chapter is designed to correct three instincts:
 1) treating perception as decoding, as if the image contained the answer and the brain only had to read it out,
 2) treating illusions and hallucinations as bugs, and
-3) treating attention as a spotlight that selects, rather than a gain that weights evidence by its reliability.
+3) treating attention only as a spotlight that selects, rather than also as a gain that weights evidence by its reliability.
 
-Your goal is to be able to explain, in plain language, why the inverse problem forces the brain to use priors, how a prior and a likelihood combine, what predictive coding says travels up and down the cortical hierarchy and which observations (expectation suppression, omission responses, and the mismatch negativity) test it, how sensory prediction error differs from Chapter 3's reward prediction error, why attention is precision, how two senses are combined, why the world does not jump when your eyes do, and where priors come from.
+Your goal is to be able to explain, in plain language, why the inverse problem forces the brain to use priors, how a prior and a likelihood combine, what predictive coding says travels up and down the cortical hierarchy and which observations (expectation suppression, omission responses, and the mismatch negativity) test it, how sensory prediction error differs from Chapter 3's reward prediction error, why attention can be treated as precision, how two senses are combined, why the world does not jump when your eyes do, and where priors come from.
 
 ## The problem perception solves
 
@@ -22,7 +22,7 @@ The retinal image is a two-dimensional projection and is ambiguous: many arrange
 
 ## The senses deliver evidence, not pictures
 
-- About 92 million rods and 4.6 million cones (Curcio et al. 1990), but only about 1 million ganglion-cell axons per eye: about 97-to-1, roughly a hundred-to-one compression before the brain. What is kept: contrast, change, edges (Chapter 4).
+- About 92 million rods and 4.6 million cones (Curcio et al. 1990), but only about one million ganglion-cell axons per eye: about 97-to-1, roughly a hundred-to-one compression before the brain. What is kept: contrast, change, edges (Chapter 4).
 - Information rate of the optic nerve: on the order of 10 megabits per second.
 - High acuity only in the fovea, whose region of highest acuity covers one to two degrees (a thumbnail at arm's length). The blind spot is about 6 degrees across, 15 degrees to the side, and you have never seen it.
 - The eye jumps about three times a second (saccades); vision is suppressed during each jump.
@@ -74,7 +74,7 @@ Cost: what is not attended is barely seen. The gorilla in the basketball video; 
 ## Combining the senses
 
 If the brain weights by precision, the estimate from two senses should lie between them, closer to the more reliable one, and be narrower than either. Ernst and Banks (2002): vision plus touch judging a bar's width, with visual noise varied. Observed weights matched the computed optimum at every noise level (Figure 6.8). The senses are pooled sources of evidence, not separate channels to a viewer.
-This is the sense in which the book says the brain optimizes: there is no single global objective trained by gradient descent, but circuits such as this one (and the dopamine error of Chapter 3) behave as if minimizing a well-defined local cost, here the variance of the estimate.
+This is the local sense in which the book says the brain optimizes (Chapter 3): there is no single global objective trained by gradient descent, but circuits such as this one (and the reward prediction error of Chapter 3) behave as if minimizing a well-defined local cost, here the variance of the estimate.
 
 ## Perception is active
 
@@ -85,7 +85,7 @@ Two consequences of a brain that moves its sensors:
 ## Learning the priors
 
 Some priors are present at or near birth (newborns orient to faces; chicks reared under light from below still assume light from above), but present at birth is not fixed for life, as the Adams experiment shows. Most of sensory cortex is learned from input statistics, and the learning is slow, gated, and windowed, as Chapter 5 predicts.
-- Critical period (Hubel and Wiesel): one eye closed for weeks early in life permanently loses its cortical representation; the same closure in an adult does nothing. Kittens raised among vertical stripes had almost no horizontal-edge neurons. The window is controlled by inhibitory maturation and neuromodulators.
+- Critical period (Hubel and Wiesel; the strict form of Chapter 1's sensitive period): one eye closed for weeks early in life permanently loses its cortical representation; the same closure in an adult does nothing. Kittens raised among vertical stripes had almost no horizontal-edge neurons. The window is controlled by inhibitory maturation and neuromodulators.
 - Olshausen and Field (1996): a model trained only to represent natural image patches sparsely learned localized, oriented, band-pass filters (Figure 6.10), the receptive fields Hubel and Wiesel found in V1. Edges are what the world contains. The receptive fields of sensory cortex are the priors of the natural world made into tissue.
 - Adult recalibration continues: prism goggles (reaching errors vanish in minutes); inverting goggles (motor adaptation in six to ten days, but whether the world ever looks upright again is disputed; a controlled 1999 study found no perceptual re-inversion); a colored filter worn a few hours a day for several days shifts perceived pure yellow for a week or two afterward (Neitz et al. 2002). Slow at the core, fast at the periphery, like Chapter 5's two clocks.
 
@@ -110,7 +110,7 @@ Some priors are present at or near birth (newborns orient to faces; chicks reare
 - The cortical hierarchy sends predictions down and errors up; expected input is quiet, surprise is loud. Expectation suppression, not repetition suppression alone, is the decisive evidence.
 - Sensory prediction error (high-dimensional, about content) is a different signal from Chapter 3's reward prediction error (a scalar about value).
 - Illusions are correct inferences from the wrong picture; each reveals a prior.
-- Attention is precision: gain on errors, implemented by biased competition, gamma synchrony, and acetylcholine.
+- On the predictive coding proposal, attention is precision: gain on errors, implemented by biased competition, gamma synchrony, and acetylcholine.
 - Senses are combined by precision weighting, near-optimally.
 - Efference copy and forward models cancel the sensory consequences of one's own actions.
 - Critical periods window the learning of priors; adult recalibration continues more slowly.
@@ -120,7 +120,7 @@ Some priors are present at or near birth (newborns orient to faces; chicks reare
 
 ## Lab Notes: how to succeed in these labs
 
-These labs make inference concrete with pencil, paper, and short recurrences. Each isolates a single idea: combining a prior with evidence, weighting two senses, prediction error over a sequence, discrete hypotheses against a strong prior, cancelling self-caused sensation, and learning a prior that must track a changing world. The arithmetic is light; the point is to watch the rule behave.
+These labs make inference concrete with pencil, paper, and short recurrences. Each isolates a single idea: combining a prior with evidence, weighting two senses, prediction error over a sequence, discrete hypotheses against a strong prior, canceling self-caused sensation, and learning a prior that must track a changing world. The arithmetic is light; the point is to watch the rule behave.
 
 General rules:
 1) Write every intermediate value.
@@ -174,7 +174,7 @@ Vision reports a bar width of 52 mm with standard deviation s_v. Touch reports 5
 3) Find the value of s_v at which the two senses get equal weight. (Check: 4 mm, the same as touch.)
 4) Plot, by hand, the weight on vision as a function of s_v for s_v = 1, 2, 4, 8, 16. Describe the shape.
 5) Now suppose the room goes dark so that vision reports nothing usable (s_v very large). What does the formula do? What does the organism do?
-6) Write 6-10 sentences: Ernst and Banks found that people's weights matched the optimum at every noise level. What would the brain need to represent, and update trial by trial, for that to be possible? Relate it to the chapter's claim that attention is precision.
+6) Write 6-10 sentences: Ernst and Banks found that people's weights matched the optimum at every noise level. What would the brain need to represent, and update trial by trial, for that to be possible? Relate it to the chapter's proposal that attention is precision.
 
 ## Lab 6.3 - Surprise on a Chain (predictive coding over time)
 
@@ -210,7 +210,7 @@ To work the hollow-mask illusion as a two-hypothesis Bayesian decision, and to s
 
 Two hypotheses: the face is convex (normal) or hollow. Work in odds.
 Prior odds convex:hollow = 99:1 (almost every face ever seen was convex).
-Stereo and shading evidence favor "hollow" by a likelihood ratio L that depends on viewing distance, because stereo precision falls with distance: at 2 m, L = 5 (the evidence is 5 times more likely under "hollow"); at 1 m, L = 50; at 0.5 m, L = 500.
+Stereo and shading evidence favor "hollow" by a likelihood ratio L that depends on viewing distance, because stereo precision falls with distance: at 2 m, L = 5 (the evidence is five times more likely under "hollow"); at 1 m, L = 50; at 0.5 m, L = 500.
 Posterior odds convex:hollow = prior odds / L. Probability of convex = odds / (1 + odds).
 
 ### Procedure
@@ -243,7 +243,7 @@ d) command 10 degrees right, eye moves 10 degrees right, and the object moves 3 
 (Check: a) 0; b) 5 degrees of apparent world motion; c) −10, the world appears to jump in the direction of the intended movement; d) the object is seen to move 3 degrees right.)
 2) In case c, the retina reported nothing at all, and yet motion was perceived. Explain, in one sentence, what that tells you about where perception happens.
 3) Tickling: let the predicted touch intensity be 1.0 when you move your own hand and 0 when someone else does; actual intensity is 1.0 in both cases. Compute what is felt. Now suppose a 200 ms delay is inserted between your command and the touch, so that the forward model's prediction arrives at the wrong time and only 0.4 of it is subtracted. What is felt? (Experiments show that self-tickling becomes more ticklish as the delay grows.)
-4) The forward model is learned by the cerebellum (Chapter 4). Describe, using the climbing-fiber error signal of that chapter, how the model would be corrected if you began wearing glasses that magnified the visual scene by 20 percent, so that a 10 degree eye movement produced a 12 degree slip.
+4) The forward model is learned by the cerebellum (Chapters 4 and 6). Describe, using the climbing-fiber error signal of that chapter, how the model would be corrected if you began wearing glasses that magnified the visual scene by 20 percent, so that a 10 degree eye movement produced a 12 degree slip.
 5) Write 6-10 sentences: why must any agent that moves its own sensors have an efference copy, what goes wrong in an agent without one, and how does this relate to the chapter's claim that perception and action are one loop?
 
 ## Lab 6.6 - Learning a Prior That Must Track the World
