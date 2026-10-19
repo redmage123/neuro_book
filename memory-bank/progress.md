@@ -17,6 +17,7 @@
 - Chapter 13: Why the Brain Works the Way It Does: Constraints, Trade-offs, and the Shape of a Solution (main book + companion, 2026-10-18; 7 figures by make_figures.py, Figures 13.2-13.6 computed; 65 citations logged; literary and expert reviews to 5/5)
 - Chapter 14: Implications for Learning, Work, and Technology: What the Brain's Design Asks of the World We Have Built (main book + companion, 2026-10-18; 7 figures by make_figures.py, Figures 14.3 and 14.5 computed, 14.1, 14.4, 14.6 from published data; 83 citations logged; literary and expert reviews to 5/5)
 - Chapter 15: A Coherent Model of the Human Brain: How the Pieces Fit (main book + companion, 2026-10-18; 5 figures by make_figures.py, Figure 15.4 from published counts; 31 citations logged; literary and expert reviews to 5/5)
+- Chapter 16: NIMCP: Building a Brain from the Book's Principles (main book + companion, 2026-10-19; 5 figures by make_figures.py, Figure 16.3 computed; 19 citations logged incl. 12 repository documents; literary and expert reviews to 5/5)
 - PDF and Word formats maintained for all chapters
 - Directory structure supports independent chapter review
 
@@ -28,7 +29,7 @@
 - Additional glossary entries as chapters expand
 
 ## Current Status
-**Phase:** Active writing — All chapters (0-15) drafted with companions; front matter to be reconciled
+**Phase:** Active writing — All chapters (0-16) drafted with companions; front matter to be reconciled
 
 | Component | Status |
 |-----------|--------|
@@ -50,6 +51,7 @@
 | Chapter 13 | ✓ Complete (book + companion, 2026-10-18) |
 | Chapter 14 | ✓ Complete (book + companion, 2026-10-18) |
 | Chapter 15 | ✓ Complete (book + companion, 2026-10-18) |
+| Chapter 16 | ✓ Complete (book + companion, 2026-10-19; NIMCP case study) |
 
 ## Recent Addition: Chapter 0 (Foundations)
 Added prerequisite chapter addressing reader feedback about assumed knowledge. Covers:
